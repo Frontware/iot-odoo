@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!-- 
+    purpose : device
+    
+    remarks :
+    
+    2021-10-04 KPO created
+ -->
+<odoo>
+    <data>
+        <record id="fwiot_device_tree" model="ir.ui.view">
+            <field name="name">fwiot_device_tree</field>
+            <field name="model">fwiot_device</field>
+            <field name="arch" type="xml">
+                <tree string="Device" delete="0" sample="1">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="fwiot_device_edit" model="ir.ui.view">
+            <field name="name">fwiot_device_edit</field>
+            <field name="model">fwiot_device</field>
+            <field name="arch" type="xml">
+                <form string="Device" delete="0">
+                <sheet string="Device">
+                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Device Name"/>
+                            <field name="type" placeholder="Device type"/>
+                        </h1>
+                    </div>
+                    <notebook>
+                        <page name="settings_page" string="Settings">
+                            <group>
+                                <group>
+                                    <field name="active" invisible="1"/>
+                                    <field name="guid" string="GUID" />
+                                    <field name="lock_code" string="Lock code"/>
+                                    <field name="unlock_code" string="Unlock code"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page name="note_page" string="Description">
+                            <field name="note" nolabel="1" placeholder="Note..." type="html"/>
+                            <div class="d-none oe_clear"/>
+                        </page>
+                    </notebook>
+
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" options="{'post_refresh':True}" help="Follow this project to automatically track the events associated to tasks and issues of this project." groups="base.group_user"/>
+                    </div>
+                </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="fwiot_device_filter" model="ir.ui.view">
+            <field name="name">fwiot_device_filter</field>
+            <field name="model">fwiot_device</field>
+            <field name="arch" type="xml">
+                <search string="Search Device">
+                    <field name="name" string="Device"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>       

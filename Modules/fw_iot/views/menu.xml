@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+        <!-- Top menu item -->
+        <menuitem name="Frontware IoT"
+            id="menu_main_fwiot"
+            groups="fw_iot.group_fwiot_manager"
+            sequence="50"/>
+
+        <menuitem id="menu_fwiot_config" name="Configuration" parent="menu_main_fwiot"
+            sequence="100" groups="fw_iot.group_fwiot_manager"/>
+
+        <record id="open_view_device" model="ir.actions.act_window">
+            <field name="name">Device</field>
+            <field name="res_model">fwiot_device</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="fwiot_device_filter"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Import device by connect to fwiot
+              </p><p>
+                Define api key in configuration and sync all data.
+              </p>
+            </field>
+        </record>        
+
+        <record id="open_view_device_type" model="ir.actions.act_window">
+            <field name="name">Device type</field>
+            <field name="res_model">fwiot_device_type</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="fwiot_device_type_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Import device type by connect to fwiot
+              </p><p>
+                Define api key in configuration and sync all data.
+              </p>
+            </field>
+        </record>        
+
+        <menuitem action="open_view_device" id="menu_fwiot_device" name="Device" parent="menu_main_fwiot" sequence="1"/>
+        <menuitem action="open_view_device_type" id="menu_fwiot_device_type" name="Device type" parent="menu_main_fwiot" sequence="2"/>
+</data>
+</odoo>
