@@ -1,3 +1,8 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_fwiot_device_user,access_fwiot_device_user,model_fwiot_device,fw_iot.group_fwiot_user,1,0,0,0
 access_fwiot_device_manager,access_fwiot_device_manager,model_fwiot_device,fw_iot.group_fwiot_manager,1,1,1,1
+
+access_fwiot_device_type_user,access_fwiot_device_type_user,model_fwiot_device_type,fw_iot.group_fwiot_user,1,0,0,0
+access_fwiot_device_type_manager,access_fwiot_device_type_manager,model_fwiot_device_type,fw_iot.group_fwiot_manager,1,1,1,1
+
+access_fwiot_device_create_wizard,access_fwiot_device_create_wizard,model_fwiot_device_create_wizard,fw_iot.group_fwiot_user,1,1,1,1

@@ -12,8 +12,9 @@
             <field name="name">fwiot_device_tree</field>
             <field name="model">fwiot_device</field>
             <field name="arch" type="xml">
-                <tree string="Device" delete="0" sample="1">
+                <tree string="Device" delete="0">
                     <field name="name"/>
+                    <field name="status"/>
                 </tree>
             </field>
         </record>
@@ -23,28 +24,43 @@
             <field name="model">fwiot_device</field>
             <field name="arch" type="xml">
                 <form string="Device" delete="0">
+                <header>
+                  <button name="action_confirm" string="Confirm" type="object" class="oe_highlight" states="draft" />
+                  <button name="action_fetch" string="Fetch data" type="object" class="oe_highlight" states="confirm" />
+                  <field name="state" widget="statusbar" statusbar_visible="draft,confirm"/>
+                </header>                
                 <sheet string="Device">
-                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+                    <widget name="web_ribbon" states="confirm" title="Online" bg_color="bg-success" attrs="{'invisible': [('status', '=', 'Offline')]}"/>
+                    <widget name="web_ribbon" states="confirm" title="Offline" bg_color="bg-danger" attrs="{'invisible': [('status', '=', 'Online')]}"/>
                     <div class="oe_title">
                         <h1>
                             <field name="name" placeholder="Device Name"/>
-                            <field name="type" placeholder="Device type"/>
                         </h1>
                     </div>
                     <notebook>
-                        <page name="settings_page" string="Settings">
+                        <page name="info_page" string="Infomation" attrs="{'invisible': [('state', '=', 'draft')]}">
                             <group>
                                 <group>
-                                    <field name="active" invisible="1"/>
-                                    <field name="guid" string="GUID" />
-                                    <field name="lock_code" string="Lock code"/>
-                                    <field name="unlock_code" string="Unlock code"/>
+                                    <field name="type" placeholder="Device type" readonly="1" />
+                                    <field name="token" placeholder="Device token" readonly="1" />
+                                    <field name="status" invisible="1" />
+                                    <BR/>
+                                    <field name="last_fetch" readonly="1" />
                                 </group>
                             </group>
                         </page>
-                        <page name="note_page" string="Description">
-                            <field name="note" nolabel="1" placeholder="Note..." type="html"/>
-                            <div class="d-none oe_clear"/>
+                        <page name="settings_page" string="Settings" groups="fw_iot.group_fwiot_manager">
+                            <group>
+                                <group>
+                                    <field name="active" invisible="1"/>
+                                    <field name="guid" string="API Key" />
+                                    <field name="unlock_code" string="Unlock code"/>
+                                </group>
+                            </group>
+                            <group string="Note">
+                                <field name="note" nolabel="1" placeholder="Note..." type="html"/>
+                                <div class="d-none oe_clear"/>
+                            </group>
                         </page>
                     </notebook>
 

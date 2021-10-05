@@ -14,6 +14,7 @@
         "views/device_type.xml",
         "views/device.xml",
         "views/menu.xml",
+        "wizard/fwiot_device_create_wizard.xml"
     ],
     "installable": True,
     "active": False,

@@ -10,6 +10,7 @@ _logger = logging.getLogger(__name__)
 class FWIOT_device_type(models.Model):
     _name = 'fwiot_device_type'
     _description = "Frontware IOT device type"
-    _inherit = ['mail.alias.mixin', 'mail.thread']
+    _inherit = ['mail.thread']
 
     name = fields.Char(string="Name", required=True)
+    code = fields.Char(string="Code", required=True)
