@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="fwiot_device_create_wizard_form" model="ir.ui.view">
+            <field name="name">fwiot_device_create_wizard_form</field>
+            <field name="model">fwiot_device_create_wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                        <group id="info" string="Info">
+                            <field name="type" readonly="1"/>
+                            <field name="serial" readonly="1"/>
+                            <field name="token" readonly="1"/>
+                        </group>
+                        <group string="Status">
+                            <field name="active" readonly="1"/>
+                            <field name="locked" readonly="1"/>
+                            <field name="status" readonly="1"/>
+                        </group>
+                        </group>
+                        <group string="Settings">                        
+                            <field name="settings" nolabel="1" readonly="1"/>
+                        </group>
+                        <group string="Webhook">
+                            <field name="web_hook_url" readonly="1"/>
+                            <field name="web_hook_header" readonly="1"/>
+                        </group>
+                        <group string="Data">
+                            <field name="csv_url" readonly="1"/>
+                            <field name="json_url" readonly="1"/>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="action_confirm" string="Confirm" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="fwiot_device_create_wizard_action" model="ir.actions.act_window">
+            <field name="name">Device status</field>
+            <field name="res_model">fwiot_device_create_wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>

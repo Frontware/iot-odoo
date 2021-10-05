@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!-- 
+    purpose : device
+    
+    remarks :
+    
+    2021-10-04 KPO created
+ -->
+<odoo>
+    <data>
+        <record id="fwiot_device_thermometer_tree" model="ir.ui.view">
+            <field name="name">fwiot_device_thermometer_tree</field>
+            <field name="model">fwiot_device_thermometer</field>
+            <field name="arch" type="xml">
+                <tree string="Thermometer" delete="0">
+                    <field name="date"/>
+                    <field name="temperature"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="fwiot_device_thermometer_edit" model="ir.ui.view">
+            <field name="name">fwiot_device_thermometer_edit</field>
+            <field name="model">fwiot_device_thermometer</field>
+            <field name="arch" type="xml">
+                <form string="Thermometer" delete="0">
+                <sheet string="Thermometer">
+                    <group>
+                        <field name="date" readonly="1"/>
+                        <field name="temperature" readonly="1"/>
+                    </group>
+                </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="fwiot_device_thermometer_filter" model="ir.ui.view">
+            <field name="name">fwiot_device_thermometer_filter</field>
+            <field name="model">fwiot_device_thermometer</field>
+            <field name="arch" type="xml">
+                <search string="Search Device">
+                    <field name="name" string="Device"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>       
