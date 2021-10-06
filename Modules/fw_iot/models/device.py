@@ -9,6 +9,10 @@ from odoo.exceptions import UserError
 
 _logger = logging.getLogger(__name__)
 
+DEVICE_IMPLEMENT = [
+    {"code": ["THERM1M"], "model": "fwiot_device_thermometer", "action" : "fw_iot.fwiot_device_thermometer_action"}
+]
+
 class FWIOT_device(models.Model):
     _name = 'fwiot_device'
     _description = "Frontware IOT device"
@@ -108,23 +112,23 @@ class FWIOT_device(models.Model):
            for j in jj:
                mctl.insert_record(self.token, json.loads(j['data']))
 
+    def _get_device_implement(self):
+        for d in DEVICE_IMPLEMENT:
+            if self.type.code in d['code']:
+               return d
+        return {}
+
     def _get_device_data_action(self):
         """
         get device data action
         """
-        if self.type.code in ['THERM1M']:
-           return 'fw_iot.fwiot_device_thermometer_action' 
-        
-        return False
+        return self._get_device_implement().get('action', False)
 
     def _get_device_model(self):
         """
         get device model
         """
-        if self.type.code in ['THERM1M']:
-           return 'fwiot_device_thermometer' 
-        
-        return False
+        return self._get_device_implement().get('model', False)
 
     def action_view_all_data(self):
         """
@@ -146,7 +150,9 @@ class FWIOT_device(models.Model):
         compute field is_implement according type
         """
         for d in self:
-            d.is_implement = d.type.code in ['THERM1M']
+            for dv in DEVICE_IMPLEMENT:
+                d.is_implement = d.type.code in dv['code']
+                break
     
     def action_lock(self):
         """
