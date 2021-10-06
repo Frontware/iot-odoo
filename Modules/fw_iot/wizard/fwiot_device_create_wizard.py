@@ -28,11 +28,15 @@ class FWIOTDeviceCreateWizard(models.TransientModel):
         # create new type if not exist.
         t = self.env['fwiot_device_type'].search([('code','=',self.type_code)])
         if not t.id:
-           t = self.env['fwiot_device_type'].create({"code": self.type_code}) 
+           t = self.env['fwiot_device_type'].create({
+               "code": self.type_code,
+               "name": self.type
+            }) 
 
         self.env['fwiot_device'].browse(self.env.context.get('active_id'))\
             .write({
                 'state': 'confirm', 
+                'locked': self.locked,
                 'token': self.token,
                 'last_fetch' : datetime.now(),
                 'type': t.id})

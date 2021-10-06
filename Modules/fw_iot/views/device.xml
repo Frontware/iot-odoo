@@ -14,6 +14,7 @@
             <field name="arch" type="xml">
                 <tree string="Device" delete="0">
                     <field name="name"/>
+                    <field name="token"/>
                     <field name="status"/>
                 </tree>
             </field>
@@ -26,12 +27,44 @@
                 <form string="Device" delete="0">
                 <header>
                   <button name="action_confirm" string="Confirm" type="object" class="oe_highlight" states="draft" />
-                  <button name="action_fetch" string="Fetch data" type="object" class="oe_highlight" states="confirm" />
+                  <button name="action_fetch" string="Fetch data" type="object" class="oe_highlight" attrs="{'invisible': ['|', ('is_implement', '=', False),('state', '=', 'draft')]}" />
                   <field name="state" widget="statusbar" statusbar_visible="draft,confirm"/>
+                  <field name="is_implement" invisible="1" />
+                  <field name="locked" invisible="1" />
                 </header>                
                 <sheet string="Device">
-                    <widget name="web_ribbon" states="confirm" title="Online" bg_color="bg-success" attrs="{'invisible': [('status', '=', 'Offline')]}"/>
-                    <widget name="web_ribbon" states="confirm" title="Offline" bg_color="bg-danger" attrs="{'invisible': [('status', '=', 'Online')]}"/>
+                    <div class="oe_button_box" name="button_box" groups="base.group_user">
+                        <button name="action_lock" type="object" attrs="{'invisible': ['|', ('locked', '=', True),('state', '=', 'draft')]}" class="oe_stat_button oe_percent oe_read_only" icon="fa-lock">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_text">
+                                    Lock
+                                </span>                                
+                            </div>
+                        </button>                            
+                        <button name="action_unlock" type="object" attrs="{'invisible': ['|', '|', ('locked', '=', False),('unlock_code','=', False),('state', '=', 'draft')]}" class="oe_stat_button oe_percent oe_read_only" icon="fa-unlock">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_text">
+                                    Unlock
+                                </span>                                
+                            </div>
+                        </button>                            
+                        <button name="action_view_all_data" type="object" attrs="{'invisible': ['|', ('is_implement', '=', False),('state', '=', 'draft')]}" class="oe_stat_button oe_percent oe_read_only" icon="fa-signal">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_text">
+                                    Data
+                                </span>                                
+                            </div>
+                        </button>                            
+                        <button name="action_view_all_data" type="object" attrs="{'invisible': ['|', ('is_implement', '=', True),('state', '=', 'draft')]}" class="oe_stat_button oe_percent oe_read_only" icon="fa-ban">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_text">
+                                    No implement
+                                </span>                                
+                            </div>
+                        </button>                            
+                    </div>
+                    <widget name="web_ribbon" title="Online" bg_color="bg-success" attrs="{'invisible': ['|',('status', '=', 'Offline'),('state','!=','confirm')]}"/>
+                    <widget name="web_ribbon" title="Offline" bg_color="bg-danger" attrs="{'invisible': ['|',('status', '=', 'Online'),('state','!=','confirm')]}"/>
                     <div class="oe_title">
                         <h1>
                             <field name="name" placeholder="Device Name"/>
@@ -78,6 +111,11 @@
             <field name="arch" type="xml">
                 <search string="Search Device">
                     <field name="name" string="Device"/>
+                    <field name="token" string="Token"/>
+                    <field name="type" string="Type"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Type" name="type" domain="[]" context="{'group_by': 'type'}"/>
+                    </group>
                 </search>
             </field>
         </record>

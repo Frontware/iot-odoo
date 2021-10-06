@@ -12,7 +12,7 @@
             <field name="name">fwiot_device_thermometer_tree</field>
             <field name="model">fwiot_device_thermometer</field>
             <field name="arch" type="xml">
-                <tree string="Thermometer" delete="0">
+                <tree string="Thermometer" delete="0" create="0" edit="0">
                     <field name="date"/>
                     <field name="temperature"/>
                 </tree>
@@ -23,8 +23,8 @@
             <field name="name">fwiot_device_thermometer_edit</field>
             <field name="model">fwiot_device_thermometer</field>
             <field name="arch" type="xml">
-                <form string="Thermometer" delete="0">
-                <sheet string="Thermometer">
+                <form string="Temperature" delete="0" create="0" edit="0">
+                <sheet string="Temperature">
                     <group>
                         <field name="date" readonly="1"/>
                         <field name="temperature" readonly="1"/>
@@ -38,9 +38,24 @@
             <field name="name">fwiot_device_thermometer_filter</field>
             <field name="model">fwiot_device_thermometer</field>
             <field name="arch" type="xml">
-                <search string="Search Device">
-                    <field name="name" string="Device"/>
+                <search string="Search Data">
+                    <field name="date_only" string="Date"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Date" name="date" domain="[]" context="{'group_by': 'date'}"/>
+                    </group>
                 </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="fwiot_device_thermometer_action">
+            <field name="name">Temperature</field>
+            <field name="res_model">fwiot_device_thermometer</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="fwiot_device_thermometer_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_empty_folder">
+                No temperature's data yet on this device
+              </p>
             </field>
         </record>
     </data>

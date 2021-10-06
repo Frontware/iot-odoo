@@ -28,7 +28,10 @@ class FWIOT_device(models.Model):
     token = fields.Char(string="Token")
     status = fields.Char(string="Status")
     type = fields.Many2one('fwiot_device_type',string="Type")
-    last_fetch = fields.Date(string='Last updated')
+    last_fetch = fields.Datetime(string='Last updated')
+    locked = fields.Boolean(string="Lock/Unlock")
+
+    is_implement = fields.Boolean(compute='_compute_device_implement')
 
     def _get_status(self):
         """
@@ -79,13 +82,14 @@ class FWIOT_device(models.Model):
                 'context': {'active_id': self.id},
                 'views': [[False, 'form']]
             }
-
+    
     def action_fetch(self):
         """
         fetch record
         """
         j_status = self._get_status()
         self.write({
+            'locked': j_status.get('locked', False),
             'status': j_status.get('status', False),
             'last_fetch' : datetime.now()
         })
@@ -99,10 +103,83 @@ class FWIOT_device(models.Model):
         if r.content:
            # list
            jj = json.loads(r.content)
+           m = self._get_device_model()
+           mctl = self.env[m]
            for j in jj:
-               print(j)    
+               mctl.insert_record(self.token, json.loads(j['data']))
 
-    def get_model_type(self):
+    def _get_device_data_action(self):
         """
-        get model type from type
+        get device data action
         """
+        if self.type.code in ['THERM1M']:
+           return 'fw_iot.fwiot_device_thermometer_action' 
+        
+        return False
+
+    def _get_device_model(self):
+        """
+        get device model
+        """
+        if self.type.code in ['THERM1M']:
+           return 'fwiot_device_thermometer' 
+        
+        return False
+
+    def action_view_all_data(self):
+        """
+        show data
+        """
+        if not self.is_implement:
+           return 
+
+        ir_act = self._get_device_data_action()
+
+        action = self.env["ir.actions.actions"]._for_xml_id(ir_act)
+        action['context'] = {}
+        action['domain'] = [('token', '=', self.token)]
+        return action
+
+    @api.depends('type')
+    def _compute_device_implement(self):
+        """
+        compute field is_implement according type
+        """
+        for d in self:
+            d.is_implement = d.type.code in ['THERM1M']
+    
+    def action_lock(self):
+        """
+        click lock
+        """
+        return self._action_to_lock(True)
+
+    def action_unlock(self):
+        """
+        click unlock
+        """
+        return self._action_to_lock(False)
+
+    def _action_to_lock(self, lock):
+        """
+        lock/unlock record
+        """       
+        code = "lock/%s" % self.guid
+        if not lock:
+           code = "unlock/%s/%s" % (self.guid, self.unlock_code)
+        
+        newid = self.env['fwiot_device_lock_wizard'].create({
+            "lock": lock,
+            "code": "https://iot.frontware.com/%s" % code,
+        })
+
+        return {
+                'type': 'ir.actions.act_window',
+                'name': _('Device'),
+                'res_model': 'fwiot_device_lock_wizard',
+                'view_mode': 'form',
+                'res_id': newid.id,
+                'target': 'new',
+                'context': {'active_id': self.id},
+                'views': [[False, 'form']]
+            }

@@ -2,3 +2,4 @@
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
 from . import fwiot_device_create_wizard
+from . import fwiot_device_lock_wizard

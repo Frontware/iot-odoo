@@ -14,7 +14,9 @@
         "views/device_type.xml",
         "views/device.xml",
         "views/menu.xml",
-        "wizard/fwiot_device_create_wizard.xml"
+        "wizard/fwiot_device_create_wizard.xml",
+        "wizard/fwiot_device_lock_wizard.xml",
+        "models/thermometer/device.xml"
     ],
     "installable": True,
     "active": False,
