@@ -36,6 +36,7 @@ class FWIOTDeviceCreateWizard(models.TransientModel):
         self.env['fwiot_device'].browse(self.env.context.get('active_id'))\
             .write({
                 'state': 'confirm', 
+                'serial': self.serial, 
                 'locked': self.locked,
                 'token': self.token,
                 'last_fetch' : datetime.now(),

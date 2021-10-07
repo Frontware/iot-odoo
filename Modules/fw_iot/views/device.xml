@@ -27,13 +27,27 @@
                 <form string="Device" delete="0">
                 <header>
                   <button name="action_confirm" string="Confirm" type="object" class="oe_highlight" states="draft" />
-                  <button name="action_fetch" string="Fetch data" type="object" class="oe_highlight" attrs="{'invisible': ['|', ('is_implement', '=', False),('state', '=', 'draft')]}" />
+                  <button name="action_fetch" string="Fetch data" type="object" class="oe_highlight" attrs="{'invisible': [('state', '=', 'draft')]}" />
                   <field name="state" widget="statusbar" statusbar_visible="draft,confirm"/>
                   <field name="is_implement" invisible="1" />
                   <field name="locked" invisible="1" />
                 </header>                
                 <sheet string="Device">
                     <div class="oe_button_box" name="button_box" groups="base.group_user">
+                        <button name="action_setting" type="object" attrs="{'invisible': [('state', '=', 'draft')]}" class="oe_stat_button oe_percent oe_read_only" icon="fa-cog">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_text">
+                                    Setting
+                                </span>                                
+                            </div>
+                        </button>                            
+                        <button name="action_command" type="object" attrs="{'invisible': [('state', '=', 'draft')]}" class="oe_stat_button oe_percent oe_read_only" icon="fa-flash">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_text">
+                                    Action
+                                </span>                                
+                            </div>
+                        </button>                            
                         <button name="action_lock" type="object" attrs="{'invisible': ['|', ('locked', '=', True),('state', '=', 'draft')]}" class="oe_stat_button oe_percent oe_read_only" icon="fa-lock">
                             <div class="o_field_widget o_stat_info">
                                 <span class="o_stat_text">
@@ -82,7 +96,7 @@
                                 </group>
                             </group>
                         </page>
-                        <page name="settings_page" string="Settings" groups="fw_iot.group_fwiot_manager">
+                        <page name="key_page" string="Authentication" groups="fw_iot.group_fwiot_manager">
                             <group>
                                 <group>
                                     <field name="active" invisible="1"/>
@@ -90,13 +104,12 @@
                                     <field name="unlock_code" string="Unlock code"/>
                                 </group>
                             </group>
-                            <group string="Note">
-                                <field name="note" nolabel="1" placeholder="Note..." type="html"/>
-                                <div class="d-none oe_clear"/>
-                            </group>
                         </page>
                     </notebook>
-
+                    <group string="Note">
+                        <field name="note" nolabel="1" placeholder="Note..." type="html"/>
+                        <div class="d-none oe_clear"/>
+                    </group>
                     <div class="oe_chatter">
                         <field name="message_follower_ids" options="{'post_refresh':True}" help="Follow this project to automatically track the events associated to tasks and issues of this project." groups="base.group_user"/>
                     </div>
