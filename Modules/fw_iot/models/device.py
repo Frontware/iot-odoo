@@ -3,15 +3,12 @@ import logging
 import requests
 import json
 from datetime import datetime
+from odoo.addons.fw_iot.models.device_implement import DEVICE_IMPLEMENT
 
 from odoo import api, fields, models, tools, _
 from odoo.exceptions import UserError
 
 _logger = logging.getLogger(__name__)
-
-DEVICE_IMPLEMENT = [
-    {"code": ["THERM1M"], "model": "fwiot_device_thermometer", "action" : "fw_iot.fwiot_device_thermometer_action"}
-]
 
 class FWIOT_device(models.Model):
     _name = 'fwiot_device'
@@ -30,12 +27,16 @@ class FWIOT_device(models.Model):
     ], string='Status', copy=False, index=True, readonly=True, default='draft', help="Status of the device.")
 
     token = fields.Char(string="Token")
+    serial = fields.Integer(string="Serial")
     status = fields.Char(string="Status")
     type = fields.Many2one('fwiot_device_type',string="Type")
     last_fetch = fields.Datetime(string='Last updated')
     locked = fields.Boolean(string="Lock/Unlock")
 
     is_implement = fields.Boolean(compute='_compute_device_implement')
+    has_action = fields.Boolean(compute='_compute_device_implement')
+    has_data = fields.Boolean(compute='_compute_device_implement')
+    has_setting = fields.Boolean(compute='_compute_device_implement')
 
     def _get_status(self):
         """
@@ -95,8 +96,12 @@ class FWIOT_device(models.Model):
         self.write({
             'locked': j_status.get('locked', False),
             'status': j_status.get('status', False),
+            'serial': j_status.get('serial', False),
             'last_fetch' : datetime.now()
         })
+
+        if not self.is_implement:
+           return 
 
         url = 'https://iot.frontware.com/json/%s.json' % self.guid
         r = requests.get(url)
@@ -122,7 +127,7 @@ class FWIOT_device(models.Model):
         """
         get device data action
         """
-        return self._get_device_implement().get('action', False)
+        return self._get_device_implement().get('action', {}).get('data', False)
 
     def _get_device_model(self):
         """
@@ -150,9 +155,21 @@ class FWIOT_device(models.Model):
         compute field is_implement according type
         """
         for d in self:
+            isimp = False
+            h_data = False
+            h_action = False
+            h_set = False
             for dv in DEVICE_IMPLEMENT:
-                d.is_implement = d.type.code in dv['code']
-                break
+                 if d.type.code in dv['code']:
+                    isimp = True
+                    h_data = dv['action'].get('data', False)
+                    h_action = dv['action'].get('action', False)
+                    h_set = dv['action'].get('setting', False)
+                    break
+            d.is_implement = isimp     
+            d.has_data = h_data
+            d.has_setting = h_set
+            d.has_action = h_action
     
     def action_lock(self):
         """
@@ -189,3 +206,39 @@ class FWIOT_device(models.Model):
                 'context': {'active_id': self.id},
                 'views': [[False, 'form']]
             }
+    
+    def action_command(self):
+        """
+        send action
+        """
+        if not self.is_implement:
+           return 
+
+        ir_act = self._get_device_implement().get('action', {}).get('action', False)
+
+        action = self.env["ir.actions.actions"]._for_xml_id(ir_act)
+        action['context'] = dict(self.env.context)
+
+        action['context']['code'] = self.guid
+        return action
+
+    def action_setting(self):
+        """
+        update settings
+        """
+        if not self.is_implement:
+           return 
+
+        ir_act = self._get_device_implement().get('action', {}).get('setting', False)
+
+        action = self.env["ir.actions.actions"]._for_xml_id(ir_act)
+        action['context'] = dict(self.env.context)
+
+        code = " https://iot.frontware.com/settings/%s" % self.guid
+        action['context']['code'] = code
+        
+        last = self.env[self._get_device_implement().get('wizard-model')].search([], limit=1)
+        print(last.id)
+        action['res_id'] = last.id
+
+        return action
