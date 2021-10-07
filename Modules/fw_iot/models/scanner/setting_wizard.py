@@ -7,7 +7,7 @@ from requests.structures import CaseInsensitiveDict
 from odoo import api, fields, models, _
 from odoo.exceptions import UserError
 
-class FWIOTDeviceNFCReaderSettingWizard(models.TransientModel):
+class FWIOTDeviceScannerSettingWizard(models.TransientModel):
     _name = 'fwiot_device_scanner_setting_wizard'
     _description = 'show scanner setting'
 
