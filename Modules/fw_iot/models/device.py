@@ -118,6 +118,9 @@ class FWIOT_device(models.Model):
                mctl.insert_record(self.token, json.loads(j['data']))
 
     def _get_device_implement(self):
+        """
+        get device match with type.code
+        """
         for d in DEVICE_IMPLEMENT:
             if self.type.code in d['code']:
                return d
@@ -127,7 +130,7 @@ class FWIOT_device(models.Model):
         """
         get device data action
         """
-        return self._get_device_implement().get('action', {}).get('data', False)
+        return self._get_device_implement().get('data', {}).get('action', False)
 
     def _get_device_model(self):
         """
@@ -162,9 +165,9 @@ class FWIOT_device(models.Model):
             for dv in DEVICE_IMPLEMENT:
                  if d.type.code in dv['code']:
                     isimp = True
-                    h_data = dv['action'].get('data', False)
+                    h_data = dv['data'].get('action', False)
                     h_action = dv['action'].get('action', False)
-                    h_set = dv['action'].get('setting', False)
+                    h_set = dv['setting'].get('action', False)
                     break
             d.is_implement = isimp     
             d.has_data = h_data
@@ -229,7 +232,7 @@ class FWIOT_device(models.Model):
         if not self.is_implement:
            return 
 
-        ir_act = self._get_device_implement().get('action', {}).get('setting', False)
+        ir_act = self._get_device_implement().get('setting', {}).get('action', False)
 
         action = self.env["ir.actions.actions"]._for_xml_id(ir_act)
         action['context'] = dict(self.env.context)
@@ -237,7 +240,7 @@ class FWIOT_device(models.Model):
         code = " https://iot.frontware.com/settings/%s" % self.guid
         action['context']['code'] = code
         
-        last = self.env[self._get_device_implement().get('wizard-model')].search([], limit=1)
+        last = self.env[self._get_device_implement().get('setting', {}).get('model')].search([], limit=1)
         print(last.id)
         action['res_id'] = last.id
 
