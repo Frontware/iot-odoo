@@ -9,7 +9,7 @@ from odoo.exceptions import UserError
 
 class FWIOTDeviceSmokeSettingWizard(models.TransientModel):
     _name = 'fwiot_device_smoke_detector_setting_wizard'
-    _description = 'show smoke_detector setting'
+    _description = 'Frontware IOT device: show smoke_detector setting'
 
     delay = fields.Integer(string='Delay (sec)', help='the number of seconds between 2 stay alive mqtt ping, minimum = 15 secs')
     deep_sleep = fields.Boolean(string='Deep sleep', help='if set to true then the board is set to deep sleep mode. if set to false then device is OFF until smoke is detected.')
@@ -34,11 +34,11 @@ class FWIOTDeviceSmokeSettingWizard(models.TransientModel):
         resp = requests.post(self.env.context.get('code'), headers=headers, data=json.dumps(data))
 
         if resp.status_code != 200:
-           raise UserError(_('Erro while send new settings to device')) 
+           raise UserError(_('Error while send new settings to device')) 
 
         j = json.loads(resp.content)
         
         if j.get('error',''):
-           raise UserError(_('Erro while send new settings to device : %s' % j.get('error', 'Unexpected error')))  
+           raise UserError(_('Error while send new settings to device : %s' % j.get('error', 'Unexpected error')))  
 
         return

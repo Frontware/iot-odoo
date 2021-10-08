@@ -467,6 +467,7 @@ msgstr ""
 #: code:addons/fw_iot/models/beacon/setting_wizard.py.py:0
 #: code:addons/fw_iot/models/nfc_reader/setting_wizard.py.py:0
 #: code:addons/fw_iot/models/scanner/setting_wizard.py.py:0
+#: code:addons/fw_iot/models/smoke_detector/setting_wizard.py.py:0
 #, python-format
 msgid "Error while send new settings to device"
 msgstr "ไม่สามารถที่จะส่งค่าติดตั้งของอุปกรณ์"
@@ -476,6 +477,7 @@ msgstr "ไม่สามารถที่จะส่งค่าติดต
 #: code:addons/fw_iot/models/beacon/setting_wizard.py.py:0
 #: code:addons/fw_iot/models/nfc_reader/setting_wizard.py.py:0
 #: code:addons/fw_iot/models/scanner/setting_wizard.py.py:0
+#: code:addons/fw_iot/models/smoke_detector/setting_wizard.py.py:0
 #, python-format
 msgid "Error while send new settings to device : %s"
 msgstr "ไม่สามารถที่จะส่งค่าติดตั้งของอุปกรณ์ : %s"
@@ -484,6 +486,7 @@ msgstr "ไม่สามารถที่จะส่งค่าติดต
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_beacon_setting_wizard_form
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_setting_wizard_form
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_setting_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_setting_wizard_form
 msgid "Update"
 msgstr "ยืนยัน"
 
@@ -491,6 +494,7 @@ msgstr "ยืนยัน"
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_beacon_setting_wizard_form
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_setting_wizard_form
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_setting_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_setting_wizard_form
 msgid "Close"
 msgstr "ปิด"
 
@@ -498,6 +502,7 @@ msgstr "ปิด"
 #: model:ir.actions.act_window,name:fw_iot.fwiot_device_beacon_setting_wizard_action
 #: model:ir.actions.act_window,name:fw_iot.fwiot_device_nfc_reader_setting_wizard_action
 #: model:ir.actions.act_window,name:fw_iot.fwiot_device_scanner_setting_wizard_action
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_setting_wizard_form
 msgid "Settings"
 msgstr "ค่าติดตั้ง"
 
@@ -512,14 +517,17 @@ msgstr "ฟร้อนท์แวร์ไอโอที: nfc_reader"
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_filter
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__date
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__date_only
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_filter
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_filter
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector__date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector__date_only
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_filter
 msgid "Date"
 msgstr "วันที่"
 
 #. module: fw_iot
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader__token
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__token
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector__token
 msgid "Token"
 msgstr ""
 
@@ -538,12 +546,14 @@ msgstr ""
 #. module: fw_iot
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_filter
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_filter
 msgid "Search Data"
 msgstr "ค้นหาข้อมูล"
 
 #. module: fw_iot
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_filter
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_filter
 msgid "Group By"
 msgstr "จัดกลุ่ม"
 
@@ -559,6 +569,7 @@ msgstr "ฟร้อนท์แวร์ไอโอที: ค่าติด�
 
 #. module: fw_iot
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__delay
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector_setting_wizard__delay
 msgid "Delay (sec)"
 msgstr "ถ่วงเวลา (วินาที)"
 
@@ -719,3 +730,39 @@ msgstr "ไม่รวม MAC นี้"
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_setting_wizard_form
 msgid "<span>* Separate each MAC by enter</span>"
 msgstr "<span>* แยกแต่ละ MAC โดย enter</span>"
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_smoke_detector
+msgid "Frontware IOT device: smoke detector"
+msgstr "ฟร้อนท์แวร์ไอโอที: smoke detector"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_tree
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_edit
+msgid "Smoke detector"
+msgstr "เครื่องตรวจจับควัน"
+
+#. module: fw_iot
+#: model_terms:ir.actions.act_window,help:fw_iot.fwiot_device_smoke_detector_action
+msgid "No any data on this device"
+msgstr "ไม่มีข้อมูลใด ๆ บนอุปกรณ์นี้"
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_smoke_detector_setting_wizard
+msgid "Frontware IOT device: show smoke_detector setting"
+msgstr "ฟร้อนท์แวร์ไอโอที: ค่าติดตั้งของอุปกรณ์ smoke_detector"
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_smoke_detector_setting_wizard__delay
+msgid "the number of seconds between 2 stay alive mqtt ping, minimum = 15 secs"
+msgstr "จำนวนวินาทีระหว่างรอ mqtt ping, ขั้นต่ำ = 15 วินาที"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector_setting_wizard__deep_sleep
+msgid "Deep sleep"
+msgstr "โหมดหลับลึก"
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_smoke_detector_setting_wizard__deep_sleep
+msgid "if set to true then the board is set to deep sleep mode. if set to false then device is OFF until smoke is detected."
+msgstr "หากตั้งค่าเป็น true แสดงว่าบอร์ดถูกตั้งค่าเป็นโหมดหลับลึก หากตั้งค่าเป็นเท็จ อุปกรณ์จะปิดจนกว่าจะตรวจพบควัน"
