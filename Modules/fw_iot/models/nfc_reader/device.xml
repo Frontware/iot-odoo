@@ -39,8 +39,8 @@
             <field name="model">fwiot_device_nfc_reader</field>
             <field name="arch" type="xml">
                 <search string="Search Data">
-                    <field name="date_only" string="Date"/>
-                    <field name="rfid" string="RFID"/>
+                    <field name="date_only" />
+                    <field name="rfid"/>
                     <group expand="0" string="Group By">
                         <filter string="Date" name="date" domain="[]" context="{'group_by': 'date'}"/>
                         <filter string="RFID" name="rfid" domain="[]" context="{'group_by': 'rfid'}"/>

@@ -22,19 +22,15 @@
         "models/beacon/setting_wizard.xml",
 
         "models/thermometer/device.xml",
-        "models/thermometer/action_wizard.xml",
         "models/thermometer/setting_wizard.xml",
 
         "models/sniffer/device.xml",
-        "models/sniffer/action_wizard.xml",
         "models/sniffer/setting_wizard.xml",
 
         "models/nfc_reader/device.xml",
-        "models/nfc_reader/action_wizard.xml",
         "models/nfc_reader/setting_wizard.xml",
 
         "models/smoke_detector/device.xml",
-        "models/smoke_detector/action_wizard.xml",
         "models/smoke_detector/setting_wizard.xml",
     ],
     "installable": True,

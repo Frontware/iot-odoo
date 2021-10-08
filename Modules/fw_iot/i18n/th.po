@@ -423,3 +423,175 @@ msgstr "ยืนยันล็อคอุปกรณ์?"
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_lock_wizard_form
 msgid "Do you want to unlock this device?"
 msgstr "ยืนยันปลดล็อคอุปกรณ์?"
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_beacon_setting_wizard
+msgid "Frontware IOT: show beacon setting"
+msgstr "ฟร้อนท์แวร์ไอโอที: ค่าติดตั้งของอุปกรณ์"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_beacon_setting_wizard__uuid
+msgid "UUID"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_beacon_setting_wizard__uuid
+msgid "Proximity ID for iBeacon"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_beacon_setting_wizard__major
+msgid "major"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_beacon_setting_wizard__major
+msgid "major (0 to 65535) for beacon"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_beacon_setting_wizard__minor
+msgid "minor"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_beacon_setting_wizard__minor
+msgid "minor (0 to 65535) for beacon"
+msgstr ""
+
+#. module: fw_iot
+#: code:addons/fw_iot/models/device.py:0
+#: code:addons/fw_iot/models/nfc_reader/setting_wizard.py.py:0
+#, python-format
+msgid "Error while send new settings to device"
+msgstr "ไม่สามารถที่จะส่งค่าติดตั้งของอุปกรณ์"
+
+#. module: fw_iot
+#: code:addons/fw_iot/models/device.py:0
+#: code:addons/fw_iot/models/nfc_reader/setting_wizard.py.py:0
+#, python-format
+msgid "Error while send new settings to device : %s"
+msgstr "ไม่สามารถที่จะส่งค่าติดตั้งของอุปกรณ์ : %s"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_beacon_setting_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_setting_wizard_form
+msgid "Update"
+msgstr "ยืนยัน"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_beacon_setting_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_setting_wizard_form
+msgid "Close"
+msgstr "ปิด"
+
+#. module: fw_iot
+#: model:ir.actions.act_window,name:fw_iot.fwiot_device_beacon_setting_wizard_action
+#: model:ir.actions.act_window,name:fw_iot.fwiot_device_nfc_reader_setting_wizard_action
+msgid "Settings"
+msgstr "ค่าติดตั้ง"
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_nfc_reader
+msgid "Frontware IOT: nfc_reader"
+msgstr "ฟร้อนท์แวร์ไอโอที: nfc_reader"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader__date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader__date_only
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_filter
+msgid "Date"
+msgstr "วันที่"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader__token
+msgid "Token"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader__rfid
+msgid "RFID"
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_tree
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_edit
+#: model:ir.actions.act_window,name:fw_iot.fwiot_device_nfc_reader_action
+msgid "Check"
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_filter
+msgid "Search Data"
+msgstr "ค้นหาข้อมูล"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_filter
+msgid "Group By"
+msgstr "จัดกลุ่ม"
+
+#. module: fw_iot
+#: model_terms:ir.actions.act_window,help:fw_iot.fwiot_device_nfc_reader_filter
+msgid "No check's data yet on this device"
+msgstr "ไม่พบข้อมูลของอุปกรณ์นี้"
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_nfc_reader_setting_wizard
+msgid "Frontware IOT: show nfc reader setting"
+msgstr "ฟร้อนท์แวร์ไอโอที: ค่าติดตั้งของอุปกรณ์"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__delay
+msgid "Delay (sec)"
+msgstr "ถ่วงเวลา (วินาที)"
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__delay
+msgid "minimum time between 2 scans of same tag. Default is 3 second. There is no delay between scans of 2 different tags."
+msgstr "เวลาขั้นต่ำระหว่างการสแกนแท็กเดียวกัน 2 ครั้ง ค่าเริ่มต้นคือ 3 วินาที ไม่มีถ่วงเวลาระหว่างการสแกน 2 แท็กที่แตกต่างกัน"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__beep
+msgid "Play beep"
+msgstr "ส่งเสียงบี๊บ"
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__beep
+msgid "play a beep when a RFID tag is read."
+msgstr "ส่งเสียงบี๊บเมื่ออ่านแท็ก RFID"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__led
+msgid "Switch LED on"
+msgstr "เปิดไฟ LED"
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__led
+msgid "switch LED on when RFID is read."
+msgstr "เปิดไฟ LED เมื่ออ่าน RFID"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__rfids
+msgid "RFID list"
+msgstr "รายการ RFID"
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__rfids
+msgid "if exists then it will send MQTT or Beep or Led only if scan an ID that is in the list. (max 100)"
+msgstr "หากมีอยู่แล้วจะส่ง MQTT หรือ ส่งเสียงบี๊บ หรือ เปิดไฟ Led เฉพาะเมื่อสแกน ID ที่อยู่ในรายการ (สูงสุด 100)"
+
+#. module: fw_iot
+#: code:addons/fw_iot/models/nfc_reader/setting_wizard.py.py:0
+#, python-format
+msgid "Maximum of RIFDs list is 100, current list number is %s"
+msgstr "จำนวน RIFD สูงสุดคือ 100 จำนวนปัจจุบันคือ"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_setting_wizard_form
+msgid "Only these RFIDs"
+msgstr "เฉพาะ RFID นี้เท่านั้น"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_setting_wizard_form
+msgid "<span>* Separate each RFID by enter</span>"
+msgstr "<span>* แยกแต่ละ RFID โดย enter</span>"

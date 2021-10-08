@@ -423,3 +423,175 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_lock_wizard_form
 msgid "Do you want to unlock this device?"
 msgstr ""
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_beacon_setting_wizard
+msgid "Frontware IOT: show beacon setting"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_beacon_setting_wizard__uuid
+msgid "UUID"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_beacon_setting_wizard__uuid
+msgid "Proximity ID for iBeacon"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_beacon_setting_wizard__major
+msgid "major"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_beacon_setting_wizard__major
+msgid "major (0 to 65535) for beacon"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_beacon_setting_wizard__minor
+msgid "minor"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_beacon_setting_wizard__minor
+msgid "minor (0 to 65535) for beacon"
+msgstr ""
+
+#. module: fw_iot
+#: code:addons/fw_iot/models/device.py:0
+#: code:addons/fw_iot/models/nfc_reader/setting_wizard.py.py:0
+#, python-format
+msgid "Error while send new settings to device"
+msgstr ""
+
+#. module: fw_iot
+#: code:addons/fw_iot/models/device.py:0
+#: code:addons/fw_iot/models/nfc_reader/setting_wizard.py.py:0
+#, python-format
+msgid "Error while send new settings to device : %s"
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_beacon_setting_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_setting_wizard_form
+msgid "Update"
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_beacon_setting_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_setting_wizard_form
+msgid "Close"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.actions.act_window,name:fw_iot.fwiot_device_beacon_setting_wizard_action
+#: model:ir.actions.act_window,name:fw_iot.fwiot_device_nfc_reader_setting_wizard_action
+msgid "Settings"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_nfc_reader
+msgid "Frontware IOT: nfc_reader"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader__date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader__date_only
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_filter
+msgid "Date"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader__token
+msgid "Token"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader__rfid
+msgid "RFID"
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_tree
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_edit
+#: model:ir.actions.act_window,name:fw_iot.fwiot_device_nfc_reader_action
+msgid "Check"
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_filter
+msgid "Search Data"
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_filter
+msgid "Group By"
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.actions.act_window,help:fw_iot.fwiot_device_nfc_reader_filter
+msgid "No check's data yet on this device"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_nfc_reader_setting_wizard
+msgid "Frontware IOT: show nfc reader setting"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__delay
+msgid "Delay (sec)"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__delay
+msgid "minimum time between 2 scans of same tag. Default is 3 second. There is no delay between scans of 2 different tags."
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__beep
+msgid "Play beep"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__beep
+msgid "play a beep when a RFID tag is read."
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__led
+msgid "Switch LED on"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__led
+msgid "switch LED on when RFID is read."
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__rfids
+msgid "RFID list"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__rfids
+msgid "if exists then it will send MQTT or Beep or Led only if scan an ID that is in the list. (max 100)"
+msgstr ""
+
+#. module: fw_iot
+#: code:addons/fw_iot/models/nfc_reader/setting_wizard.py.py:0
+#, python-format
+msgid "Maximum of RIFDs list is 100, current list number is %s"
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_setting_wizard_form
+msgid "Only these RFIDs"
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_setting_wizard_form
+msgid "<span>* Separate each RFID by enter</span>"
+msgstr ""

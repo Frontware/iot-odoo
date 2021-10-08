@@ -9,7 +9,7 @@ from odoo.exceptions import UserError
 
 class FWIOTDeviceNFCReaderSettingWizard(models.TransientModel):
     _name = 'fwiot_device_nfc_reader_setting_wizard'
-    _description = 'show nfc reader setting'
+    _description = 'Frontware IOT: show nfc reader setting'
 
     delay = fields.Integer(string='Delay (sec)', help='minimum time between 2 scans of same tag. Default is 3 second. There is no delay between scans of 2 different tags.', default=3)
     beep = fields.Boolean(string='Play beep', help='play a beep when a RFID tag is read.')
