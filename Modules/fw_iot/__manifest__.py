@@ -25,13 +25,14 @@
         "models/thermometer/action_wizard.xml",
         "models/thermometer/setting_wizard.xml",
 
+        "models/sniffer/device.xml",
+        "models/sniffer/action_wizard.xml",
+        "models/sniffer/setting_wizard.xml",
+
         "models/nfc_reader/device.xml",
         "models/nfc_reader/action_wizard.xml",
         "models/nfc_reader/setting_wizard.xml",
 
-        "models/scanner/device.xml",
-        "models/scanner/action_wizard.xml",
-        "models/scanner/setting_wizard.xml",
     ],
     "installable": True,
     "active": False,

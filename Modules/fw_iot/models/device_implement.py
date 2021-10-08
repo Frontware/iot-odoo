@@ -23,20 +23,6 @@ DEVICE_IMPLEMENT = [
         }
     },
     {
-        "code": ["NFCREAD"],
-        "model": "fwiot_device_nfc_reader",
-        "data": {
-            "action": "fw_iot.fwiot_device_nfc_reader_action",
-        },
-        "action":{
-            "action": "fw_iot.fwiot_device_nfc_reader_action_wizard_action",
-        },
-        "setting": {
-            "action": "fw_iot.fwiot_device_nfc_reader_setting_wizard_action",
-            "model": "fwiot_device_nfc_reader_setting_wizard"
-        }
-    },
-    {
         "code": ["SCANNER"],
         "model": "fwiot_device_scanner",
         "data": {
@@ -48,6 +34,34 @@ DEVICE_IMPLEMENT = [
         "setting": {
             "action": "fw_iot.fwiot_device_scanner_setting_wizard_action",
             "model": "fwiot_device_scanner_setting_wizard"
+        }
+    },
+    {
+        "code": ["SNIF"],
+        "model": "fwiot_device_sniffer",
+        "data": {
+            "action": "fw_iot.fwiot_device_sniffer_action",
+        },
+        "action":{
+            "action": "fw_iot.fwiot_device_sniffer_action_wizard_action",
+        },
+        "setting": {
+            "action": "fw_iot.fwiot_device_sniffer_setting_wizard_action",
+            "model": "fwiot_device_sniffer_setting_wizard"
+        }
+    },
+    {
+        "code": ["NFCREAD"],
+        "model": "fwiot_device_nfc_reader",
+        "data": {
+            "action": "fw_iot.fwiot_device_nfc_reader_action",
+        },
+        "action":{
+            "action": "fw_iot.fwiot_device_nfc_reader_action_wizard_action",
+        },
+        "setting": {
+            "action": "fw_iot.fwiot_device_nfc_reader_setting_wizard_action",
+            "model": "fwiot_device_nfc_reader_setting_wizard"
         }
     }
 ]
