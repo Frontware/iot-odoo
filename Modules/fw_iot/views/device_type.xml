@@ -12,7 +12,7 @@
             <field name="name">fwiot_device_type_tree</field>
             <field name="model">fwiot_device_type</field>
             <field name="arch" type="xml">
-                <tree string="Device" create="0" delete="0" edit="0">
+                <tree string="Device type" create="0" delete="0" edit="0">
                     <field name="name"/>
                 </tree>
             </field>
@@ -44,7 +44,7 @@
             <field name="name">fwiot_device_type_filter</field>
             <field name="model">fwiot_device_type</field>
             <field name="arch" type="xml">
-                <search string="Search Device type">
+                <search string="Device type">
                     <field name="name" string="Device type"/>
                 </search>
             </field>

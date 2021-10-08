@@ -24,14 +24,14 @@ class FWIOT_device(models.Model):
     state = fields.Selection([
         ('draft', 'Draft'),
         ('confirm', 'Confirm')
-    ], string='Status', copy=False, index=True, readonly=True, default='draft', help="Status of the device.")
+    ], string='State', copy=False, index=True, readonly=True, default='draft', help="Status of the device.")
 
     token = fields.Char(string="Token")
     serial = fields.Integer(string="Serial")
     status = fields.Char(string="Status")
-    type = fields.Many2one('fwiot_device_type',string="Type")
+    type = fields.Many2one('fwiot_device_type',string="Device type")
     last_fetch = fields.Datetime(string='Last updated')
-    locked = fields.Boolean(string="Lock/Unlock")
+    locked = fields.Boolean(string="Lock")
 
     is_implement = fields.Boolean(compute='_compute_device_implement')
     has_action = fields.Boolean(compute='_compute_device_implement')
@@ -43,13 +43,13 @@ class FWIOT_device(models.Model):
         get status
         """
         if not self.guid:
-           raise UserError('You must enter API Key') 
+           raise UserError(_('You must enter API Key')) 
         
         url = 'https://iot.frontware.com/status/%s' % self.guid
         r = requests.get(url)
         
         if r.status_code != 200:
-           raise UserError('Error while try to check this device status') 
+           raise UserError(_('Error while try to check this device status')) 
 
         return json.loads(r.content)
 
@@ -58,7 +58,7 @@ class FWIOT_device(models.Model):
         confirm record
         """
         if not self.guid:
-           raise UserError('You must enter API Key') 
+           raise UserError(_('You must enter API Key'))
         
         j = self._get_status()
        
@@ -107,7 +107,7 @@ class FWIOT_device(models.Model):
         r = requests.get(url)
         
         if r.status_code != 200:
-           raise UserError('Error while try to get this device data') 
+           raise UserError(_('Error while try to get this device data'))
         
         if r.content:
            # list
@@ -165,8 +165,8 @@ class FWIOT_device(models.Model):
             for dv in DEVICE_IMPLEMENT:
                  if d.type.code in dv['code']:
                     isimp = True
-                    h_data = dv['data'].get('action', False)
-                    h_action = dv['action'].get('action', False)
+                    h_data = dv.get('data',{}).get('action', False)
+                    h_action = dv.get('action', {}).get('action', False)
                     h_set = dv['setting'].get('action', False)
                     break
             d.is_implement = isimp     

@@ -14,9 +14,6 @@ DEVICE_IMPLEMENT = [
         "data": {
             "action": "fw_iot.fwiot_device_thermometer_action"
         },
-        "action":{
-            "action": "fw_iot.fwiot_device_thermo_action_wizard_action",
-        },
         "setting": {
             "action": "fw_iot.fwiot_device_thermo_setting_wizard_action",
             "model": "fwiot_device_thermo_setting_wizard"
@@ -27,9 +24,6 @@ DEVICE_IMPLEMENT = [
         "model": "fwiot_device_scanner",
         "data": {
             "action": "fw_iot.fwiot_device_scanner_action",
-        },
-        "action":{
-            "action": "fw_iot.fwiot_device_scanner_action_wizard_action",
         },
         "setting": {
             "action": "fw_iot.fwiot_device_scanner_setting_wizard_action",
@@ -42,9 +36,6 @@ DEVICE_IMPLEMENT = [
         "data": {
             "action": "fw_iot.fwiot_device_sniffer_action",
         },
-        "action":{
-            "action": "fw_iot.fwiot_device_sniffer_action_wizard_action",
-        },
         "setting": {
             "action": "fw_iot.fwiot_device_sniffer_setting_wizard_action",
             "model": "fwiot_device_sniffer_setting_wizard"
@@ -56,9 +47,6 @@ DEVICE_IMPLEMENT = [
         "data": {
             "action": "fw_iot.fwiot_device_nfc_reader_action",
         },
-        "action":{
-            "action": "fw_iot.fwiot_device_nfc_reader_action_wizard_action",
-        },
         "setting": {
             "action": "fw_iot.fwiot_device_nfc_reader_setting_wizard_action",
             "model": "fwiot_device_nfc_reader_setting_wizard"
@@ -69,9 +57,6 @@ DEVICE_IMPLEMENT = [
         "model": "fwiot_device_smoke_detector",
         "data": {
             "action": "fw_iot.fwiot_device_smoke_detector_action",
-        },
-        "action":{
-            "action": "fw_iot.fwiot_device_smoke_detector_action_wizard_action",
         },
         "setting": {
             "action": "fw_iot.fwiot_device_smoke_detector_setting_wizard_action",

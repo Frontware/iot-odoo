@@ -4,14 +4,14 @@ from datetime import datetime
 import requests
 import json
 
-from odoo import api, fields, models
+from odoo import api, fields, models, _
 from odoo.exceptions import UserError
 
 class FWIOTDeviceLockWizard(models.TransientModel):
     _name = 'fwiot_device_lock_wizard'
-    _description = 'confirm lock / unlock device'
+    _description = 'Frontware IOT: confirm lock / unlock device'
 
-    lock = fields.Boolean(string="Lock/Unlock")
+    lock = fields.Boolean(string="Lock")
     code = fields.Char(string="Code")
 
     def action_confirm(self):
@@ -19,16 +19,16 @@ class FWIOTDeviceLockWizard(models.TransientModel):
         confirm and change status
         """        
         r = requests.get(self.code)
-        t = 'lock'
+        t = _('lock')
         if not self.lock:
-           t = 'unlock' 
+           t = _('unlock')
         
         if r.status_code != 200:
-           raise UserError('Error while try to %s this device' % t) 
+           raise UserError(_('Error while try to %s this device') % t)
         
         rr = json.loads(r.content)
         if rr.get('error'):
-           raise UserError('Error while try to %s this device: %s' % (t, rr.get('error') )) 
+           raise UserError(_('Error while try to %s this device: %s') % (t, rr.get('error') )) 
 
         self.env['fwiot_device'].browse(self.env.context.get('active_id'))\
             .write({

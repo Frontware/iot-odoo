@@ -6,7 +6,7 @@ from odoo import api, fields, models
 
 class FWIOTDeviceCreateWizard(models.TransientModel):
     _name = 'fwiot_device_create_wizard'
-    _description = 'show device status from iot'
+    _description = 'Frontware IOT: show device status from iot'
 
     type = fields.Char(string="Type")
     type_code = fields.Char(string="Type Code")

@@ -15,3 +15,411 @@ msgstr ""
 "Language: th\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+#. module: fw_iot
+#: model:ir.ui.menu,name:fw_iot.menu_main_fwiot
+msgid "Frontware IoT"
+msgstr "ฟร้อนท์แวร์ไอโอที"
+
+#. module: fw_iot
+#: model:ir.ui.menu,name:fw_iot.menu_fwiot_device
+#: model:ir.actions.act_window,name:fw_iot.open_view_device
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_tree
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_filter
+#: code:addons/fw_iot/models/device.py:0
+#, python-format
+msgid "Device"
+msgstr "อุปกรณ์"
+
+#. module: fw_iot
+#: model:ir.ui.menu,name:fw_iot.menu_fwiot_device_type
+#: model:ir.actions.act_window,name:fw_iot.open_view_device_type
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__type
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_type_tree
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_type_edit
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_type_filter
+msgid "Device type"
+msgstr "ชนิดอุปกรณ์"
+
+#. module: fw_iot
+#: model_terms:ir.actions.act_window,help:fw_iot.open_view_device
+msgid "Import device by connect to fwiot"
+msgstr "นำเข้ารายชื่ออุปกรณ์โดยเชื่อมต่อไปยังฟร้อนท์แวร์ไอโอที"
+
+#. module: fw_iot
+#: model_terms:ir.actions.act_window,help:fw_iot.open_view_device
+msgid "Define API key in configuration and sync all data."
+msgstr "กรอก API key แล้วทำการเชื่อมต่อและดึงข้อมูล"
+
+#. module: fw_iot
+#: model_terms:ir.actions.act_window,help:fw_iot.open_view_device_type
+msgid "Import device type by connect to fwiot"
+msgstr "นำเข้ารายชื่อชนิดอุปกรณ์โดยเชื่อมต่อไปยังฟร้อนท์แวร์ไอโอที"
+
+#. module: fw_iot
+#: model_terms:ir.actions.act_window,help:fw_iot.open_view_device_type
+msgid "Define api key in configuration and sync all data."
+msgstr "กรอก API key แล้วทำการเชื่อมต่อและดึงข้อมูล"
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_type
+msgid "Frontware IOT device type"
+msgstr "ฟร้อนท์แวร์ไอโอที: ชนิดอุปกรณ์"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_type__name
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__name
+msgid "Name"
+msgstr "ชื่อ"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_type__code
+msgid "Code"
+msgstr "รหัส"
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device
+msgid "Frontware IOT device"
+msgstr "ฟร้อนท์แวร์ไอโอที: อุปกรณ์"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__active
+msgid "Active"
+msgstr "ใช้งาน"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__guid
+msgid "API Key"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__unlock_code
+msgid "Unlock code"
+msgstr "รหัสปลดล็อค"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__note
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
+msgid "Note"
+msgstr "โน้ต"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__state
+msgid "State"
+msgstr "สถานะ"
+
+#. module: fw_iot
+#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device__state__draft
+msgid "Draft"
+msgstr "ฉบับร่าง"
+
+#. module: fw_iot
+#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device__state__confirm
+msgid "Confirm"
+msgstr "ยืนยัน"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__token
+msgid "Token"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__serial
+msgid "Serial"
+msgstr "ซีเรียล"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__status
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__status
+msgid "Status"
+msgstr "สถานะอุปกรณ์"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__last_fetch
+msgid "Last updated"
+msgstr "อัพเดทครั้งสุดท้ายเมื่อ"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__locked
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
+msgid "Lock"
+msgstr "ล็อค"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__is_implement
+msgid "is implement"
+msgstr "สามารถนำไปใช้"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__has_action
+msgid "has action"
+msgstr "สามารถสั่งอุปกรณ์"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__has_data
+msgid "has data"
+msgstr "สามารถดูข้อมูลของอุปกรณ์"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__has_setting
+msgid "has setting"
+msgstr "สามารถเปลี่ยนค่าที่ติดตั้งในอุปกรณ์"
+
+#. module: fw_iot
+#: code:addons/fw_iot/models/device.py:0
+#, python-format
+msgid "You must enter API Key"
+msgstr "คุณต้องใส่ API Key"
+
+#. module: fw_iot
+#: code:addons/fw_iot/models/device.py:0
+#, python-format
+msgid "Error while try to check this device status"
+msgstr "ไม่สามารถที่จะตรวจสอบสถานะของอุปกรณ์"
+
+#. module: fw_iot
+#: model:ir.actions.act_window,name:fw_iot.fwiot_device_create_wizard_action
+#: model:ir.actions.act_window,name:fw_iot.fwiot_device_lock_wizard_action
+#: code:addons/fw_iot/models/device.py:0
+#, python-format
+msgid "Device status"
+msgstr "สถานะของอุปกรณ์"
+
+#. module: fw_iot
+#: code:addons/fw_iot/models/device.py:0
+#, python-format
+msgid "Error while try to get this device data"
+msgstr "ไม่สามารถที่จะดูข้อมูลอุปกรณ์"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
+msgid "Confirm"
+msgstr "ยืนยัน"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
+msgid "Fetch data"
+msgstr "นำเข้าข้อมูล"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
+msgid "<span class=\"o_stat_text\">Setting</span>"
+msgstr "<span class=\"o_stat_text\">ติดตั้ง</span>"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
+msgid "<span class=\"o_stat_text\">Unlock</span>"
+msgstr "<span class=\"o_stat_text\">ปลดล็อค</span>"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
+msgid "<span class=\"o_stat_text\">Lock</span>"
+msgstr "<span class=\"o_stat_text\">ล็อค</span>"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
+msgid "<span class=\"o_stat_text\">Data</span>"
+msgstr "<span class=\"o_stat_text\">ข้อมูล</span>"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
+msgid "<span class=\"o_stat_text\">No implement</span>"
+msgstr "<span class=\"o_stat_text\">ไม่พร้อมนำไปใช้</span>"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
+msgid "Offline"
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
+msgid "Online"
+msgstr "ออนไลน์"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
+msgid "Device Name"
+msgstr "ชื่ออุปกรณ์"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
+msgid "Device token"
+msgstr "Token อุปกรณ์"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
+msgid "Infomation"
+msgstr "รายละเอียด"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
+msgid "Authentication"
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
+msgid "Note..."
+msgstr "โน้ต..."
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_type_edit
+msgid "Device code"
+msgstr "รหัสชนิดอุปกรณ์"
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_mac
+msgid "Frontware IOT device mac address"
+msgstr "ฟร้อนท์แวร์ไอโอที: mac address"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_mac__name
+msgid "MAC"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_create_wizard
+msgid "Frontware IOT: show device status from iot"
+msgstr "ฟร้อนท์แวร์ไอโอที: แสดงสถานะของอุปกรณ์"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__type
+msgid "Type"
+msgstr "ชนิดอุปกรณ์"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__type_code
+msgid "Type Code"
+msgstr "รหัสชนิดอุปกรณ์"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__serial
+msgid "Serial"
+msgstr "ซีเรียล"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__active
+msgid "Active"
+msgstr "เปิดใช้งาน"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__locked
+msgid "Locked"
+msgstr "ล็อค"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__token
+msgid "Token"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__settings
+msgid "JSON settings"
+msgstr "ค่าติดตั้งแบบ JSON"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__web_hook_url
+msgid "Web Hook URL"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__web_hook_header
+msgid "Web Hook header"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__csv_url
+msgid "CSV URL"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__json_url
+msgid "JSON URL"
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_create_wizard_form
+msgid "Info"
+msgstr "ข้อมูลทั่วไป"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_create_wizard_form
+msgid "Status"
+msgstr "สถานะ"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_create_wizard_form
+msgid "Settings"
+msgstr "ค่าติดตั้ง"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_create_wizard_form
+msgid "Webhook"
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_create_wizard_form
+msgid "Data"
+msgstr "ข้อมูลของอุปกรณ์"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_create_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_lock_wizard_form
+msgid "Confirm"
+msgstr "ยืนยัน"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_create_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_lock_wizard_form
+msgid "Cancel"
+msgstr "ปิด"
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_lock_wizard
+msgid "Frontware IOT: confirm lock / unlock device"
+msgstr "ฟร้อนท์แวร์ไอโอที: ยืนยันล็อค,ปลดล็อคของอุปกรณ์"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_fwiot_device_lock_wizard__lock
+msgid "Lock"
+msgstr "ล็อค"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_fwiot_device_lock_wizard__code
+msgid "Code"
+msgstr ""
+
+#. module: fw_iot
+#: code:addons/fw_iot/models/device.py:0
+#, python-format
+msgid "unlock"
+msgstr "ปลดล็อค"
+
+#. module: fw_iot
+#: code:addons/fw_iot/models/device.py:0
+#, python-format
+msgid "lock"
+msgstr "ล็อค"
+
+#. module: fw_iot
+#: code:addons/fw_iot/models/device.py:0
+#, python-format
+msgid "Error while try to %s this device"
+msgstr "ไม่สามารถที่จะ%sอุปกรณ์"
+
+#. module: fw_iot
+#: code:addons/fw_iot/models/device.py:0
+#, python-format
+msgid "Error while try to %s this device: %s"
+msgstr "ไม่สามารถที่จะ%sอุปกรณ์: %s"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_lock_wizard_form
+msgid "Do you want to lock this device?"
+msgstr "ยืนยันล็อคอุปกรณ์?"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_lock_wizard_form
+msgid "Do you want to unlock this device?"
+msgstr "ยืนยันปลดล็อคอุปกรณ์?"

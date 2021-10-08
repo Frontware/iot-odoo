@@ -7,9 +7,6 @@
             groups="fw_iot.group_fwiot_manager"
             sequence="50"/>
 
-        <menuitem id="menu_fwiot_config" name="Configuration" parent="menu_main_fwiot"
-            sequence="100" groups="fw_iot.group_fwiot_manager"/>
-
         <record id="open_view_device" model="ir.actions.act_window">
             <field name="name">Device</field>
             <field name="res_model">fwiot_device</field>
@@ -19,7 +16,7 @@
               <p class="o_view_nocontent_smiling_face">
                 Import device by connect to fwiot
               </p><p>
-                Define api key in configuration and sync all data.
+                Define API key in configuration and sync all data.
               </p>
             </field>
         </record>        
@@ -33,7 +30,7 @@
               <p class="o_view_nocontent_smiling_face">
                 Import device type by connect to fwiot
               </p><p>
-                Define api key in configuration and sync all data.
+                Define API key in configuration and sync all data.
               </p>
             </field>
         </record>        
