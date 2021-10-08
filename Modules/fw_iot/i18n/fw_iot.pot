@@ -26,6 +26,8 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_tree
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_tree
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_edit
 #: code:addons/fw_iot/models/device.py:0
 #, python-format
 msgid "Device"
@@ -40,6 +42,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_type_tree
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_type_edit
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_type_filter
+#: model:ir.actions.act_window,name:fw_iot.fwiot_device_scanner_action
 msgid "Device type"
 msgstr ""
 
@@ -461,14 +464,18 @@ msgstr ""
 
 #. module: fw_iot
 #: code:addons/fw_iot/models/device.py:0
+#: code:addons/fw_iot/models/beacon/setting_wizard.py.py:0
 #: code:addons/fw_iot/models/nfc_reader/setting_wizard.py.py:0
+#: code:addons/fw_iot/models/scanner/setting_wizard.py.py:0
 #, python-format
 msgid "Error while send new settings to device"
 msgstr ""
 
 #. module: fw_iot
 #: code:addons/fw_iot/models/device.py:0
+#: code:addons/fw_iot/models/beacon/setting_wizard.py.py:0
 #: code:addons/fw_iot/models/nfc_reader/setting_wizard.py.py:0
+#: code:addons/fw_iot/models/scanner/setting_wizard.py.py:0
 #, python-format
 msgid "Error while send new settings to device : %s"
 msgstr ""
@@ -476,35 +483,43 @@ msgstr ""
 #. module: fw_iot
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_beacon_setting_wizard_form
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_setting_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_setting_wizard_form
 msgid "Update"
 msgstr ""
 
 #. module: fw_iot
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_beacon_setting_wizard_form
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_setting_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_setting_wizard_form
 msgid "Close"
 msgstr ""
 
 #. module: fw_iot
 #: model:ir.actions.act_window,name:fw_iot.fwiot_device_beacon_setting_wizard_action
 #: model:ir.actions.act_window,name:fw_iot.fwiot_device_nfc_reader_setting_wizard_action
+#: model:ir.actions.act_window,name:fw_iot.fwiot_device_scanner_setting_wizard_action
 msgid "Settings"
 msgstr ""
 
 #. module: fw_iot
 #: model:ir.model,name:fw_iot.model_fwiot_device_nfc_reader
-msgid "Frontware IOT: nfc_reader"
+msgid "Frontware IOT device: nfc_reader"
 msgstr ""
 
 #. module: fw_iot
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader__date
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader__date_only
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_filter
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__date_only
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_filter
 msgid "Date"
 msgstr ""
 
 #. module: fw_iot
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader__token
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__token
 msgid "Token"
 msgstr ""
 
@@ -522,11 +537,13 @@ msgstr ""
 
 #. module: fw_iot
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_filter
 msgid "Search Data"
 msgstr ""
 
 #. module: fw_iot
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_filter
 msgid "Group By"
 msgstr ""
 
@@ -594,4 +611,111 @@ msgstr ""
 #. module: fw_iot
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_setting_wizard_form
 msgid "<span>* Separate each RFID by enter</span>"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_scanner
+msgid "Frontware IOT device: scanner"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__mac
+msgid "MAC"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__ssid
+msgid "SSID"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__tx_power
+msgid "txPower"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__rssi
+msgid "rssi"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__bluetooth
+msgid "is bluetooth"
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_edit
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_filter
+msgid "WiFi"
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_edit
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_filter
+msgid "Bluetooth"
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.actions.act_window,help:fw_iot.fwiot_device_scanner_action
+msgid "No data yet on this device"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_scanner_setting_wizard
+msgid "Frontware IOT device: show scanner setting"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner_setting_wizard__scan_wifi
+msgid "Scan wifi"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner_setting_wizard__scan_bluetooth
+msgid "Scan bluetooth"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner_setting_wizard__scan_delay
+msgid "Scan delay"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_scanner_setting_wizard__scan_delay
+msgid "number of seconds between 2 scans. Ignored if scan_wifi and scan_bluetooth are false. Set to 120 seconds for any value < 30"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner_setting_wizard__macs
+msgid "Only MAC"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_scanner_setting_wizard__macs
+msgid "list of mac addresses we want to report. If empty then we report all mac addresses."
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner_setting_wizard__exclude
+msgid "Exclude MAC"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_scanner_setting_wizard__exclude
+msgid "list of mac don\'t have to report. exclude is ignored if macs is present in json."
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_setting_wizard_form
+msgid "Only these MACS"
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_setting_wizard_form
+msgid "Exclude these MACS"
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_setting_wizard_form
+msgid "<span>* Separate each MAC by enter</span>"
 msgstr ""

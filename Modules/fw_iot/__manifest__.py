@@ -24,6 +24,9 @@
         "models/thermometer/device.xml",
         "models/thermometer/setting_wizard.xml",
 
+        "models/scanner/device.xml",
+        "models/scanner/setting_wizard.xml",
+
         "models/sniffer/device.xml",
         "models/sniffer/setting_wizard.xml",
 

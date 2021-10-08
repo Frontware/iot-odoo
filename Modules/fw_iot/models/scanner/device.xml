@@ -52,7 +52,7 @@
             <field name="model">fwiot_device_scanner</field>
             <field name="arch" type="xml">
                 <search string="Search Data">
-                    <field name="date_only" string="Date"/>
+                    <field name="date_only"/>
                     <field name="mac"/>
                     <field name="ssid"/>
                     <filter string="Bluetooth" name="bluetooth" domain="[('bluetooth','=',True)]"/>
