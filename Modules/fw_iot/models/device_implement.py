@@ -63,5 +63,19 @@ DEVICE_IMPLEMENT = [
             "action": "fw_iot.fwiot_device_nfc_reader_setting_wizard_action",
             "model": "fwiot_device_nfc_reader_setting_wizard"
         }
+    },
+    {
+        "code": ["SMOKE"],
+        "model": "fwiot_device_smoke_detector",
+        "data": {
+            "action": "fw_iot.fwiot_device_smoke_detector_action",
+        },
+        "action":{
+            "action": "fw_iot.fwiot_device_smoke_detector_action_wizard_action",
+        },
+        "setting": {
+            "action": "fw_iot.fwiot_device_smoke_detector_setting_wizard_action",
+            "model": "fwiot_device_smoke_detector_setting_wizard"
+        }
     }
 ]

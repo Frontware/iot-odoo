@@ -9,3 +9,4 @@ from . import thermometer
 from . import scanner
 from . import sniffer
 from . import nfc_reader
+from . import smoke_detector
