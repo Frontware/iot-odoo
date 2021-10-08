@@ -14,7 +14,7 @@
             <field name="arch" type="xml">
                 <tree string="Check" delete="0" create="0" edit="0">
                     <field name="date"/>
-                    <field name="rfid" widget="char" />
+                    <field name="rfid" />
                 </tree>
             </field>
         </record>
@@ -27,7 +27,7 @@
                 <sheet string="Check">
                     <group>
                         <field name="date" readonly="1"/>
-                        <field name="rfid" readonly="1" widget="char"/>
+                        <field name="rfid" readonly="1"/>
                     </group>
                 </sheet>
                 </form>
