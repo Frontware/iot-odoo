@@ -40,11 +40,11 @@ class FWIOTDeviceSnifferSettingWizard(models.TransientModel):
         resp = requests.post(self.env.context.get('code'), headers=headers, data=json.dumps(data))
 
         if resp.status_code != 200:
-           raise UserError(_('Erro while send new settings to device')) 
+           raise UserError(_('Error while send new settings to device')) 
 
         j = json.loads(resp.content)
         
         if j.get('error',''):
-           raise UserError(_('Erro while send new settings to device : %s' % j.get('error', 'Unexpected error')))  
+           raise UserError(_('Error while send new settings to device : %s' % j.get('error', 'Unexpected error')))  
 
         return
