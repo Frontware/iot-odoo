@@ -33,14 +33,14 @@
                         <field name="bluetooth" invisible="1"/>
                     </group>
                     <group string="WiFi" attrs="{'invisible':[('bluetooth','=',True)]}">
-                        <field name="mac"/>
-                        <field name="ssid"/>
+                        <field name="mac" readonly="1"/>
+                        <field name="ssid" readonly="1"/>
                     </group>
                     <group string="Bluetooth" attrs="{'invisible':[('bluetooth','=',False)]}">
-                        <field name="mac"/>
-                        <field name="ssid"/>
-                        <field name="tx_power"/>
-                        <field name="rssi"/>
+                        <field name="mac" readonly="1"/>
+                        <field name="ssid" readonly="1"/>
+                        <field name="tx_power" readonly="1"/>
+                        <field name="rssi" readonly="1"/>
                     </group>
                 </sheet>
                 </form>
