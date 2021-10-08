@@ -12,8 +12,12 @@
             <field name="name">fwiot_device_scanner_tree</field>
             <field name="model">fwiot_device_scanner</field>
             <field name="arch" type="xml">
-                <tree string="Thermometer" delete="0" create="0" edit="0">
+                <tree string="Device" delete="0" create="0" edit="0">
                     <field name="date"/>
+                    <field name="mac"/>
+                    <field name="ssid"/>
+                    <field name="tx_power"/>
+                    <field name="rssi"/>
                 </tree>
             </field>
         </record>
@@ -22,10 +26,21 @@
             <field name="name">fwiot_device_scanner_edit</field>
             <field name="model">fwiot_device_scanner</field>
             <field name="arch" type="xml">
-                <form string="Check" delete="0" create="0" edit="0">
-                <sheet string="Check">
+                <form string="Device" delete="0" create="0" edit="0">                
+                <sheet string="Device">
                     <group>
                         <field name="date" readonly="1"/>
+                        <field name="bluetooth" invisible="1"/>
+                    </group>
+                    <group string="WiFi" attrs="{'invisible':[('bluetooth','=',True)]}">
+                        <field name="mac"/>
+                        <field name="ssid"/>
+                    </group>
+                    <group string="Bluetooth" attrs="{'invisible':[('bluetooth','=',False)]}">
+                        <field name="mac"/>
+                        <field name="ssid"/>
+                        <field name="tx_power"/>
+                        <field name="rssi"/>
                     </group>
                 </sheet>
                 </form>
@@ -38,6 +53,10 @@
             <field name="arch" type="xml">
                 <search string="Search Data">
                     <field name="date_only" string="Date"/>
+                    <field name="mac"/>
+                    <field name="ssid"/>
+                    <filter string="Bluetooth" name="bluetooth" domain="[('bluetooth','=',True)]"/>
+                    <filter string="WiFi" name="wifi" domain="[('bluetooth','=',False)]"/>
                     <group expand="0" string="Group By">
                         <filter string="Date" name="date" domain="[]" context="{'group_by': 'date'}"/>
                     </group>
@@ -46,13 +65,13 @@
         </record>
 
         <record model="ir.actions.act_window" id="fwiot_device_scanner_action">
-            <field name="name">Check</field>
+            <field name="name">Device</field>
             <field name="res_model">fwiot_device_scanner</field>
             <field name="view_mode">tree,form</field>
             <field name="view_id" ref="fwiot_device_scanner_tree"/>
             <field name="help" type="html">
               <p class="o_view_nocontent_empty_folder">
-                No check's data yet on this device
+                No data yet on this device
               </p>
             </field>
         </record>

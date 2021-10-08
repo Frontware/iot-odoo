@@ -19,6 +19,12 @@ class FWIOT_device_scanner(models.Model):
     token = fields.Char(string='Token')
     date_only = fields.Date(compute='_compute_date_only', string="Date", store=True, readonly=True)
 
+    mac = fields.Char('MAC')
+    ssid = fields.Char('SSID')
+    tx_power = fields.Integer('txPower')
+    rssi  = fields.Integer('rssi')
+    bluetooth = fields.Boolean('is bluetooth')
+
     def insert_record(self, token, data):
         """
         insert record with data
@@ -33,7 +39,12 @@ class FWIOT_device_scanner(models.Model):
         if not r.id:
            self.create({
                "token": token,
-               "date": d
+               "date": d,
+               "bluetooth": data.get('rssi', False) != 0,
+               "mac": data.get('mac', False),
+               "ssid": data.get('ssid', False),
+               "tx_power": data.get('txPower', False),
+               "rssi": data.get('rssi', False),
            }) 
 
     @api.depends('date')
