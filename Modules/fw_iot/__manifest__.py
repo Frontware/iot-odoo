@@ -11,12 +11,27 @@
     "data": [
         "security/security.xml",
         "security/ir.model.access.csv",
+
         "views/device_type.xml",
         "views/device.xml",
         "views/menu.xml",
+
         "wizard/fwiot_device_create_wizard.xml",
         "wizard/fwiot_device_lock_wizard.xml",
-        "models/thermometer/device.xml"
+        
+        "models/beacon/setting_wizard.xml",
+
+        "models/thermometer/device.xml",
+        "models/thermometer/action_wizard.xml",
+        "models/thermometer/setting_wizard.xml",
+
+        "models/nfc_reader/device.xml",
+        "models/nfc_reader/action_wizard.xml",
+        "models/nfc_reader/setting_wizard.xml",
+
+        "models/scanner/device.xml",
+        "models/scanner/action_wizard.xml",
+        "models/scanner/setting_wizard.xml",
     ],
     "installable": True,
     "active": False,

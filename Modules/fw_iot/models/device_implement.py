@@ -28,8 +28,11 @@ DEVICE_IMPLEMENT = [
         "data": {
             "action": "fw_iot.fwiot_device_nfc_reader_action",
         },
-        "setting": {
+        "action":{
             "action": "fw_iot.fwiot_device_nfc_reader_action_wizard_action",
+        },
+        "setting": {
+            "action": "fw_iot.fwiot_device_nfc_reader_setting_wizard_action",
             "model": "fwiot_device_nfc_reader_setting_wizard"
         }
     },
