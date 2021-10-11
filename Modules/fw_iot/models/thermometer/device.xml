@@ -12,7 +12,7 @@
             <field name="name">fwiot_device_thermometer_tree</field>
             <field name="model">fwiot_device_thermometer</field>
             <field name="arch" type="xml">
-                <tree string="Thermometer" delete="0" create="0" edit="0">
+                <tree string="Temperature" delete="0" create="0" edit="0">
                     <field name="date"/>
                     <field name="temperature"/>
                 </tree>
@@ -39,7 +39,7 @@
             <field name="model">fwiot_device_thermometer</field>
             <field name="arch" type="xml">
                 <search string="Search Data">
-                    <field name="date_only" string="Date"/>
+                    <field name="date_only"/>
                     <group expand="0" string="Group By">
                         <filter string="Date" name="date" domain="[]" context="{'group_by': 'date'}"/>
                     </group>

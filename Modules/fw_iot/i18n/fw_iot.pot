@@ -471,6 +471,7 @@ msgstr ""
 #: code:addons/fw_iot/models/scanner/setting_wizard.py.py:0
 #: code:addons/fw_iot/models/smoke_detector/setting_wizard.py.py:0
 #: code:addons/fw_iot/models/sniffer/setting_wizard.py.py:0
+#: code:addons/fw_iot/models/thermometer/setting_wizard.py.py:0
 #, python-format
 msgid "Error while send new settings to device"
 msgstr ""
@@ -482,6 +483,7 @@ msgstr ""
 #: code:addons/fw_iot/models/scanner/setting_wizard.py.py:0
 #: code:addons/fw_iot/models/smoke_detector/setting_wizard.py.py:0
 #: code:addons/fw_iot/models/sniffer/setting_wizard.py.py:0
+#: code:addons/fw_iot/models/thermometer/setting_wizard.py.py:0
 #, python-format
 msgid "Error while send new settings to device : %s"
 msgstr ""
@@ -492,6 +494,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_setting_wizard_form
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_setting_wizard_form
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_setting_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_setting_wizard_form
 msgid "Update"
 msgstr ""
 
@@ -501,6 +504,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_setting_wizard_form
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_setting_wizard_form
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_setting_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_setting_wizard_form
 msgid "Close"
 msgstr ""
 
@@ -510,6 +514,7 @@ msgstr ""
 #: model:ir.actions.act_window,name:fw_iot.fwiot_device_scanner_setting_wizard_action
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_setting_wizard_form
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_setting_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_setting_wizard_action
 msgid "Settings"
 msgstr ""
 
@@ -531,6 +536,9 @@ msgstr ""
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer__date
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer__date_only
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_filter
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermometer__date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermometer__date_only
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermometer_filter
 msgid "Date"
 msgstr ""
 
@@ -539,6 +547,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__token
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector__token
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer__token
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermometer__token
 msgid "Token"
 msgstr ""
 
@@ -559,6 +568,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_filter
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_filter
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermometer_filter
 msgid "Search Data"
 msgstr ""
 
@@ -567,6 +577,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_filter
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_filter
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermometer_filter
 msgid "Group By"
 msgstr ""
 
@@ -583,6 +594,7 @@ msgstr ""
 #. module: fw_iot
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__delay
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector_setting_wizard__delay
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_setting_wizard__delay
 msgid "Delay (sec)"
 msgstr ""
 
@@ -780,6 +792,7 @@ msgstr ""
 #. module: fw_iot
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector_setting_wizard__deep_sleep
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer_setting_wizard__deep_sleep
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_setting_wizard__deep_sleep
 msgid "Deep sleep"
 msgstr ""
 
@@ -821,4 +834,61 @@ msgstr ""
 #. module: fw_iot
 #: model:ir.model.fields,help:fw_iot.field_fwiot_device_sniffer_setting_wizard__exclude
 msgid "list of mac addresses we want to report. If empty then we report all mac addresses."
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_thermometer
+msgid "Frontware IOT device: thermometer"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermometer__temperature
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermometer_tree
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermometer_edit
+msgid "Temperature"
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.actions.act_window,help:fw_iot.fwiot_device_thermometer_action
+msgid "No temperature's data yet on this device"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_thermo_setting_wizard
+msgid "Frontware IOT device: show thermometer setting"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_thermo_setting_wizard__delay
+msgid "number of seconds between 2 temperatures scan"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_thermo_setting_wizard__deep_sleep
+msgid "if set to true then the board is set to deep sleep mode between 2 scans. Useful when use witn battery. Delay should be at least 5 minutes long."
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_setting_wizard__resolution
+msgid "Resolution"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_thermo_setting_wizard__resolution__9
+msgid "9"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_thermo_setting_wizard__resolution__10
+msgid "10"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_thermo_setting_wizard__resolution__11
+msgid "11"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_thermo_setting_wizard__resolution__12
+msgid "12"
 msgstr ""
