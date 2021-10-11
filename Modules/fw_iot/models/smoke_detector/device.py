@@ -23,13 +23,8 @@ class FWIOT_device_smoke_detector(models.Model):
     def insert_record(self, token, data):
         """
         insert record with data
-         - token
-         - date
-        """
-        if not data.get('ts', False):
-           return
-        
-        d = datetime.fromtimestamp(data['ts'])
+        """        
+        d = datetime.fromtimestamp(data)
         r = self.search([('token','=', token),('date','=', d)])
         if not r.id:
            self.create({

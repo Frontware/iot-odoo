@@ -99,6 +99,8 @@ class FWIOT_device(models.Model):
             'serial': j_status.get('serial', False),
             'last_fetch' : datetime.now()
         })
+        if not self.has_data:
+           return 
 
         if not self.is_implement:
            return 
@@ -210,21 +212,6 @@ class FWIOT_device(models.Model):
                 'views': [[False, 'form']]
             }
     
-    def action_command(self):
-        """
-        send action
-        """
-        if not self.is_implement:
-           return 
-
-        ir_act = self._get_device_implement().get('action', {}).get('action', False)
-
-        action = self.env["ir.actions.actions"]._for_xml_id(ir_act)
-        action['context'] = dict(self.env.context)
-
-        action['context']['code'] = self.guid
-        return action
-
     def action_setting(self):
         """
         update settings
@@ -241,7 +228,18 @@ class FWIOT_device(models.Model):
         action['context']['code'] = code
         
         last = self.env[self._get_device_implement().get('setting', {}).get('model')].search([], limit=1)
-        print(last.id)
         action['res_id'] = last.id
 
         return action
+
+    @api.model
+    def _cron_get_data(self):
+        """
+        get data
+        """
+        records = self.search([
+            ('state', '=', 'confirm'),
+        ])
+
+        for ids in records:
+            ids.action_fetch()            

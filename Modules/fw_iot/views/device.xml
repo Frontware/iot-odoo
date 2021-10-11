@@ -42,13 +42,6 @@
                                 <span class="o_stat_text">Setting</span>                                
                             </div>
                         </button>                            
-                        <button name="action_command" type="object" attrs="{'invisible': ['|',('has_action','=', False),('state', '=', 'draft')]}" class="oe_stat_button oe_percent oe_read_only" icon="fa-flash">
-                            <div class="o_field_widget o_stat_info">
-                                <span class="o_stat_text">
-                                    Action
-                                </span>                                
-                            </div>
-                        </button>                            
                         <button name="action_lock" type="object" attrs="{'invisible': ['|', ('locked', '=', True),('state', '=', 'draft')]}" class="oe_stat_button oe_percent oe_read_only" icon="fa-lock">
                             <div class="o_field_widget o_stat_info">
                                 <span class="o_stat_text">Lock</span>                                

@@ -35,6 +35,8 @@
 
         "models/smoke_detector/device.xml",
         "models/smoke_detector/setting_wizard.xml",
+
+        "data/cron.xml"
     ],
     "installable": True,
     "active": False,
