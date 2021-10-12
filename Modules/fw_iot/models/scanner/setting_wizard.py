@@ -9,6 +9,7 @@ from odoo.exceptions import UserError
 
 class FWIOTDeviceScannerSettingWizard(models.TransientModel):
     _name = 'fwiot_device_scanner_setting_wizard'
+    _inherit = 'fwiot_device_generic_setting_wizard'
     _description = 'show scanner setting'
 
     scan_wifi = fields.Boolean(string='Scan wifi', default=True)
@@ -25,14 +26,8 @@ class FWIOTDeviceScannerSettingWizard(models.TransientModel):
         if not (self.scan_bluetooth or self.scan_wifi):
            self.scan_delay = 0  
 
-    def action_update(self):
-        """
-        update setting
-        """        
-        headers = CaseInsensitiveDict()
-        headers["Content-Type"] = "application/json"
-
-        data = {
+    def get_action_data(self):
+        return {
             "scan_delay": self.scan_delay,
             "scan_wifi": self.scan_wifi,
             "scan_bluetooth": self.scan_bluetooth,
@@ -40,14 +35,22 @@ class FWIOTDeviceScannerSettingWizard(models.TransientModel):
             "exclude": (self.exclude or '').split("\r\n"),
         }
 
-        resp = requests.post(self.env.context.get('code'), headers=headers, data=json.dumps(data))
-
-        if resp.status_code != 200:
-           raise UserError(_('Error while send new settings to device')) 
-
-        j = json.loads(resp.content)
-        
-        if j.get('error',''):
-           raise UserError(_('Error while send new settings to device : %s' % j.get('error', 'Unexpected error')))  
-
-        return
+    def save_setting(self, data):
+        """
+        save current setting
+        """
+        ls = ''
+        for e in data.get('macs', []):
+           if e:
+              ls += e + '\n'
+        es = ''
+        for e in data.get('exclude', []):
+           if e:
+              es += e + '\n'
+        self.create({
+            "scan_wifi": data.get('scan_wifi', False),
+            "scan_bluetooth": data.get('scan_bluetooth', False),
+            "scan_delay": data.get('scan_delay', 0),
+            "macs": ls,
+            "exclude": es,
+        })

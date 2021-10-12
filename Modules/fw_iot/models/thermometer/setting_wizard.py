@@ -9,6 +9,7 @@ from odoo.exceptions import UserError
 
 class FWIOTDeviceThermoSettingWizard(models.TransientModel):
     _name = 'fwiot_device_thermo_setting_wizard'
+    _inherit = 'fwiot_device_generic_setting_wizard'
     _description = 'Frontware IOT device: show thermometer setting'
 
     delay = fields.Integer(string='Delay (sec)', help='number of seconds between 2 temperatures scan')
@@ -26,27 +27,22 @@ class FWIOTDeviceThermoSettingWizard(models.TransientModel):
            if self.delay < 300:
               self.delay = 300  
 
-    def action_update(self):
-        """
-        update setting
-        """        
-        headers = CaseInsensitiveDict()
-        headers["Content-Type"] = "application/json"
-
-        data = {
+    def get_action_data(self):
+        return {
             "delay": self.delay,
             "deep_sleep": self.deep_sleep,
             "resolution": int(self.resolution),
         }
 
-        resp = requests.post(self.env.context.get('code'), headers=headers, data=json.dumps(data))
-
-        if resp.status_code != 200:
-           raise UserError(_('Error while send new settings to device')) 
-
-        j = json.loads(resp.content)
-        
-        if j.get('error',''):
-           raise UserError(_('Error while send new settings to device : %s' % j.get('error', 'Unexpected error')))  
-
-        return
+    def save_setting(self, data):
+        """
+        save current setting
+        """
+        r = data.get('resolution', 9)
+        if not r in [9, 10, 11, 12]:
+           r = 9 
+        self.create({
+            "delay": data.get('delay', 0),
+            "deep_sleep": data.get('deep_sleep', False),
+            "resolution": '%s' % r,
+        })                

@@ -9,33 +9,26 @@ from odoo.exceptions import UserError
 
 class FWIOTDeviceBeaconSettingWizard(models.TransientModel):
     _name = 'fwiot_device_beacon_setting_wizard'
+    _inherit = 'fwiot_device_generic_setting_wizard'
     _description = 'Frontware IOT: show beacon setting'
 
     uuid = fields.Char(string='UUID', help='Proximity ID for iBeacon')
     major = fields.Integer(string='major', help='major (0 to 65535) for beacon')
     minor = fields.Integer(string='minor', help='minor (0 to 65535) for beacon')
 
-    def action_update(self):
-        """
-        update setting
-        """        
-        headers = CaseInsensitiveDict()
-        headers["Content-Type"] = "application/json"
-
-        data = {
+    def get_action_data(self):
+        return {
             "uuid": self.uuid,
             "major": self.major,
             "minor": self.minor,
         }
-
-        resp = requests.post(self.env.context.get('code'), headers=headers, data=json.dumps(data))
-
-        if resp.status_code != 200:
-           raise UserError(_('Error while send new settings to device')) 
-
-        j = json.loads(resp.content)
         
-        if j.get('error',''):
-           raise UserError(_('Error while send new settings to device : %s' % j.get('error', 'Unexpected error')))  
-
-        return
+    def save_setting(self, data):
+        """
+        save current setting
+        """
+        self.create({
+            "uuid": data.get('uuid', ''),
+            "major": data.get('major', False),
+            "minor": data.get('minor', False),
+        })

@@ -9,15 +9,19 @@
                     <sheet>
                         <group>
                             <group>
-                                <field name="uuid" required="1" />
-                                <field name="major" required="1" />
-                                <field name="minor" required="1"/>
+                                <field name="uuid" required="1"  attrs="{'readonly': [('device_locked','=',True)]}" />
+                                <field name="major" required="1"  attrs="{'readonly': [('device_locked','=',True)]}" />
+                                <field name="minor" required="1" attrs="{'readonly': [('device_locked','=',True)]}" />
+                                <field name="device_locked" invisible="1" />
                             </group>
                         </group>
                     </sheet>
                     <footer>
-                        <button name="action_update" string="Update" type="object" class="oe_highlight"/>
+                        <button name="action_update" string="Update" type="object" attrs="{'invisible': [('device_locked','=',True)]}" class="oe_highlight"/>
                         <button string="Close" class="btn-secondary" special="cancel"/>
+                        <div class="text-danger" attrs="{'invisible': [('device_locked','=',False)]}">
+                        This device is locked
+                        </div>
                     </footer>
                 </form>
             </field>

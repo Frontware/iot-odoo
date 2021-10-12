@@ -3,6 +3,8 @@
 from . import device_type
 from . import device
 from . import device_mac
+from . import device_wizard
+from . import device_data
 
 from . import beacon
 from . import thermometer

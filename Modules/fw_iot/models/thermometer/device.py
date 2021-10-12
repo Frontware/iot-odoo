@@ -12,14 +12,10 @@ _logger = logging.getLogger(__name__)
 
 class FWIOT_device_thermometer(models.Model):
     _name = 'fwiot_device_thermometer'
+    _inherit = 'fwiot_device_generic'
     _description = "Frontware IOT device: thermometer"
-    _order = 'date desc'
 
     temperature = fields.Float(string='Temperature', required=True, digits=(4,4))
-    date = fields.Datetime(string="Date")
-    token = fields.Char(string='Token')
-    date_only = fields.Date(compute='_compute_date_only', string="Date", store=True, readonly=True)
-
 
     def insert_record(self, token, data):
         """
@@ -41,8 +37,3 @@ class FWIOT_device_thermometer(models.Model):
                "date": d,
                "temperature": float_round(data['temp'], precision_digits=4)
            }) 
-
-    @api.depends('date')
-    def _compute_date_only(self):
-        for each in self:
-            each.date_only = each.date

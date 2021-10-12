@@ -9,14 +9,18 @@
                     <sheet>
                         <group>
                             <group>
-                                <field name="delay" />
-                                <field name="deep_sleep" />
+                                <field name="delay"  attrs="{'readonly': [('device_locked','=',True)]}" />
+                                <field name="deep_sleep"  attrs="{'readonly': [('device_locked','=',True)]}" />
+                                <field name="device_locked" invisible="1" />
                             </group>
                         </group>
                     </sheet>
                     <footer>
-                        <button name="action_update" string="Update" type="object" class="oe_highlight"/>
+                        <button name="action_update" string="Update" type="object" attrs="{'invisible': [('device_locked','=',True)]}" class="oe_highlight"/>
                         <button string="Close" class="btn-secondary" special="cancel"/>
+                        <div class="text-danger" attrs="{'invisible': [('device_locked','=',False)]}">
+                        This device is locked
+                        </div>
                     </footer>
                 </form>
             </field>

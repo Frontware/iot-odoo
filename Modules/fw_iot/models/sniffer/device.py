@@ -12,12 +12,9 @@ _logger = logging.getLogger(__name__)
 
 class FWIOT_device_sniffer(models.Model):
     _name = 'fwiot_device_sniffer'
+    _inherit = 'fwiot_device_generic'
     _description = "Frontware IOT device: sniffer"
     _order = 'date desc'
-
-    date = fields.Datetime(string="Date")
-    token = fields.Char(string='Token')
-    date_only = fields.Date(compute='_compute_date_only', string="Date", store=True, readonly=True)
 
     macs = fields.Many2many('fwiot_device_mac', 'fwiot_device_sniffer_mac', 'device_id', 'mac_id', string='MACs')
 
@@ -48,8 +45,3 @@ class FWIOT_device_sniffer(models.Model):
                "date": d,
                "macs": [(6, 0, mac_ids)],
            }) 
-
-    @api.depends('date')
-    def _compute_date_only(self):
-        for each in self:
-            each.date_only = each.date

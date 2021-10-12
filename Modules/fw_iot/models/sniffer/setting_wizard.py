@@ -9,7 +9,8 @@ from odoo.exceptions import UserError
 
 class FWIOTDeviceSnifferSettingWizard(models.TransientModel):
     _name = 'fwiot_device_sniffer_setting_wizard'
-    _description = 'show sniffer setting'
+    _inherit = 'fwiot_device_generic_setting_wizard'
+    _description = 'Frontware IOT device: show sniffer setting'
 
     scan_delay = fields.Integer(string='Scan delay', help='time in seconds between 2 scans.')
     deep_sleep = fields.Boolean(string='Deep sleep', help='if set to true then board goes to deep sleep mode between 2 scans. Useful when use with battery. scan_delay should be at least 5 minutes.')
@@ -22,14 +23,8 @@ class FWIOTDeviceSnifferSettingWizard(models.TransientModel):
            if self.scan_delay < 300:
               self.scan_delay = 300  
 
-    def action_update(self):
-        """
-        update setting
-        """        
-        headers = CaseInsensitiveDict()
-        headers["Content-Type"] = "application/json"
-
-        data = {
+    def get_action_data(self):
+        return {
             "scan_delay": self.scan_delay,
             "deep_sleep": self.deep_sleep,
             "scan_bluetooth": self.scan_bluetooth,
@@ -37,14 +32,21 @@ class FWIOTDeviceSnifferSettingWizard(models.TransientModel):
             "exclude": (self.exclude or '').split("\r\n"),
         }
 
-        resp = requests.post(self.env.context.get('code'), headers=headers, data=json.dumps(data))
-
-        if resp.status_code != 200:
-           raise UserError(_('Error while send new settings to device')) 
-
-        j = json.loads(resp.content)
-        
-        if j.get('error',''):
-           raise UserError(_('Error while send new settings to device : %s' % j.get('error', 'Unexpected error')))  
-
-        return
+    def save_setting(self, data):
+        """
+        save current setting
+        """
+        ls = ''
+        for e in data.get('macs', []):
+           if e:
+              ls += e + '\n'
+        es = ''
+        for e in data.get('exclude', []):
+           if e:
+              es += e + '\n'
+        self.create({
+            "scan_delay": data.get('scan_delay', 0),
+            "deep_sleep": data.get('deep_sleep', False),
+            "macs": ls,
+            "exclude": es,
+        })        

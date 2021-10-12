@@ -17,6 +17,7 @@
                     <field name="type"/>
                     <field name="token"/>
                     <field name="status"/>
+                    <field name="last_online" />
                 </tree>
             </field>
         </record>
@@ -79,7 +80,7 @@
                                     <field name="token" placeholder="Device token" readonly="1" />
                                     <field name="status" invisible="1" />
                                     <BR/>
-                                    <field name="last_fetch" readonly="1" />
+                                    <field name="last_online" readonly="1" />
                                 </group>
                             </group>
                         </page>

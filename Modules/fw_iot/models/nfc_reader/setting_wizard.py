@@ -9,6 +9,7 @@ from odoo.exceptions import UserError
 
 class FWIOTDeviceNFCReaderSettingWizard(models.TransientModel):
     _name = 'fwiot_device_nfc_reader_setting_wizard'
+    _inherit = 'fwiot_device_generic_setting_wizard'
     _description = 'Frontware IOT: show nfc reader setting'
 
     delay = fields.Integer(string='Delay (sec)', help='minimum time between 2 scans of same tag. Default is 3 second. There is no delay between scans of 2 different tags.', default=3)
@@ -16,32 +17,29 @@ class FWIOTDeviceNFCReaderSettingWizard(models.TransientModel):
     led = fields.Boolean(string='Switch LED on', help='switch LED on when RFID is read.')
     rfids = fields.Text(string='RFID list', help='if exists then it will send MQTT or Beep or Led only if scan an ID that is in the list. (max 100)')
 
-    def action_update(self):
-        """
-        update setting
-        """        
+    def get_action_data(self):
         ls = (self.rfids or '').split("\n")
         if len(ls) > 100:
            raise UserError('Maximum of RIFDs list is 100, current list number is %s' % len(ls))
-
-        headers = CaseInsensitiveDict()
-        headers["Content-Type"] = "application/json"
-
-        data = {
+        
+        return {
             "delay": self.delay,
             "beep": self.beep,
             "led": self.led,
             "rfids": ls,
         }
 
-        resp = requests.post(self.env.context.get('code'), headers=headers, data=json.dumps(data))
-
-        if resp.status_code != 200:
-           raise UserError(_('Erro while send new settings to device')) 
-
-        j = json.loads(resp.content)
-        
-        if j.get('error',''):
-           raise UserError(_('Erro while send new settings to device : %s' % j.get('error', 'Unexpected error')))  
-
-        return
+    def save_setting(self, data):
+        """
+        save current setting
+        """
+        ls = ''
+        for e in data.get('rfids', []):
+           if e:
+              ls += e + '\n'
+        self.create({
+            "delay": data.get('delay', 0),
+            "beep": data.get('beep', False),
+            "led": data.get('led', False),
+            "rfids": ls,
+        })

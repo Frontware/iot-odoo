@@ -12,12 +12,10 @@ _logger = logging.getLogger(__name__)
 
 class FWIOT_device_nfc_reader(models.Model):
     _name = 'fwiot_device_nfc_reader'
+    _inherit = 'fwiot_device_generic'
     _description = "Frontware IOT device: nfc_reader"
     _order = 'date desc'
 
-    date = fields.Datetime(string="Date")
-    token = fields.Char(string='Token')
-    date_only = fields.Date(compute='_compute_date_only', string="Date", store=True, readonly=True)
     rfid = fields.Char(string="RFID")
 
     def insert_record(self, token, data):

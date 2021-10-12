@@ -893,3 +893,25 @@ msgstr "3 ทศนิยม"
 #: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_thermo_setting_wizard__resolution__12
 msgid "12"
 msgstr "4 ทศนิยม"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__last_online
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__last_online
+msgid "Last online"
+msgstr "ข้อมูลสุดท้ายเมื่อ"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_beacon_setting_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_setting_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_setting_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_setting_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_setting_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_setting_wizard_form
+msgid ""
+"<div class=\"text-danger\" attrs=\"{'invisible': [('device_locked','=',False)]}\">\n"
+"                        This device is locked\n"
+"                        </div>"
+msgstr ""
+"<div class=\"text-danger\" attrs=\"{'invisible': [('device_locked','=',False)]}\">\n"
+"                        อุปกรณ์นี้ล๊อค\n"
+"                        </div>"

@@ -9,19 +9,23 @@
                     <sheet>
                         <group>
                             <group>
-                                <field name="delay" />
-                                <field name="beep" />
-                                <field name="led" />
+                                <field name="delay"  attrs="{'readonly': [('device_locked','=',True)]}" />
+                                <field name="beep"  attrs="{'readonly': [('device_locked','=',True)]}" />
+                                <field name="led"  attrs="{'readonly': [('device_locked','=',True)]}" />
+                                <field name="device_locked" invisible="1" />
                             </group>
                         </group>
                         <group string="Only these RFIDs">
-                            <field name="rfids" nolabel="1"/>
+                            <field name="rfids" nolabel="1"  attrs="{'readonly': [('device_locked','=',True)]}" />
                         </group>
                         <span>* Separate each RFID by enter</span>
                     </sheet>
                     <footer>
-                        <button name="action_update" string="Update" type="object" class="oe_highlight"/>
+                        <button name="action_update" string="Update" type="object" attrs="{'invisible': [('device_locked','=',True)]}" class="oe_highlight"/>
                         <button string="Close" class="btn-secondary" special="cancel"/>
+                        <div class="text-danger" attrs="{'invisible': [('device_locked','=',False)]}">
+                        This device is locked
+                        </div>
                     </footer>
                 </form>
             </field>

@@ -32,6 +32,7 @@ class FWIOT_device(models.Model):
     type = fields.Many2one('fwiot_device_type',string="Device type")
     last_fetch = fields.Datetime(string='Last updated')
     locked = fields.Boolean(string="Lock")
+    last_online = fields.Datetime(string='Last online')
 
     is_implement = fields.Boolean(compute='_compute_device_implement')
     has_action = fields.Boolean(compute='_compute_device_implement')
@@ -61,6 +62,10 @@ class FWIOT_device(models.Model):
            raise UserError(_('You must enter API Key'))
         
         j = self._get_status()
+
+        jt = j.get('last_online', False)
+        if jt:
+           jt = datetime.fromtimestamp(jt) 
        
         newid = self.env['fwiot_device_create_wizard'].create({
             "type": j.get('device_type_name', False),
@@ -75,6 +80,7 @@ class FWIOT_device(models.Model):
             "csv_url": j.get('csv_url', False),
             "json_url": j.get('json_url', False),
             "status": j.get('status', False),
+            "last_online": jt,
         })
 
         return {
@@ -93,12 +99,26 @@ class FWIOT_device(models.Model):
         fetch record
         """
         j_status = self._get_status()
+        
+        jt = j_status.get('last_online', False)
+        if jt:
+           jt = datetime.fromtimestamp(jt) 
         self.write({
             'locked': j_status.get('locked', False),
             'status': j_status.get('status', False),
             'serial': j_status.get('serial', False),
+            'last_online': jt,
             'last_fetch' : datetime.now()
         })
+
+        # store last setting
+        j_set = j_status.get('json_settings', False)
+        if j_set:
+           j_setting = json.loads(j_set)
+           j_set_mod = self._get_device_implement().get('setting', {}).get('model', False)
+           if j_set_mod:
+              self.env[j_set_mod].save_setting(j_setting)
+
         if not self.has_data:
            return 
 
@@ -227,8 +247,10 @@ class FWIOT_device(models.Model):
         code = " https://iot.frontware.com/settings/%s" % self.guid
         action['context']['code'] = code
         
-        last = self.env[self._get_device_implement().get('setting', {}).get('model')].search([], limit=1)
+        last = self.env[self._get_device_implement().get('setting', {}).get('model')].search([], limit=1, order='id desc')
         action['res_id'] = last.id
+        action['device_id'] = self.id
+        last.write({'device_id': self.id})
 
         return action
 
