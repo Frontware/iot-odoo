@@ -11,7 +11,7 @@
                             <group>
                                 <field name="scan_wifi"  attrs="{'readonly': [('device_locked','=',True)]}" />
                                 <field name="scan_bluetooth"  attrs="{'readonly': [('device_locked','=',True)]}" />
-                                <field name="scan_delay" attrs="{'readonly':['|',('device_locked','=',True), ('scan_wifi','=',False), ('scan_bluetooth','=',False)]}" />
+                                <field name="scan_delay" attrs="{'readonly':['|', '|',('device_locked','=',True), ('scan_wifi','=',False), ('scan_bluetooth','=',False)]}" />
                                 <field name="device_locked" invisible="1" />
                             </group>
                         </group>
