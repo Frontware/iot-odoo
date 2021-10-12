@@ -18,6 +18,7 @@
 
         "wizard/fwiot_device_create_wizard.xml",
         "wizard/fwiot_device_lock_wizard.xml",
+        "wizard/fwiot_device_cron_wizard.xml",
         
         "models/beacon/setting_wizard.xml",
 
@@ -36,7 +37,11 @@
         "models/smoke_detector/device.xml",
         "models/smoke_detector/setting_wizard.xml",
 
-        "data/cron.xml"
+        "models/nfc_reader/cron.xml",
+        "models/scanner/cron.xml",
+        "models/smoke_detector/cron.xml",
+        "models/sniffer/cron.xml",
+        "models/thermometer/cron.xml",
     ],
     "installable": True,
     "active": False,
