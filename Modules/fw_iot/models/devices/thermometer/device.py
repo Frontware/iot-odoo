@@ -30,10 +30,10 @@ class FWIOT_device_thermometer(models.Model):
            return
         
         d = datetime.fromtimestamp(data['ts'])
-        r = self.search([('token','=', token),('date','=', d)])
+        r = self.search([('device_id','=', id),('date','=', d)])
         if not r.id:
            self.create({
-               "token": token,
+               "device_id": id,
                "date": d,
                "temperature": float_round(data['temp'], precision_digits=4)
            }) 

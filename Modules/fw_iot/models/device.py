@@ -39,6 +39,8 @@ class FWIOT_device(models.Model):
     has_data = fields.Boolean(compute='_compute_device_implement')
     has_setting = fields.Boolean(compute='_compute_device_implement')
 
+    alerts = fields.One2many('fwiot_device_alert', 'device_id', string='Alert trigger')
+
     def _get_status(self):
         """
         get status
@@ -137,7 +139,7 @@ class FWIOT_device(models.Model):
            m = self._get_device_model()
            mctl = self.env[m]
            for j in jj:
-               mctl.insert_record(self.token, json.loads(j['data']))
+               mctl.insert_record(self.id, json.loads(j['data']))
 
     def _get_device_implement(self):
         """
@@ -290,3 +292,33 @@ class FWIOT_device(models.Model):
         action['context'] = dict(self.env.context)
         action['res_id'] = sch_id.id
         return action
+
+    def action_notify(self):
+        """
+        setup alert trigger
+        """        
+        return {
+                'type': 'ir.actions.act_window',
+                'name': _('Device action'),
+                'res_model': 'fwiot_device_alert',
+                'view_mode': 'tree,form',
+                'domain': [('device_id', '=', self.id)],
+                'context': {'device_id': self.id},
+            }
+
+    @api.model
+    def get_condition_fields(self, device_id):
+        """
+        get fields list from device
+        """
+        ff = []                
+        langdb = self.env['ir.translation']
+        fdb = self.env['ir.model.fields']
+        dv = self.browse(device_id)._get_device_implement()
+        for each in dv.get('fields', []):
+            f = fdb._get(dv.get('model'), each)
+            ff.append(
+                (each, langdb._get_ids('ir.model.fields,field_description', 'model', self.env.user.lang, [f.id]).get(f.id))
+            )
+        return ff
+    

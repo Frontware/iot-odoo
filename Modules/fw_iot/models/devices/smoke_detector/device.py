@@ -16,15 +16,15 @@ class FWIOT_device_smoke_detector(models.Model):
     _description = "Frontware IOT device: smoke detector"
     _order = 'date desc'
 
-    def insert_record(self, token, data):
+    def insert_record(self, id, data):
         """
         insert record with data
         """        
         d = datetime.fromtimestamp(data)
-        r = self.search([('token','=', token),('date','=', d)])
+        r = self.search([('device_id','=', id),('date','=', d)])
         if not r.id:
            self.create({
-               "token": token,
+               "device_id": id,
                "date": d,
            }) 
 

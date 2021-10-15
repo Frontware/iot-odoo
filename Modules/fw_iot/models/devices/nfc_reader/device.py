@@ -18,7 +18,7 @@ class FWIOT_device_nfc_reader(models.Model):
 
     rfid = fields.Char(string="RFID")
 
-    def insert_record(self, token, data):
+    def insert_record(self, id, data):
         """
         insert record with data
          - token
@@ -31,10 +31,10 @@ class FWIOT_device_nfc_reader(models.Model):
            return
         
         d = datetime.fromtimestamp(data['ts'])
-        r = self.search([('token','=', token),('date','=', d)])
+        r = self.search([('device_id','=', id),('date','=', d)])
         if not r.id:
            self.create({
-               "token": token,
+               "device_id": id,
                "date": d,
                "rfid": data['rfid']
            }) 

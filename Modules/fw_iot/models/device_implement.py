@@ -11,6 +11,7 @@ DEVICE_IMPLEMENT = [
     {
         "code": ["THERM1M"],
         "model": "fwiot_device_thermometer",
+        "fields": ["temperature"],
         "data": {
             "action": "fw_iot.fwiot_device_thermometer_action",
             "schedule_id": "fw_iot.ir_cron_thermometer_get_data"

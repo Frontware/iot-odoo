@@ -39,6 +39,11 @@
                 </header>                
                 <sheet string="Device">
                     <div class="oe_button_box" name="button_box" groups="base.group_user">
+                        <button name="action_notify" type="object" attrs="{'invisible': ['|', '|',('has_data','=', False),('is_implement', '=', False),('state', '=', 'draft')]}" class="oe_stat_button oe_percent oe_read_only" icon="fa-exclamation-triangle">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_text">Notification</span>                                
+                            </div>
+                        </button>                            
                         <button name="action_schedule" type="object" attrs="{'invisible': ['|', '|',('has_data','=', False),('is_implement', '=', False),('state', '=', 'draft')]}" class="oe_stat_button oe_percent oe_read_only" icon="fa-clock-o">
                             <div class="o_field_widget o_stat_info">
                                 <span class="o_stat_text">Schedule</span>                                

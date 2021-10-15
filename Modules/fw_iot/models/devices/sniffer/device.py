@@ -18,7 +18,7 @@ class FWIOT_device_sniffer(models.Model):
 
     macs = fields.Many2many('fwiot_device_mac', 'fwiot_device_sniffer_mac', 'device_id', 'mac_id', string='MACs')
 
-    def insert_record(self, token, data):
+    def insert_record(self, id, data):
         """
         insert record with data
          - token
@@ -30,7 +30,7 @@ class FWIOT_device_sniffer(models.Model):
            return
         
         d = datetime.fromtimestamp(data['ts'])
-        r = self.search([('token','=', token),('date','=', d)])
+        r = self.search([('device_id','=', id),('date','=', d)])
         if not r.id:
            mac_ids = []
            for m in data.get('macs', []):
@@ -41,7 +41,7 @@ class FWIOT_device_sniffer(models.Model):
                mac_ids.append(mmi.id) 
 
            self.create({
-               "token": token,
+               "device_id": id,
                "date": d,
                "macs": [(6, 0, mac_ids)],
            }) 

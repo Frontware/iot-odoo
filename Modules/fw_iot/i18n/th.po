@@ -30,6 +30,11 @@ msgstr "ฟร้อนท์แวร์ไอโอที"
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_edit
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_tree
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_edit
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader__device_id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__device_id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector__device_id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer__device_id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermometer__device_id
 #: code:addons/fw_iot/models/device.py:0
 #, python-format
 msgid "Device"
@@ -471,24 +476,24 @@ msgstr ""
 
 #. module: fw_iot
 #: code:addons/fw_iot/models/device.py:0
-#: code:addons/fw_iot/models/beacon/setting_wizard.py.py:0
-#: code:addons/fw_iot/models/nfc_reader/setting_wizard.py.py:0
-#: code:addons/fw_iot/models/scanner/setting_wizard.py.py:0
-#: code:addons/fw_iot/models/smoke_detector/setting_wizard.py.py:0
-#: code:addons/fw_iot/models/sniffer/setting_wizard.py.py:0
-#: code:addons/fw_iot/models/thermometer/setting_wizard.py.py:0
+#: code:addons/fw_iot/models/devices/beacon/setting_wizard.py.py:0
+#: code:addons/fw_iot/models/devices/nfc_reader/setting_wizard.py.py:0
+#: code:addons/fw_iot/models/devices/scanner/setting_wizard.py.py:0
+#: code:addons/fw_iot/models/devices/smoke_detector/setting_wizard.py.py:0
+#: code:addons/fw_iot/models/devices/sniffer/setting_wizard.py.py:0
+#: code:addons/fw_iot/models/devices/thermometer/setting_wizard.py.py:0
 #, python-format
 msgid "Error while send new settings to device"
 msgstr "ไม่สามารถที่จะส่งค่าติดตั้งของอุปกรณ์"
 
 #. module: fw_iot
 #: code:addons/fw_iot/models/device.py:0
-#: code:addons/fw_iot/models/beacon/setting_wizard.py.py:0
-#: code:addons/fw_iot/models/nfc_reader/setting_wizard.py.py:0
-#: code:addons/fw_iot/models/scanner/setting_wizard.py.py:0
-#: code:addons/fw_iot/models/smoke_detector/setting_wizard.py.py:0
-#: code:addons/fw_iot/models/sniffer/setting_wizard.py.py:0
-#: code:addons/fw_iot/models/thermometer/setting_wizard.py.py:0
+#: code:addons/fw_iot/models/devices/beacon/setting_wizard.py.py:0
+#: code:addons/fw_iot/models/devices/nfc_reader/setting_wizard.py.py:0
+#: code:addons/fw_iot/models/devices/scanner/setting_wizard.py.py:0
+#: code:addons/fw_iot/models/devices/smoke_detector/setting_wizard.py.py:0
+#: code:addons/fw_iot/models/devices/sniffer/setting_wizard.py.py:0
+#: code:addons/fw_iot/models/devices/thermometer/setting_wizard.py.py:0
 #, python-format
 msgid "Error while send new settings to device : %s"
 msgstr "ไม่สามารถที่จะส่งค่าติดตั้งของอุปกรณ์ : %s"
@@ -546,15 +551,6 @@ msgstr "ฟร้อนท์แวร์ไอโอที: nfc_reader"
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermometer_filter
 msgid "Date"
 msgstr "วันที่"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader__token
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__token
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector__token
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer__token
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermometer__token
-msgid "Token"
-msgstr ""
 
 #. module: fw_iot
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader__rfid
@@ -639,7 +635,7 @@ msgid "if exists then it will send MQTT or Beep or Led only if scan an ID that i
 msgstr "หากมีอยู่แล้วจะส่ง MQTT หรือ ส่งเสียงบี๊บ หรือ เปิดไฟ Led เฉพาะเมื่อสแกน ID ที่อยู่ในรายการ (สูงสุด 100)"
 
 #. module: fw_iot
-#: code:addons/fw_iot/models/nfc_reader/setting_wizard.py.py:0
+#: code:addons/fw_iot/models/devices/nfc_reader/setting_wizard.py.py:0
 #, python-format
 msgid "Maximum of RIFDs list is 100, current list number is %s"
 msgstr "จำนวน RIFD สูงสุดคือ 100 จำนวนปัจจุบันคือ"

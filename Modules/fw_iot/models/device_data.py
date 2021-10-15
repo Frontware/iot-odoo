@@ -16,7 +16,7 @@ class FWIOT_device_generic(models.Model):
     _order = 'date desc'
 
     date = fields.Datetime(string="Date")
-    token = fields.Char(string='Token')
+    device_id = fields.Many2one('fwiot_device', string='Device')
     date_only = fields.Date(compute='_compute_date_only', string="Date", store=True, readonly=True)
 
     @api.depends('date')
