@@ -20,6 +20,7 @@
         "wizard/fwiot_device_create_wizard.xml",
         "wizard/fwiot_device_lock_wizard.xml",
         "wizard/fwiot_device_cron_wizard.xml",
+        "wizard/fwiot_device_tg_wizard.xml",
         
         "models/devices/beacon/setting_wizard.xml",
 
