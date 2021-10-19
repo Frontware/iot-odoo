@@ -18,7 +18,7 @@ class FWIOT_device_nfc_reader(models.Model):
 
     rfid = fields.Char(string="RFID")
 
-    def insert_record(self, id, data):
+    def insert_record(self, device, data):
         """
         insert record with data
          - token
@@ -31,10 +31,10 @@ class FWIOT_device_nfc_reader(models.Model):
            return
         
         d = datetime.fromtimestamp(data['ts'])
-        r = self.search([('device_id','=', id),('date','=', d)])
+        r = self.search([('device_id','=', device.id),('date','=', d)])
         if not r.id:
-           self.create({
-               "device_id": id,
+           return self.create({
+               "device_id": device.id,
                "date": d,
                "rfid": data['rfid']
            }) 
@@ -43,3 +43,17 @@ class FWIOT_device_nfc_reader(models.Model):
     def _compute_date_only(self):
         for each in self:
             each.date_only = each.date
+
+    def alert_record(self, device, data):
+        """
+        alert record
+        """ 
+        print(data)
+        rfid = data.get('rfid', False)
+
+        alerts = self.env['fwiot_device_alert'].search([('device_id','=', device.id),('active','=',True)])
+        for each in alerts:
+            if each.condition_fields == 'last_time':
+               each.alert_record(device.last_online, 'last_time')
+            elif each.condition_fields == 'rfid':
+               each.alert_record(rfid, 'rfid')            

@@ -138,8 +138,12 @@ class FWIOT_device(models.Model):
            jj = json.loads(r.content)
            m = self._get_device_model()
            mctl = self.env[m]
+           last = False           
            for j in jj:
-               mctl.insert_record(self.id, json.loads(j['data']))
+               if mctl.insert_record(self, json.loads(j['data'])):
+                  last = json.loads(j['data'])
+           if last:
+              mctl.alert_record(self, last)
 
     def _get_device_implement(self):
         """
@@ -173,7 +177,7 @@ class FWIOT_device(models.Model):
 
         action = self.env["ir.actions.actions"]._for_xml_id(ir_act)
         action['context'] = {}
-        action['domain'] = [('token', '=', self.token)]
+        action['domain'] = [('device_id', '=', self.id)]
         return action
 
     @api.depends('type')
@@ -315,10 +319,11 @@ class FWIOT_device(models.Model):
         langdb = self.env['ir.translation']
         fdb = self.env['ir.model.fields']
         dv = self.browse(device_id)._get_device_implement()
-        for each in dv.get('fields', []):
+        
+        for each in dv.get('alert', {}).get('fields', []):
             f = fdb._get(dv.get('model'), each)
             ff.append(
-                (each, langdb._get_ids('ir.model.fields,field_description', 'model', self.env.user.lang, [f.id]).get(f.id))
+                (each, langdb._get_ids('ir.model.fields,field_description', 'model', self.env.user.lang, [f.id]).get(f.id) or each)
             )
         return ff
     

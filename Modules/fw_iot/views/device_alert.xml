@@ -30,17 +30,13 @@
                                 <span class="o_stat_text">Test</span>                                
                             </div>
                         </button>  
-                        <button name="action_tg_token" type="object" attrs="{'invisible':[('message_type','!=','tg')]}" class="oe_stat_button oe_percent oe_read_only" icon="fa-telegram">
-                            <div class="o_field_widget o_stat_info">
-                                <span class="o_stat_value">Telegram</span>
-                                <span class="o_stat_text">Token</span>                                
-                            </div>
-                        </button>  
                     </div>
                     <div class="oe_title">
                         <h1>
                             <field name="name" placeholder="Action" required="1"/>
                         </h1>
+                        <label for="active" />
+                        <field name="active" widget="boolean_toggle"/>
                     </div>
                     <group>
                         <group>
@@ -54,17 +50,23 @@
                             <span>&amp;nbsp;</span>
                             <field name="condition_fields" class="oe_inline" required="1" />
                             <span>&amp;nbsp;</span>
-                            <field name="condition_type" class="oe_inline" attrs="{'invisible':[('condition_fields','=','last-time')],'required':[('condition_fields','!=','last-time')]}" />
-                            <span  attrs="{'invisible':[('condition_fields','=','last-time')]}">&amp;nbsp;</span>
-                            <field name="condition_value" class="oe_inline"  attrs="{'invisible':[('condition_fields','=','last-time')],'required':[('condition_fields','!=','last-time')]}" />
-                            <span  attrs="{'invisible':[('condition_fields','=','last-time')]}">&amp;nbsp;</span>
-                            <field name="condition_last_min" class="oe_inline"  attrs="{'invisible':[('condition_fields','!=','last-time')],'required':[('condition_fields','=','last-time')]}" />
-                            <span  attrs="{'invisible':[('condition_fields','!=','last-time')]}">&amp;nbsp;minute(s)</span>
+                            <field name="condition_type" class="oe_inline" attrs="{'invisible':[('condition_fields','=','last_time')],'required':[('condition_fields','!=','last_time')]}" />
+                            <span  attrs="{'invisible':[('condition_fields','=','last_time')]}">&amp;nbsp;</span>
+                            <field name="condition_value" class="oe_inline"  attrs="{'invisible':[('condition_fields','=','last_time')],'required':[('condition_fields','!=','last_time')]}" />
+                            <span  attrs="{'invisible':[('condition_fields','=','last_time')]}">&amp;nbsp;</span>
+                            <field name="condition_last_min" class="oe_inline"  attrs="{'invisible':[('condition_fields','!=','last_time')],'required':[('condition_fields','=','last_time')]}" />
+                            <span  attrs="{'invisible':[('condition_fields','!=','last_time')]}">&amp;nbsp;minute(s)</span>
                         </div>
                     </group>
 
                     <group string="Send message">
+                        <group>
                         <field name="message" nolabel="1" required="1" placeholder="Message to send"/>
+                        </group>    
+                        <br/>
+                        <span>* condition value: %value%</span>
+                        <br/>
+                        <span>* device name: %device%</span>
                     </group>
 
                     <group string="To" attrs="{'invisible':[('message_type','!=','odoo')]}">
@@ -76,20 +78,27 @@
                                 </tree>
                             </field>    
                         </div>
-                    </group>
+                    </group>                    
                     <group string="To" attrs="{'invisible':['|',('message_type','!=','tg'),('tg_bot_token','=',False)]}">
                         <div>
-                            <field name="tg_recipient_ids">
-                                <tree string="Recipient" editable="top" create="0" delete="0">
-                                    <field name="name"/>
-                                </tree>
-                            </field>    
+                            <field name="tg_recipients" nolabel="1"/>
+                            <br/>
+                            <span>* Separate each Telegram id by enter</span>
+                        </div>
+                        <br/>
+                        <div class="oe_edit_only">
+                        <span>The user scan this qrcode, join the bot and get Telegram ID</span>
+                        <br/>
+                        <div>
+                          <img src="data:image/png;base64,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" />
+                        </div>
                         </div>
                     </group>
+                    
                     <field name="tg_bot_token" invisible="1" />
                     <group attrs="{'invisible':['|',('message_type','!=','tg'),('tg_bot_token','!=',False)]}">                    
                         <div class="text-danger">
-                        No Telegram Token define
+                        No Telegram Bot Token define
                         </div>
                     </group>
 

@@ -35,6 +35,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector__device_id
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer__device_id
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermometer__device_id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__device_id
 #: code:addons/fw_iot/models/device.py:0
 #, python-format
 msgid "Device"
@@ -81,6 +82,7 @@ msgstr ""
 #. module: fw_iot
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_type__name
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__name
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__name
 msgid "Name"
 msgstr ""
 
@@ -96,6 +98,7 @@ msgstr ""
 
 #. module: fw_iot
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__active
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__active
 msgid "Active"
 msgstr ""
 
@@ -979,4 +982,156 @@ msgstr ""
 #. module: fw_iot
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_cron_wizard_form
 msgid "Execute Every"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_alert
+msgid "Frontware IOT: device\'s alert trigger"
+msgstr "ฟร้อนท์แวร์ไอโอที: ของอุปกรณ์"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__condition_fields
+msgid "If"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__condition_type
+msgid "operator"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__condition_value
+msgid "Compare value"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__condition_last_min
+msgid "last seen"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__message_type
+msgid "Message type"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_alert__message_type__odoo
+msgid "Email / Odoo Bot"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_alert__message_type__tg
+msgid "Telegram"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__message
+msgid "Message"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__allow_partner_ids
+msgid "allowed partner"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__odoo_recipient_ids
+msgid "To (Partners)"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__tg_bot_token
+msgid "Telegram Bot Token"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__tg_recipients
+msgid "To (Telegram)"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_alert__message_type__last_time
+#: code:addons/fw_iot/models/device_alert.py:0
+#, python-format
+msgid "a device is not active for "
+msgstr ""
+
+#. module: fw_iot
+#: code:addons/fw_iot/models/device_alert.py:0
+#, python-format
+msgid "Error while send message to Telegram:\r\n %s"
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_tree
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_filter
+msgid "Action"
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+msgid "<span class=\"o_stat_text\">Test</span>"
+msgstr "<span class=\"o_stat_text\"></span>"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+msgid "Condition"
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+msgid "Send message"
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+msgid "To"
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+msgid ""
+"<span>The user scan this qrcode, join the bot and get Telegram ID</span>\n"
+"                        <br/>"
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+msgid "No Telegram Bot Token define"
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+msgid ""
+"<span "
+"attrs=\"{'invisible':[('condition_fields','!=','last_time')]}\">&amp;nbsp;minute(s)</span>"
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+msgid ""
+"<br/>\n"
+"                            <span>* Separate each Telegram id by enter</span>"
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+msgid ""
+"<br/>\n"
+"                        <span>* condition value: %value%</span>\n"
+"                        <br/>\n"
+"                        <span>* device name: %device%</span>"
+msgstr ""
+
+#. module: fw_iot
+#: code:addons/fw_iot/models/device_alert.py:0
+#, python-format
+msgid "no recipient"
+msgstr ""
+
+#. module: fw_iot
+#: code:addons/fw_iot/models/device_alert.py:0
+#, python-format
+msgid "unexpected error"
 msgstr ""

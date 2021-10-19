@@ -11,7 +11,9 @@ DEVICE_IMPLEMENT = [
     {
         "code": ["THERM1M"],
         "model": "fwiot_device_thermometer",
-        "fields": ["temperature"],
+        "alert": {
+            "fields": ["temperature"]
+        },
         "data": {
             "action": "fw_iot.fwiot_device_thermometer_action",
             "schedule_id": "fw_iot.ir_cron_thermometer_get_data"
@@ -24,6 +26,9 @@ DEVICE_IMPLEMENT = [
     {
         "code": ["SCANNER"],
         "model": "fwiot_device_scanner",
+        "alert": {
+            "fields": ["mac","ssid","tx_power","rssi"]
+        },
         "data": {
             "action": "fw_iot.fwiot_device_scanner_action",
             "schedule_id": "fw_iot.ir_cron_scanner_get_data",
@@ -36,6 +41,9 @@ DEVICE_IMPLEMENT = [
     {
         "code": ["SNIF"],
         "model": "fwiot_device_sniffer",
+        "alert": {
+            "fields": ["macs"]
+        },
         "data": {
             "action": "fw_iot.fwiot_device_sniffer_action",
             "schedule_id": "fw_iot.ir_cron_sniffer_get_data",
@@ -48,6 +56,9 @@ DEVICE_IMPLEMENT = [
     {
         "code": ["NFCREAD"],
         "model": "fwiot_device_nfc_reader",
+        "alert": {
+            "fields": ["rfid"]
+        },
         "data": {
             "action": "fw_iot.fwiot_device_nfc_reader_action",
             "schedule_id": "fw_iot.ir_cron_nfc_reader_get_data",

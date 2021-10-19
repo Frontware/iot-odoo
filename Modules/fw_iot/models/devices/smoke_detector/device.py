@@ -16,15 +16,15 @@ class FWIOT_device_smoke_detector(models.Model):
     _description = "Frontware IOT device: smoke detector"
     _order = 'date desc'
 
-    def insert_record(self, id, data):
+    def insert_record(self, device, data):
         """
         insert record with data
         """        
         d = datetime.fromtimestamp(data)
-        r = self.search([('device_id','=', id),('date','=', d)])
+        r = self.search([('device_id','=', device.id),('date','=', d)])
         if not r.id:
-           self.create({
-               "device_id": id,
+           return self.create({
+               "device_id": device.id,
                "date": d,
            }) 
 
@@ -32,3 +32,12 @@ class FWIOT_device_smoke_detector(models.Model):
     def _compute_date_only(self):
         for each in self:
             each.date_only = each.date
+
+    def alert_record(self, device, data):
+        """
+        alert record
+        """ 
+        alerts = self.env['fwiot_device_alert'].search([('device_id','=', device.id),('active','=',True)])
+        for each in alerts:
+            if each.condition_fields == 'last_time':
+               each.alert_record(device.last_online, 'last_time')

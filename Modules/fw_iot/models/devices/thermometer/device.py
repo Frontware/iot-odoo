@@ -17,7 +17,7 @@ class FWIOT_device_thermometer(models.Model):
 
     temperature = fields.Float(string='Temperature', required=True, digits=(4,4))
 
-    def insert_record(self, token, data):
+    def insert_record(self, device, data):
         """
         insert record with data
          - token
@@ -30,10 +30,23 @@ class FWIOT_device_thermometer(models.Model):
            return
         
         d = datetime.fromtimestamp(data['ts'])
-        r = self.search([('device_id','=', id),('date','=', d)])
+        r = self.search([('device_id','=', device.id),('date','=', d)])
         if not r.id:
-           self.create({
-               "device_id": id,
+           return self.create({
+               "device_id": device.id,
                "date": d,
                "temperature": float_round(data['temp'], precision_digits=4)
            }) 
+      
+    def alert_record(self, device, data):
+        """
+        alert record
+        """ 
+        temp = data.get('temp', False)
+
+        alerts = self.env['fwiot_device_alert'].search([('device_id','=', device.id),('active','=',True)])
+        for each in alerts:
+            if each.condition_fields == 'last_time':
+               each.alert_record(device.last_online, 'last_time')
+            elif each.condition_fields == 'temperature':
+               each.alert_record(temp, 'temperature')
