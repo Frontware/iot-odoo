@@ -2,18 +2,21 @@
 import logging
 import requests
 import json
+import base64
 from datetime import datetime
+
 from odoo.addons.fw_iot.models.device_implement import DEVICE_IMPLEMENT
 
 from odoo import api, fields, models, tools, _
 from odoo.exceptions import UserError
+from odoo.modules.module import get_module_resource
 
 _logger = logging.getLogger(__name__)
 
 class FWIOT_device(models.Model):
     _name = 'fwiot_device'
     _description = "Frontware IOT device"
-    _inherit = ['mail.thread']
+    _inherit = ['mail.thread', 'image.mixin']
 
     active = fields.Boolean(string="Active", default=True)
     name = fields.Char(string="Name", required=True)
@@ -40,6 +43,10 @@ class FWIOT_device(models.Model):
     has_setting = fields.Boolean(compute='_compute_device_implement')
 
     alerts = fields.One2many('fwiot_device_alert', 'device_id', string='Alert trigger')
+    
+    def _compute_image_128(self):
+        for record in self:
+            record.image_128 = record.image_variant_128
 
     def _get_status(self):
         """
