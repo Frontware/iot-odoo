@@ -384,12 +384,14 @@ msgstr "ข้อมูลของอุปกรณ์"
 #. module: fw_iot
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_create_wizard_form
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_lock_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_cron_wizard_form
 msgid "Confirm"
 msgstr "ยืนยัน"
 
 #. module: fw_iot
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_create_wizard_form
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_lock_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_cron_wizard_form
 msgid "Cancel"
 msgstr "ปิด"
 
@@ -552,6 +554,9 @@ msgstr "ฟร้อนท์แวร์ไอโอที: nfc_reader"
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermometer__date
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermometer__date_only
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermometer_filter
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_status__date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_status__date_only
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_status_filter
 msgid "Date"
 msgstr "วันที่"
 
@@ -573,6 +578,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_filter
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_filter
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermometer_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_status_filter
 msgid "Search Data"
 msgstr "ค้นหาข้อมูล"
 
@@ -582,6 +588,7 @@ msgstr "ค้นหาข้อมูล"
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_filter
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_filter
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermometer_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_status_filter
 msgid "Group By"
 msgstr "จัดกลุ่ม"
 
@@ -1146,3 +1153,31 @@ msgstr "ไม่ได้กำหนดผู้รับ"
 #, python-format
 msgid "unexpected error"
 msgstr "ไม่ทราบสาเหตุ"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
+msgid "<span class=\"o_stat_text\">Notification</span>"
+msgstr "<span class=\"o_stat_text\">การแจ้งเตือน</span>"
+
+#. module: fw_iot
+#: model_terms:ir.actions.act_window,help:fw_iot.fwiot_device_status_filter
+msgid "No status's data yet on this device"
+msgstr "ไม่พบข้อมูลของอุปกรณ์นี้"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_status_filter
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_status__status
+msgid "Status"
+msgstr "การใช้งาน"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_status_tree
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_status_edit
+#: model:ir.actions.act_window,name:fw_iot.fwiot_device_status_action
+msgid "Status history"
+msgstr "ประวัติการใช้งาน"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
+msgid "<span class=\"o_stat_text\">History</span>"
+msgstr "<span class=\"o_stat_text\">ประวัติ</span>"

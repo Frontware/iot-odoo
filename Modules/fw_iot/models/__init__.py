@@ -6,5 +6,6 @@ from . import device
 from . import device_mac
 from . import device_wizard
 from . import device_data
+from . import device_status
 
 from . import devices

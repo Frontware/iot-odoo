@@ -23,3 +23,19 @@ class FWIOT_device_generic(models.Model):
     def _compute_date_only(self):
         for each in self:
             each.date_only = each.date
+
+    def insert_history(self, device, data, d):
+        """
+        insert status data
+        """
+        if not data.get('status', False):
+           return
+
+        his = self.env['fwiot_device_status']       
+        r = his.search([('device_id','=', device.id),('date','=', d)])
+        if not r.id:
+           return his.create({
+               "device_id": device.id,
+               "date": d,
+               "status": data.get('status')
+           }) 

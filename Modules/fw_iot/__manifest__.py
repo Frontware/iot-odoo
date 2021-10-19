@@ -16,6 +16,7 @@
         "views/device_alert.xml",
         "views/device.xml",
         "views/menu.xml",
+        "views/device_status.xml",
 
         "wizard/fwiot_device_create_wizard.xml",
         "wizard/fwiot_device_lock_wizard.xml",

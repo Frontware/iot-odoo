@@ -14,6 +14,7 @@
             <field name="arch" type="xml">
                 <tree string="Action">
                     <field name="name"/>
+                    <field name="message_type"/>
                 </tree>
             </field>
         </record>

@@ -24,12 +24,16 @@ class FWIOT_device_thermometer(models.Model):
          - date
          - temperature
         """
-        if not data.get('temp', False):
-           return
         if not data.get('ts', False):
            return
-        
+
         d = datetime.fromtimestamp(data['ts'])
+        if self.insert_history(device, data, d):
+           return
+
+        if not data.get('temp', False):
+           return
+        
         r = self.search([('device_id','=', device.id),('date','=', d)])
         if not r.id:
            return self.create({
@@ -37,7 +41,7 @@ class FWIOT_device_thermometer(models.Model):
                "date": d,
                "temperature": float_round(data['temp'], precision_digits=4)
            }) 
-      
+
     def alert_record(self, device, data):
         """
         alert record

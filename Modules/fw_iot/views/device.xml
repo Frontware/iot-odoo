@@ -64,6 +64,11 @@
                                 <span class="o_stat_text">Unlock</span>                                
                             </div>
                         </button>                            
+                        <button name="action_view_history" type="object" attrs="{'invisible': ['|',('is_implement', '=', False),('state', '=', 'draft')]}" class="oe_stat_button oe_percent oe_read_only" icon="fa-history">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_text">History</span>                                
+                            </div>
+                        </button>                            
                         <button name="action_view_all_data" type="object" attrs="{'invisible': ['|', '|',('has_data','=', False),('is_implement', '=', False),('state', '=', 'draft')]}" class="oe_stat_button oe_percent oe_read_only" icon="fa-signal">
                             <div class="o_field_widget o_stat_info">
                                 <span class="o_stat_text">Data</span>                                

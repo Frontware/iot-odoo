@@ -334,3 +334,13 @@ class FWIOT_device(models.Model):
             )
         return ff
     
+    def action_view_history(self):
+        """
+        show history data
+        """
+        if not self.is_implement:
+           return 
+        action = self.env["ir.actions.actions"]._for_xml_id('fw_iot.fwiot_device_status_action')
+        action['context'] = {}
+        action['domain'] = [('device_id', '=', self.id)]
+        return action
