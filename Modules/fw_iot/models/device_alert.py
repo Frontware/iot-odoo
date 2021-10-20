@@ -11,6 +11,7 @@ class FWIOT_device_alert(models.Model):
     _description = "Frontware IOT device alert trigger"
     _inherit = ['mail.thread']
 
+    lang = fields.Char(compute='_get_user_lang',readonly=True,default=lambda self: self.env.user.lang)
     device_id = fields.Many2one('fwiot_device', string='Device', default=lambda self: self.env.context.get('device_id'))
     name = fields.Char(string='Name')
     active = fields.Boolean(string='Active',default=True)
@@ -26,7 +27,8 @@ class FWIOT_device_alert(models.Model):
 
     message_type = fields.Selection([
         ('odoo','Email / Odoo Bot'),
-        ('tg','Telegram')
+        ('tg','Telegram'),
+        ('line','LINE'),
     ],string='Message type')
     message = fields.Text(string='Message',translate=True)
 
@@ -37,6 +39,12 @@ class FWIOT_device_alert(models.Model):
 
     tg_bot_token = fields.Text(compute='get_tg_bot_token',readonly=True,string='Telegram Bot Token',default=lambda self: self.get_tg_bot_token())
     tg_recipients = fields.Text(string='To (Telegram)')
+
+    line_recipients = fields.Text(string='To (LINE)')
+    
+    def _get_user_lang(self):
+        for each in self:
+            each.lang = self.env.user.lang
 
     @api.depends('message_type')
     def _get_allow_partners(self):
@@ -71,6 +79,10 @@ class FWIOT_device_alert(models.Model):
            r = self.send_to_tg(self.tg_recipients)   
            if r:
               raise UserError(_('Error while send message to Telegram:\r\n %s') % r) 
+        elif self.message_type == 'line':
+           r = self.send_to_LINE(self.line_recipients)   
+           if r:
+              raise UserError(_('Error while send message to LINE:\r\n %s') % r) 
 
     def parse_message(self):
         """
@@ -168,3 +180,38 @@ class FWIOT_device_alert(models.Model):
            r = self.send_to_tg(self.tg_recipients)   
            if r:
               raise UserError(_('Error while send message to Telegram:\r\n %s') % r) 
+
+        elif self.message_type == 'line':
+           r = self.send_to_LINE(self.line_recipients)   
+           if r:
+              raise UserError(_('Error while send message to LINE:\r\n %s') % r) 
+
+    def send_to_LINE(self, recipients):
+        """
+        send message to LINE
+        @recipients text separate by enter
+        """
+        err = False
+        if not recipients:
+           err = _('no recipient') 
+           return err
+
+        ls = (recipients or '').split('\r\n')
+             
+        for each in ls:
+            response = requests.post('https://notify-api.line.me/api/notify',
+            headers={
+                     'content-type':
+                     'application/x-www-form-urlencoded',
+                     'Authorization':'Bearer '+each
+                  },data={
+                     'message': self.parse_message()
+                  }
+            )
+
+            j_rp = response.json()
+            if not j_rp.get('ok',False):
+               err = j_rp.get('description', _('unexpected error'))
+               return err
+        
+        return err               

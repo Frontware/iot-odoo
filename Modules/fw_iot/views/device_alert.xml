@@ -95,7 +95,63 @@
                         </div>
                         </div>
                     </group>
-                    
+
+                    <group string="To" attrs="{'invisible':[('message_type','!=','line')]}">
+                        <div>
+                            <field name="line_recipients" nolabel="1"/>
+                            <br/>
+                            <span>* Separate each LINE token by enter</span>
+                        </div>
+                        <br/>
+                        <field name="lang" invisible="1"/>
+                        <div class="oe_edit_only">
+                            <span>The user can get their LINE token, by</span>
+                            <br/>
+                            <span>1. scan this qrcode and add to friend</span> 
+                            <div>
+                                <img src="/fw_iot/static/src/img/line/line_notify_qr.png" />
+                            </div>
+                            <br/>
+                            <span>2. user should get this message, then goto https://notify-bot.line.me/en/</span> 
+                            <div>
+                                <img src="/fw_iot/static/src/img/line/step1.png" />
+                            </div>
+                            <br/>
+                            <span>3. click login</span> 
+                            <div attrs="{'invisible':[('lang','=','th_TH')]}">
+                                <img width="300" src="/fw_iot/static/src/img/line/step2en.png" />
+                            </div>
+                            <div attrs="{'invisible':[('lang','!=','th_TH')]}">
+                                <img width="300" src="/fw_iot/static/src/img/line/step2th.png" />
+                            </div>
+                            <br/>
+                            <span>4. enter email and password then click "Log in"</span> 
+                            <div>
+                                <img width="300" src="/fw_iot/static/src/img/line/step3.png" />
+                            </div>
+                            <br/>
+                            <span>5. click at LINE name, then click "My page"</span> 
+                            <div>
+                                <img width="300" src="/fw_iot/static/src/img/line/step4.png" />
+                            </div>
+                            <br/>
+                            <span>then click "Generate token"</span> 
+                            <br/>
+                            <span>6. enter token name, select user's LINE name then click "Generate token"</span> 
+                            <div>
+                                <img width="300" src="/fw_iot/static/src/img/line/step5.png" />
+                            </div>
+                            <br/>
+                            <span>7. click "Copy"</span> 
+                            <div attrs="{'invisible':[('lang','=','th_TH')]}">
+                                <img width="300" src="/fw_iot/static/src/img/line/step6en.png" />
+                            </div>
+                            <div attrs="{'invisible':[('lang','!=','th_TH')]}">
+                                <img width="300" src="/fw_iot/static/src/img/line/step6th.png" />
+                            </div>
+                        </div>
+                    </group>
+
                     <field name="tg_bot_token" invisible="1" />
                     <group attrs="{'invisible':['|',('message_type','!=','tg'),('tg_bot_token','!=',False)]}">                    
                         <div class="text-danger">

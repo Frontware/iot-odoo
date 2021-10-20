@@ -1187,3 +1187,80 @@ msgstr "<span class=\"o_stat_text\">ประวัติ</span>"
 msgid "Firmware version number"
 msgstr "เวอรชั่นของซอฟต์แวร์"
 
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+msgid ""
+"<br/>\n"
+"                            <span>* Separate each LINE token by enter</span>"
+msgstr ""
+"<br/>\n"
+"                            <span>* แยก LINE token แต่ละตัวด้วยการขึ้นบรรทัดใหม่</span>"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+msgid ""
+"<span>The user can get their LINE token, by</span>\n"
+"                            <br/>\n"
+"                            <span>1. scan this qrcode and add to friend</span>"
+msgstr ""
+"<span>ใช้สามารถใส่ LINE token โดย</span>\n"
+"                            <br/>\n"
+"                            <span>1. สแกน qrcode นี้และเพิ่มเป็นเพื่อน</span>"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+msgid ""
+"<br/>\n"
+"                            <span>2. user should get this message, then goto https://notify-bot.line.me/en/</span>"
+msgstr ""
+"<br/>\n"
+"                            <span>2. เมื่อผู้ใช้ได้รับข้อความนี้ จากนั้นไปที่ https://notify-bot.line.me/th/</span>"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+msgid ""
+"<br/>\n"
+"                            <span>3. click login</span>"
+msgstr ""
+"<br/>\n"
+"                            <span>3. คลิก login</span>"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+msgid ""
+"<br/>\n"
+"                            <span>4. enter email and password then click \"Log in\"</span>"
+msgstr ""
+"<br/>\n"
+"                            <span>4. ใส่อีเมลและรหัสผ่านแล้วคลิก \"Log in\"</span>"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+msgid ""
+"<br/>\n"
+"                            <span>5. click at LINE name, then click \"My page\"</span>"
+msgstr ""
+"<br/>\n"
+"                            <span>5. คลิกที่ชื่อ LINE ของผู้ใช้แล้วคลิก\"My page\"</span>"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+msgid ""
+"<br/>\n"
+"                            <span>then click \"Generate access token\"</span> \n"
+"                            <br/>\n"
+"                            <span>6. enter token name, select user's LINE name then click \"Generate token\"</span>"
+msgstr ""
+"<br/>\n"
+"                            <span>คลิก \"Generate token\"</span> \n"
+"                            <br/>\n"
+"                            <span>6. ใส่ชื่อของ token แล้วเลือกชื่อ LINE ของผู้ใช้ จากนั้นคลิก \"ออก Token\"</span>"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+msgid ""
+"<br/>\n"
+"                            <span>7. click \"Copy\"</span>"
+msgstr ""
+"<br/>\n"
+"                            <span>7. คลิก \"คัดลอก\"</span>"

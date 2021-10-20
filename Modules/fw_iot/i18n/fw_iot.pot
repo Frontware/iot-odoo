@@ -1187,3 +1187,61 @@ msgstr ""
 msgid "Firmware version number"
 msgstr ""
 
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+msgid ""
+"<br/>\n"
+"                            <span>* Separate each LINE token by enter</span>"
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+msgid ""
+"<span>The user can get their LINE token, by</span>\n"
+"                            <br/>\n"
+"                            <span>1. scan this qrcode and add to friend</span>"
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+msgid ""
+"<br/>\n"
+"                            <span>2. user should get this message, then goto https://notify-bot.line.me/en/</span>"
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+msgid ""
+"<br/>\n"
+"                            <span>3. click login</span>"
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+msgid ""
+"<br/>\n"
+"                            <span>4. enter email and password then click \"Log in\"</span>"
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+msgid ""
+"<br/>\n"
+"                            <span>5. click at LINE name, then click \"My page\"</span>"
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+msgid ""
+"<br/>\n"
+"                            <span>then click \"Generate token\"</span> \n"
+"                            <br/>\n"
+"                            <span>6. enter token name, select user's LINE name then click \"Generate token\"</span>"
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+msgid ""
+"<br/>\n"
+"                            <span>7. click \"Copy\"</span>"
+msgstr ""
