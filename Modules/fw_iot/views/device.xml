@@ -98,6 +98,9 @@
                                     <BR/>
                                     <field name="last_online" readonly="1" />
                                 </group>
+                                <group>
+                                    <field name="firmware_version" readonly="1" />
+                                </group>
                             </group>
                         </page>
                         <page name="key_page" string="Authentication" groups="fw_iot.group_fwiot_manager">

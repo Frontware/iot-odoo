@@ -1182,3 +1182,8 @@ msgstr ""
 msgid "<span class=\"o_stat_text\">History</span>"
 msgstr ""
 
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__firmware_version
+msgid "Firmware version number"
+msgstr ""
+

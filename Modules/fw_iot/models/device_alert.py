@@ -44,8 +44,7 @@ class FWIOT_device_alert(models.Model):
            return []
 
         return [x.partner_id.id for x in self.env['res.users'].search([
-            ('active','=',True),
-            ('id','!=', self.env.user.id)])]
+            ('active','=',True)])]
 
     def _get_allow_partner(self):
         """
@@ -97,7 +96,7 @@ class FWIOT_device_alert(models.Model):
         """
         send message to odoo (email/bot)
         """
-        odoobot = self.env.ref('base.partner_root')
+        odoobot = self.env.ref('base.partner_root')        
         self.message_post(body=self.parse_message(), 
                           partner_ids=partners,author_id=odoobot.id)
 
@@ -163,7 +162,7 @@ class FWIOT_device_alert(models.Model):
            return 
 
         if self.message_type == 'odoo':
-           self.send_to_odoo(self.odoo_recipient_ids)
+           self.send_to_odoo([x.id for x in self.odoo_recipient_ids])
 
         elif self.message_type == 'tg':
            r = self.send_to_tg(self.tg_recipients)   

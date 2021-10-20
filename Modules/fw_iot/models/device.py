@@ -36,6 +36,7 @@ class FWIOT_device(models.Model):
     last_fetch = fields.Datetime(string='Last updated')
     locked = fields.Boolean(string="Lock")
     last_online = fields.Datetime(string='Last online')
+    firmware_version = fields.Char(string='Firmware version number')
 
     is_implement = fields.Boolean(compute='_compute_device_implement')
     has_action = fields.Boolean(compute='_compute_device_implement')
@@ -89,6 +90,8 @@ class FWIOT_device(models.Model):
             "csv_url": j.get('csv_url', False),
             "json_url": j.get('json_url', False),
             "status": j.get('status', False),
+            "status": j.get('status', False),
+            "firmware_version": j.get('version', False),
             "last_online": jt,
         })
 
@@ -116,6 +119,7 @@ class FWIOT_device(models.Model):
             'locked': j_status.get('locked', False),
             'status': j_status.get('status', False),
             'serial': j_status.get('serial', False),
+            'firmware_version': j_status.get('version', False),
             'last_online': jt,
             'last_fetch' : datetime.now()
         })

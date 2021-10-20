@@ -21,6 +21,7 @@ class FWIOTDeviceCreateWizard(models.TransientModel):
     json_url = fields.Text(string="JSON URL")
     status = fields.Char(string="Status")
     last_online = fields.Datetime(string="Last online")
+    firmware_version = fields.Char(string='Firmware version number')
 
     def action_confirm(self):
         """
@@ -43,6 +44,7 @@ class FWIOTDeviceCreateWizard(models.TransientModel):
                 'status': self.status,
                 'locked': self.locked,
                 'last_online': self.last_online,
+                'firmware_version': self.firmware_version,
                 'last_fetch' : datetime.now(),
                 'type': t.id})
 
