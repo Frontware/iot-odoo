@@ -88,6 +88,10 @@
                         </div>
                         <br/>
                         <div class="oe_edit_only">
+                        <br/>
+                        <br/>
+                        <h3>How to get your Telegram ID</h3>
+                        <br/>
                         <span>The user scan this qrcode, join the bot and get Telegram ID</span>
                         <br/>
                         <div>
@@ -102,9 +106,13 @@
                             <br/>
                             <span>* Separate each LINE token by enter</span>
                         </div>
-                        <br/>
                         <field name="lang" invisible="1"/>
+                        <br/>
                         <div class="oe_edit_only">
+                        <br/>
+                        <br/>
+                        <h3>How to get your LINE token</h3>
+                        <br/>
                             <span>The user can get their LINE token, by</span>
                             <br/>
                             <span>1. scan this qrcode and add to friend</span> 

@@ -1245,3 +1245,14 @@ msgid ""
 "<br/>\n"
 "                            <span>7. click \"Copy\"</span>"
 msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+msgid "How to get your Telegram ID"
+msgstr ""
+
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+msgid "How to get your LINE token"
+msgstr ""

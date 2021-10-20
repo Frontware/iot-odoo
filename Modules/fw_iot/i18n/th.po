@@ -1264,3 +1264,13 @@ msgid ""
 msgstr ""
 "<br/>\n"
 "                            <span>7. คลิก \"คัดลอก\"</span>"
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+msgid "How to get your Telegram ID"
+msgstr "วิธีการหา Telegram ID ของคุณ"
+
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+msgid "How to get your LINE token"
+msgstr "วิธีการหา LINE token ของคุณ"
