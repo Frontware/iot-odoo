@@ -28,5 +28,6 @@ class FWIOTDeviceCronkWizard(models.TransientModel):
             'active': self.interval_active,
             'interval_number': self.interval_number,
             'interval_type': self.interval_type,
+            'nextcall': datetime.now(),
         })
         
