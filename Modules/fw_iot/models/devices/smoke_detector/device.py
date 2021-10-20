@@ -21,7 +21,7 @@ class FWIOT_device_smoke_detector(models.Model):
         insert record with data
         """        
         d = datetime.fromtimestamp(data)
-        if self.insert_history(device, data, d):
+        if self.insert_history(device, {"d":data}, d):
            return
 
         r = self.search([('device_id','=', device.id),('date','=', d)])
