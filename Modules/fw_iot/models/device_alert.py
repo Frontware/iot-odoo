@@ -201,17 +201,15 @@ class FWIOT_device_alert(models.Model):
         for each in ls:
             response = requests.post('https://notify-api.line.me/api/notify',
             headers={
-                     'content-type':
-                     'application/x-www-form-urlencoded',
+                     'content-type': 'application/x-www-form-urlencoded',
                      'Authorization':'Bearer '+each
                   },data={
                      'message': self.parse_message()
                   }
             )
-
             j_rp = response.json()
-            if not j_rp.get('ok',False):
-               err = j_rp.get('description', _('unexpected error'))
+            if j_rp.get('message',False) != 'ok':
+               err = j_rp.get('message', _('unexpected error'))
                return err
         
         return err               
