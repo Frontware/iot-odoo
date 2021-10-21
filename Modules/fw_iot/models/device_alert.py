@@ -239,10 +239,13 @@ class FWIOT_device_alert(models.Model):
               langdb = self.env['ir.translation']
               ft = self.env['ir.model.fields.selection'].search([
                      ('field_id.model', '=', 'ir.cron'),
-                     ('field_id.name', '=', 'interval_type'),
+                     ('field_id.name', '=', 'interval_type'),                     
                      ('value', '=', sch.interval_type),
                ])
-              sch_t = langdb.search([('name','=','ir.model.fields.selection,name'),('module','=','base'),('res_id','=',ft.id or 0)])
+              sch_t = langdb.search([
+                 ('name','=','ir.model.fields.selection,name'),
+                 ('lang','=', self.env.user.lang),
+                 ('module','=','base'),('res_id','=',ft.id or 0)])
               sch_tt = sch.interval_type
               if sch_t and sch_t.id:
                  sch_tt = sch_t.value
