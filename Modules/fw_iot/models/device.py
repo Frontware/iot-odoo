@@ -151,8 +151,10 @@ class FWIOT_device(models.Model):
            mctl = self.env[m]
            last = False           
            for j in jj:
-               if mctl.insert_record(self, json.loads(j['data'])):
-                  last = json.loads(j['data'])
+               jd = json.loads(j['data'])
+               jd['topic'] = j['topic']
+               if mctl.insert_record(self, jd):
+                  last = jd
            if last:
               mctl.alert_record(self, last)
 

@@ -1251,8 +1251,24 @@ msgstr ""
 msgid "How to get your Telegram ID"
 msgstr ""
 
-
 #. module: fw_iot
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
 msgid "How to get your LINE token"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer__type
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_filter
+msgid "Type"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_sniffer__type__in
+msgid "In"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_sniffer__type__out
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_filter
+msgid "Out"
 msgstr ""

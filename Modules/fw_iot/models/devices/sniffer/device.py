@@ -17,6 +17,7 @@ class FWIOT_device_sniffer(models.Model):
     _order = 'date desc'
 
     macs = fields.Many2many('fwiot_device_mac', 'fwiot_device_sniffer_mac', 'device_id', 'mac_id', string='MACs')
+    type = fields.Selection([('in','In'), ('out','Out')], string='Type')
 
     def insert_record(self, device, data):
         """
@@ -26,7 +27,7 @@ class FWIOT_device_sniffer(models.Model):
         """
         if not data.get('ts', False):
            return
-
+        
         d = datetime.fromtimestamp(data['ts'])
         if self.insert_history(device, data, d):
            return
@@ -45,9 +46,14 @@ class FWIOT_device_sniffer(models.Model):
                
                mac_ids.append(mmi.id) 
 
+           type = 'in' 
+           if 'wifi/out' in data['topic']:
+              type = 'out'
+
            return self.create({
                "device_id": device.id,
                "date": d,
+               "type": type,
                "macs": [(6, 0, mac_ids)],
            }) 
 
