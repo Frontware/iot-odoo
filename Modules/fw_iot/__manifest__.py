@@ -13,30 +13,37 @@
         "security/ir.model.access.csv",
 
         "views/device_type.xml",
+        "views/device_alert.xml",
         "views/device.xml",
         "views/menu.xml",
+        "views/device_status.xml",
 
         "wizard/fwiot_device_create_wizard.xml",
         "wizard/fwiot_device_lock_wizard.xml",
+        "wizard/fwiot_device_cron_wizard.xml",
         
-        "models/beacon/setting_wizard.xml",
+        "models/devices/beacon/setting_wizard.xml",
 
-        "models/thermometer/device.xml",
-        "models/thermometer/setting_wizard.xml",
+        "models/devices/thermometer/device.xml",
+        "models/devices/thermometer/setting_wizard.xml",
 
-        "models/scanner/device.xml",
-        "models/scanner/setting_wizard.xml",
+        "models/devices/scanner/device.xml",
+        "models/devices/scanner/setting_wizard.xml",
 
-        "models/sniffer/device.xml",
-        "models/sniffer/setting_wizard.xml",
+        "models/devices/sniffer/device.xml",
+        "models/devices/sniffer/setting_wizard.xml",
 
-        "models/nfc_reader/device.xml",
-        "models/nfc_reader/setting_wizard.xml",
+        "models/devices/nfc_reader/device.xml",
+        "models/devices/nfc_reader/setting_wizard.xml",
 
-        "models/smoke_detector/device.xml",
-        "models/smoke_detector/setting_wizard.xml",
+        "models/devices/smoke_detector/device.xml",
+        "models/devices/smoke_detector/setting_wizard.xml",
 
-        "data/cron.xml"
+        "models/devices/nfc_reader/cron.xml",
+        "models/devices/scanner/cron.xml",
+        "models/devices/smoke_detector/cron.xml",
+        "models/devices/sniffer/cron.xml",
+        "models/devices/thermometer/cron.xml",
     ],
     "installable": True,
     "active": False,

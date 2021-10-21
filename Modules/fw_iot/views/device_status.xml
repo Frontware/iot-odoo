@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!-- 
+    purpose : device
+    
+    remarks :
+    
+    2021-10-04 KPO created
+ -->
+<odoo>
+    <data>
+        <record id="fwiot_device_status_tree" model="ir.ui.view">
+            <field name="name">fwiot_device_status_tree</field>
+            <field name="model">fwiot_device_status</field>
+            <field name="arch" type="xml">
+                <tree string="Status history" delete="0" create="0" edit="0">
+                    <field name="date"/>
+                    <field name="status" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="fwiot_device_status_edit" model="ir.ui.view">
+            <field name="name">fwiot_device_status_edit</field>
+            <field name="model">fwiot_device_status</field>
+            <field name="arch" type="xml">
+                <form string="Status history" delete="0" create="0" edit="0">
+                <sheet string="Status history">
+                    <group>
+                        <field name="date" readonly="1"/>
+                        <field name="status" readonly="1"/>
+                    </group>
+                </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="fwiot_device_status_filter" model="ir.ui.view">
+            <field name="name">fwiot_device_status_filter</field>
+            <field name="model">fwiot_device_status</field>
+            <field name="arch" type="xml">
+                <search string="Search Data">
+                    <field name="date_only" />
+                    <group expand="0" string="Group By">
+                        <filter string="Date" name="date" domain="[]" context="{'group_by': 'date'}"/>
+                        <filter string="Status" name="status" domain="[]" context="{'group_by': 'status'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="fwiot_device_status_action">
+            <field name="name">Status history</field>
+            <field name="res_model">fwiot_device_status</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="fwiot_device_status_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_empty_folder">
+                No status's data yet on this device
+              </p>
+            </field>
+        </record>
+    </data>
+</odoo>       

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="fwiot_device_scanner_setting_wizard_form" model="ir.ui.view">
+            <field name="name">fwiot_device_scanner_setting_wizard_form</field>
+            <field name="model">fwiot_device_scanner_setting_wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="scan_wifi"  attrs="{'readonly': [('device_locked','=',True)]}" />
+                                <field name="scan_bluetooth"  attrs="{'readonly': [('device_locked','=',True)]}" />
+                                <field name="scan_delay" attrs="{'readonly':['|', '|',('device_locked','=',True), ('scan_wifi','=',False), ('scan_bluetooth','=',False)]}" />
+                                <field name="device_locked" invisible="1" />
+                            </group>
+                        </group>
+                        <group string="Only these MACS">
+                            <field name="macs" rows="5" nolabel="1" attrs="{'readonly': [('device_locked','=',True)]}" />
+                        </group>
+                        <group string="Exclude these MACS">
+                            <field name="exclude" nolabel="1" attrs="{'readonly': [('device_locked','=',True)]}" />
+                        </group>
+                        <span>* Separate each MAC by enter</span>
+                    </sheet>
+                    <footer>
+                        <button name="action_update" string="Update" type="object" attrs="{'invisible': [('device_locked','=',True)]}" class="oe_highlight"/>
+                        <button string="Close" class="btn-secondary" special="cancel"/>
+                        <div class="text-danger" attrs="{'invisible': [('device_locked','=',False)]}">
+                        This device is locked
+                        </div>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="fwiot_device_scanner_setting_wizard_action" model="ir.actions.act_window">
+            <field name="name">Settings</field>
+            <field name="res_model">fwiot_device_scanner_setting_wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>

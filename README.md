@@ -8,6 +8,22 @@ All your IoT deviced delivered by Frontware can be setup from Odoo and send all 
 
 Module Odoo to get FW IoT Data
 
+
+Manage and connect to FW IoT devices:
+
+- Thermometers
+- Bluetooth & Wifi scanner
+- [NFC scanner](https://www.weladee.com/iot_nfc_reader_gate_station)
+- [Bluetooth beacons](https://www.weladee.com/smart_iot_beacon)
+- ...
+
+This module allows you to manage your FW IoT devices in Odoo, you can configure your devices, get data and create notifications based on device status (offline, online) and device data.
+The notifications can be triggerd to Telegram, Line & Email.
+
+
+
+
+
 ## Getting started
 
 To make it easy for you to get started with GitLab, here's a list of recommended next steps.

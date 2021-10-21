@@ -14,8 +14,10 @@
             <field name="arch" type="xml">
                 <tree string="Device" delete="0">
                     <field name="name"/>
+                    <field name="type"/>
                     <field name="token"/>
                     <field name="status"/>
+                    <field name="last_online" />
                 </tree>
             </field>
         </record>
@@ -37,6 +39,16 @@
                 </header>                
                 <sheet string="Device">
                     <div class="oe_button_box" name="button_box" groups="base.group_user">
+                        <button name="action_notify" type="object" attrs="{'invisible': ['|', '|',('has_data','=', False),('is_implement', '=', False),('state', '=', 'draft')]}" class="oe_stat_button oe_percent oe_read_only" icon="fa-exclamation-triangle">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_text">Notification</span>                                
+                            </div>
+                        </button>                            
+                        <button name="action_schedule" type="object" attrs="{'invisible': ['|', '|',('has_data','=', False),('is_implement', '=', False),('state', '=', 'draft')]}" class="oe_stat_button oe_percent oe_read_only" icon="fa-clock-o">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_text">Schedule</span>                                
+                            </div>
+                        </button>                            
                         <button name="action_setting" type="object" attrs="{'invisible': ['|',('has_setting','=', False),('state', '=', 'draft')]}" class="oe_stat_button oe_percent oe_read_only" icon="fa-cog">
                             <div class="o_field_widget o_stat_info">
                                 <span class="o_stat_text">Setting</span>                                
@@ -52,6 +64,11 @@
                                 <span class="o_stat_text">Unlock</span>                                
                             </div>
                         </button>                            
+                        <button name="action_view_history" type="object" attrs="{'invisible': ['|',('is_implement', '=', False),('state', '=', 'draft')]}" class="oe_stat_button oe_percent oe_read_only" icon="fa-history">
+                            <div class="o_field_widget o_stat_info">
+                                <span class="o_stat_text">History</span>                                
+                            </div>
+                        </button>                            
                         <button name="action_view_all_data" type="object" attrs="{'invisible': ['|', '|',('has_data','=', False),('is_implement', '=', False),('state', '=', 'draft')]}" class="oe_stat_button oe_percent oe_read_only" icon="fa-signal">
                             <div class="o_field_widget o_stat_info">
                                 <span class="o_stat_text">Data</span>                                
@@ -65,6 +82,7 @@
                     </div>
                     <widget name="web_ribbon" title="Online" bg_color="bg-success" attrs="{'invisible': ['|',('status', '=', 'Offline'),('state','!=','confirm')]}"/>
                     <widget name="web_ribbon" title="Offline" bg_color="bg-danger" attrs="{'invisible': ['|',('status', '=', 'Online'),('state','!=','confirm')]}"/>
+                    <field name="image_1920" widget='image' class="oe_avatar" options='{"zoom": true, "preview_image":"image_128"}'/>
                     <div class="oe_title">
                         <h1>
                             <field name="name" placeholder="Device Name"/>
@@ -78,7 +96,10 @@
                                     <field name="token" placeholder="Device token" readonly="1" />
                                     <field name="status" invisible="1" />
                                     <BR/>
-                                    <field name="last_fetch" readonly="1" />
+                                    <field name="last_online" readonly="1" />
+                                </group>
+                                <group>
+                                    <field name="firmware_version" readonly="1" />
                                 </group>
                             </group>
                         </page>

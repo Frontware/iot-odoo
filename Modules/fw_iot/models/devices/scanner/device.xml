@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<!-- 
+    purpose : device
+    
+    remarks :
+    
+    2021-10-04 KPO created
+ -->
+<odoo>
+    <data>
+        <record id="fwiot_device_scanner_tree" model="ir.ui.view">
+            <field name="name">fwiot_device_scanner_tree</field>
+            <field name="model">fwiot_device_scanner</field>
+            <field name="arch" type="xml">
+                <tree string="Device" delete="0" create="0" edit="0">
+                    <field name="date"/>
+                    <field name="mac"/>
+                    <field name="ssid"/>
+                    <field name="tx_power"/>
+                    <field name="rssi"/>
+                    <field name="type"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="fwiot_device_scanner_edit" model="ir.ui.view">
+            <field name="name">fwiot_device_scanner_edit</field>
+            <field name="model">fwiot_device_scanner</field>
+            <field name="arch" type="xml">
+                <form string="Device" delete="0" create="0" edit="0">                
+                <sheet string="Device">
+                    <group>
+                        <field name="date" readonly="1"/>
+                        <field name="bluetooth" invisible="1"/>
+                        <field name="type" readonly="1"/>
+                    </group>
+                    <group string="WiFi" attrs="{'invisible':[('bluetooth','=',True)]}">
+                        <field name="mac" readonly="1"/>
+                        <field name="ssid" readonly="1"/>
+                    </group>
+                    <group string="Bluetooth" attrs="{'invisible':[('bluetooth','=',False)]}">
+                        <field name="mac" readonly="1"/>
+                        <field name="ssid" readonly="1"/>
+                        <field name="tx_power" readonly="1"/>
+                        <field name="rssi" readonly="1"/>
+                    </group>
+                </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="fwiot_device_scanner_filter" model="ir.ui.view">
+            <field name="name">fwiot_device_scanner_filter</field>
+            <field name="model">fwiot_device_scanner</field>
+            <field name="arch" type="xml">
+                <search string="Search Data">
+                    <field name="date_only"/>
+                    <field name="mac"/>
+                    <field name="ssid"/>
+                    <filter string="Bluetooth" name="bluetooth" domain="[('bluetooth','=',True)]"/>
+                    <filter string="WiFi" name="wifi" domain="[('bluetooth','=',False)]"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Date" name="date" domain="[]" context="{'group_by': 'date'}"/>
+                        <filter string="Type" name="type" domain="[]" context="{'group_by': 'type'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="fwiot_device_scanner_action">
+            <field name="name">Device</field>
+            <field name="res_model">fwiot_device_scanner</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="fwiot_device_scanner_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_empty_folder">
+                No data yet on this device
+              </p>
+            </field>
+        </record>
+    </data>
+</odoo>       

@@ -2,18 +2,21 @@
 import logging
 import requests
 import json
+import base64
 from datetime import datetime
+
 from odoo.addons.fw_iot.models.device_implement import DEVICE_IMPLEMENT
 
 from odoo import api, fields, models, tools, _
 from odoo.exceptions import UserError
+from odoo.modules.module import get_module_resource
 
 _logger = logging.getLogger(__name__)
 
 class FWIOT_device(models.Model):
     _name = 'fwiot_device'
     _description = "Frontware IOT device"
-    _inherit = ['mail.thread']
+    _inherit = ['mail.thread', 'image.mixin']
 
     active = fields.Boolean(string="Active", default=True)
     name = fields.Char(string="Name", required=True)
@@ -32,11 +35,19 @@ class FWIOT_device(models.Model):
     type = fields.Many2one('fwiot_device_type',string="Device type")
     last_fetch = fields.Datetime(string='Last updated')
     locked = fields.Boolean(string="Lock")
+    last_online = fields.Datetime(string='Last online')
+    firmware_version = fields.Char(string='Firmware version number')
 
     is_implement = fields.Boolean(compute='_compute_device_implement')
     has_action = fields.Boolean(compute='_compute_device_implement')
     has_data = fields.Boolean(compute='_compute_device_implement')
     has_setting = fields.Boolean(compute='_compute_device_implement')
+
+    alerts = fields.One2many('fwiot_device_alert', 'device_id', string='Alert trigger')
+    
+    def _compute_image_128(self):
+        for record in self:
+            record.image_128 = record.image_variant_128
 
     def _get_status(self):
         """
@@ -61,6 +72,10 @@ class FWIOT_device(models.Model):
            raise UserError(_('You must enter API Key'))
         
         j = self._get_status()
+
+        jt = j.get('last_online', False)
+        if jt:
+           jt = datetime.fromtimestamp(jt) 
        
         newid = self.env['fwiot_device_create_wizard'].create({
             "type": j.get('device_type_name', False),
@@ -75,6 +90,9 @@ class FWIOT_device(models.Model):
             "csv_url": j.get('csv_url', False),
             "json_url": j.get('json_url', False),
             "status": j.get('status', False),
+            "status": j.get('status', False),
+            "firmware_version": j.get('version', False),
+            "last_online": jt,
         })
 
         return {
@@ -93,12 +111,27 @@ class FWIOT_device(models.Model):
         fetch record
         """
         j_status = self._get_status()
+        
+        jt = j_status.get('last_online', False)
+        if jt:
+           jt = datetime.fromtimestamp(jt) 
         self.write({
             'locked': j_status.get('locked', False),
             'status': j_status.get('status', False),
             'serial': j_status.get('serial', False),
+            'firmware_version': j_status.get('version', False),
+            'last_online': jt,
             'last_fetch' : datetime.now()
         })
+
+        # store last setting
+        j_set = j_status.get('json_settings', False)
+        if j_set:
+           j_setting = json.loads(j_set)
+           j_set_mod = self._get_device_implement().get('setting', {}).get('model', False)
+           if j_set_mod:
+              self.env[j_set_mod].save_setting(j_setting)
+
         if not self.has_data:
            return 
 
@@ -116,8 +149,14 @@ class FWIOT_device(models.Model):
            jj = json.loads(r.content)
            m = self._get_device_model()
            mctl = self.env[m]
+           last = False           
            for j in jj:
-               mctl.insert_record(self.token, json.loads(j['data']))
+               jd = json.loads(j['data'])
+               jd['topic'] = j['topic']
+               if mctl.insert_record(self, jd):
+                  last = jd
+           if last:
+              mctl.alert_record(self, last)
 
     def _get_device_implement(self):
         """
@@ -151,7 +190,7 @@ class FWIOT_device(models.Model):
 
         action = self.env["ir.actions.actions"]._for_xml_id(ir_act)
         action['context'] = {}
-        action['domain'] = [('token', '=', self.token)]
+        action['domain'] = [('device_id', '=', self.id)]
         return action
 
     @api.depends('type')
@@ -227,8 +266,10 @@ class FWIOT_device(models.Model):
         code = " https://iot.frontware.com/settings/%s" % self.guid
         action['context']['code'] = code
         
-        last = self.env[self._get_device_implement().get('setting', {}).get('model')].search([], limit=1)
+        last = self.env[self._get_device_implement().get('setting', {}).get('model')].search([], limit=1, order='id desc')
         action['res_id'] = last.id
+        action['device_id'] = self.id
+        last.write({'device_id': self.id})
 
         return action
 
@@ -243,3 +284,69 @@ class FWIOT_device(models.Model):
 
         for ids in records:
             ids.action_fetch()            
+
+    def action_schedule(self):
+        """
+        update schedule settings
+        """
+        if not self.is_implement:
+           return 
+        
+        sch_model = self._get_device_implement().get('data', {}).get('schedule_id', False)
+        if not sch_model:
+           return
+                
+        sch = self.env.ref(sch_model)
+        
+        sch_id = self.env['fwiot_device_cron_wizard'].create({
+            'interval_active': sch.active,
+            'interval_number': sch.interval_number,
+            'interval_type': sch.interval_type,
+            'schedule_id': sch.id,
+        })
+
+        action = self.env["ir.actions.actions"]._for_xml_id('fw_iot.fwiot_device_cron_wizard_action')
+        action['context'] = dict(self.env.context)
+        action['res_id'] = sch_id.id
+        return action
+
+    def action_notify(self):
+        """
+        setup alert trigger
+        """        
+        return {
+                'type': 'ir.actions.act_window',
+                'name': _('Device action'),
+                'res_model': 'fwiot_device_alert',
+                'view_mode': 'tree,form',
+                'domain': [('device_id', '=', self.id)],
+                'context': {'device_id': self.id},
+            }
+
+    @api.model
+    def get_condition_fields(self, device_id):
+        """
+        get fields list from device
+        """
+        ff = []                
+        langdb = self.env['ir.translation']
+        fdb = self.env['ir.model.fields']
+        dv = self.browse(device_id)._get_device_implement()
+        
+        for each in dv.get('alert', {}).get('fields', []):
+            f = fdb._get(dv.get('model'), each)
+            ff.append(
+                (each, langdb._get_ids('ir.model.fields,field_description', 'model', self.env.user.lang, [f.id]).get(f.id) or each)
+            )
+        return ff
+    
+    def action_view_history(self):
+        """
+        show history data
+        """
+        if not self.is_implement:
+           return 
+        action = self.env["ir.actions.actions"]._for_xml_id('fw_iot.fwiot_device_status_action')
+        action['context'] = {}
+        action['domain'] = [('device_id', '=', self.id)]
+        return action
