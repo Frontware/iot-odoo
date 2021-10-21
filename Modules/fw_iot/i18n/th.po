@@ -1286,13 +1286,20 @@ msgstr "ชนิด"
 #. module: fw_iot
 #: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_sniffer__type__in
 #: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_scanner__type__in
+#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_alert__type__in
 msgid "In"
 msgstr "เข้า"
 
 #. module: fw_iot
 #: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_sniffer__type__out
 #: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_scanner__type__out
+#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_alert__type__out
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_filter
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_filter
 msgid "Out"
 msgstr "ออก"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__type
+msgid "For"
+msgstr "สำหรับ"

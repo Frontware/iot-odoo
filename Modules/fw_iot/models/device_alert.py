@@ -15,6 +15,8 @@ class FWIOT_device_alert(models.Model):
     device_id = fields.Many2one('fwiot_device', string='Device', default=lambda self: self.env.context.get('device_id'))
     name = fields.Char(string='Name')
     active = fields.Boolean(string='Active',default=True)
+    type = fields.Selection([('in','In'), ('out','Out')], string='For',default='in')
+    device_type_code = fields.Char(related='device_id.type.code',readonly=True)
 
     condition_fields = fields.Selection(selection='_get_condition_fields', string="If")
     condition_type = fields.Selection([('!=', '<>'),

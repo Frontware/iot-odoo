@@ -46,9 +46,7 @@ class FWIOT_device_sniffer(models.Model):
                
                mac_ids.append(mmi.id) 
 
-           type = 'in' 
-           if 'wifi/out' in data['topic']:
-              type = 'out'
+           type = self._get_type(data)
 
            return self.create({
                "device_id": device.id,
@@ -56,6 +54,11 @@ class FWIOT_device_sniffer(models.Model):
                "type": type,
                "macs": [(6, 0, mac_ids)],
            }) 
+
+    def _get_type(self, data):
+        if 'wifi/out' in data['topic']:
+           return 'out'
+        return 'in' 
 
     def alert_record(self, device, data):
         """
@@ -66,4 +69,6 @@ class FWIOT_device_sniffer(models.Model):
             if each.condition_fields == 'last_time':
                each.alert_record(device.last_online, 'last_time')
             elif each.condition_fields == 'macs':
-               each.alert_record(data.get('macs', False), 'macs')
+               type = self._get_type(data)
+               if (each.type == 'in' and type == 'in') or (each.type == 'out' and type == 'out'):
+                  each.alert_record(data.get('mac', False), 'mac')

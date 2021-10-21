@@ -42,13 +42,9 @@ class FWIOT_device_scanner(models.Model):
         if not r.id:
 
            ble = False 
-           type = 'in' 
-           if 'wifi/out' in data['topic']:
-              type = 'out'
-           if 'bluetooth/out' in data['topic']:
-              type = 'out'            
            if '/bluetooth/' in data['topic']:
               ble = True
+           type = self._get_type(data)
 
            return self.create({
                "device_id": device.id,
@@ -60,6 +56,13 @@ class FWIOT_device_scanner(models.Model):
                "tx_power": data.get('txPower', False),
                "rssi": data.get('rssi', False),
            }) 
+
+    def _get_type(self, data):
+        if 'wifi/out' in data['topic']:
+           return 'out'
+        if 'bluetooth/out' in data['topic']:
+           return 'out'            
+        return 'in' 
 
     @api.depends('date')
     def _compute_date_only(self):
@@ -75,9 +78,17 @@ class FWIOT_device_scanner(models.Model):
             if each.condition_fields == 'last_time':
                each.alert_record(device.last_online, 'last_time')
             elif each.condition_fields == 'mac':
-               each.alert_record(data.get('mac', False), 'mac')
+
+               type = self._get_type(data)
+               if (each.type == 'in' and type == 'in') or (each.type == 'out' and type == 'out'):
+                  each.alert_record(data.get('mac', False), 'mac')
+
             elif each.condition_fields == 'ssid':
-               each.alert_record(data.get('ssid', False), 'ssid')
+
+               type = self._get_type(data)
+               if (each.type == 'in' and type == 'in') or (each.type == 'out' and type == 'out'):
+                   each.alert_record(data.get('ssid', False), 'ssid')
+
             elif each.condition_fields == 'tx_power':
                each.alert_record(data.get('txPower', False), 'tx_power')
             elif each.condition_fields == 'rssi':
