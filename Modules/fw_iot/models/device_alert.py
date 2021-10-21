@@ -122,7 +122,7 @@ class FWIOT_device_alert(models.Model):
            err = _('no recipient') 
            return err
 
-        ls = (recipients or '').split('\r\n')
+        ls = (recipients or '').split('\n')
         
         send_text = 'https://api.telegram.org/bot%s/sendMessage?chat_id=%s&text='
                 
@@ -196,7 +196,7 @@ class FWIOT_device_alert(models.Model):
            err = _('no recipient') 
            return err
 
-        ls = (recipients or '').split('\r\n')
+        ls = (recipients or '').split('\n')
              
         for each in ls:
             response = requests.post('https://notify-api.line.me/api/notify',

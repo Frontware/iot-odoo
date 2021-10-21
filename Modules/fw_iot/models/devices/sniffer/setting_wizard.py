@@ -27,8 +27,8 @@ class FWIOTDeviceSnifferSettingWizard(models.TransientModel):
         return {
             "scan_delay": self.scan_delay,
             "deep_sleep": self.deep_sleep,
-            "macs": (self.macs or '').split("\r\n"),
-            "exclude": (self.exclude or '').split("\r\n"),
+            "macs": (self.macs or '').split("\n"),
+            "exclude": (self.exclude or '').split("\n"),
         }
 
     def save_setting(self, data):

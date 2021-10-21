@@ -31,8 +31,8 @@ class FWIOTDeviceScannerSettingWizard(models.TransientModel):
             "scan_delay": self.scan_delay,
             "scan_wifi": self.scan_wifi,
             "scan_bluetooth": self.scan_bluetooth,
-            "macs": (self.macs or '').split("\r\n"),
-            "exclude": (self.exclude or '').split("\r\n"),
+            "macs": (self.macs or '').split("\n"),
+            "exclude": (self.exclude or '').split("\n"),
         }
 
     def save_setting(self, data):
