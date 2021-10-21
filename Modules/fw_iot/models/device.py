@@ -155,8 +155,8 @@ class FWIOT_device(models.Model):
                jd['topic'] = j['topic']
                if mctl.insert_record(self, jd):
                   last = jd
-           if last:
-              mctl.alert_record(self, last)
+           
+           mctl.alert_record(self, last)
 
     def _get_device_implement(self):
         """

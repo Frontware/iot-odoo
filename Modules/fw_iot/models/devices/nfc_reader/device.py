@@ -53,12 +53,11 @@ class FWIOT_device_nfc_reader(models.Model):
         """
         alert record
         """ 
-        print(data)
-        rfid = data.get('rfid', False)
+        rfid = (data or {}).get('rfid', False)
 
         alerts = self.env['fwiot_device_alert'].search([('device_id','=', device.id),('active','=',True)])
         for each in alerts:
             if each.condition_fields == 'last_time':
                each.alert_record(device.last_online, 'last_time')
-            elif each.condition_fields == 'rfid':
+            elif each.condition_fields == 'rfid' and data:
                each.alert_record(rfid, 'rfid')            

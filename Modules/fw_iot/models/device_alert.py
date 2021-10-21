@@ -86,7 +86,7 @@ class FWIOT_device_alert(models.Model):
            if r:
               raise UserError(_('Error while send message to LINE:\r\n %s') % r) 
 
-    def parse_message(self):
+    def parse_message(self, force_value=False):
         """
         parse message with condition value, device name
         """
@@ -102,19 +102,19 @@ class FWIOT_device_alert(models.Model):
             ('lang', '=', 'en_US'),
         ]).value
 
-        return (msg or self.message).replace('%value%', msg_con)\
-                                   .replace('%device%', msg_dev)
+        return (msg or self.message).replace('%value%', force_value or msg_con)\
+                                    .replace('%device%', msg_dev)
 
 
-    def send_to_odoo(self, partners):
+    def send_to_odoo(self, partners, msg):
         """
         send message to odoo (email/bot)
         """
         odoobot = self.env.ref('base.partner_root')        
-        self.message_post(body=self.parse_message(), 
+        self.message_post(body=msg, 
                           partner_ids=partners,author_id=odoobot.id)
 
-    def send_to_tg(self, recipients):
+    def send_to_tg(self, recipients, msg):
         """
         send message to tg 
         @recipients text separate by enter
@@ -131,7 +131,7 @@ class FWIOT_device_alert(models.Model):
         for each in ls:
             response = requests.get(send_text % (
                     self.get_tg_bot_token(), each) +
-                    urllib.parse.quote(self.parse_message())
+                    urllib.parse.quote(msg)
                     )
             j_rp = response.json()
             if not j_rp.get('ok',False):
@@ -150,45 +150,45 @@ class FWIOT_device_alert(models.Model):
     
     def alert_record(self, value, field):
         tosend = False
+        msg = self.parse_message(self.condition_value)
         if field == 'last_time':
            min = (datetime.now() - self.device_id.last_online).total_seconds() / 60
            if self.condition_last_min < min:
               tosend = True 
+              
+              msg = self.parse_message(force_value=str(round(min)))
 
         elif field == self.condition_fields:
            if type(value) == list:                               
               for l in value:
                   # found at least 1
-                  print('"%s" %s "%s"' % (l, self.condition_type, self.condition_value))
-                  chke = eval('"%s" %s "%s"' % (l, self.condition_type, self.condition_value))   
+                  chke = eval('"%s" %s "%s"' % (l, self.condition_type, msg))   
                   if chke:
                      tosend = chke
                      break
 
            elif type(value) != str:
-              print('%s %s %s' % (value, self.condition_type, self.condition_value))
-              tosend = eval('%s %s %s' % (value, self.condition_type, self.condition_value)) 
+              tosend = eval('%s %s %s' % (value, self.condition_type, msg)) 
            else:
-              print('"%s" %s "%s"' % (value, self.condition_type, self.condition_value))
-              tosend = eval('"%s" %s "%s"' % (value, self.condition_type, self.condition_value))   
+              tosend = eval('"%s" %s "%s"' % (value, self.condition_type, msg))   
 
         if not tosend:
            return 
 
         if self.message_type == 'odoo':
-           self.send_to_odoo([x.id for x in self.odoo_recipient_ids])
+           self.send_to_odoo([x.id for x in self.odoo_recipient_ids], msg)
 
         elif self.message_type == 'tg':
-           r = self.send_to_tg(self.tg_recipients)   
+           r = self.send_to_tg(self.tg_recipients, msg)   
            if r:
               raise UserError(_('Error while send message to Telegram:\r\n %s') % r) 
 
         elif self.message_type == 'line':
-           r = self.send_to_LINE(self.line_recipients)   
+           r = self.send_to_LINE(self.line_recipients, msg)   
            if r:
               raise UserError(_('Error while send message to LINE:\r\n %s') % r) 
 
-    def send_to_LINE(self, recipients):
+    def send_to_LINE(self, recipients, msg):
         """
         send message to LINE
         @recipients text separate by enter
@@ -206,7 +206,7 @@ class FWIOT_device_alert(models.Model):
                      'content-type': 'application/x-www-form-urlencoded',
                      'Authorization':'Bearer '+each
                   },data={
-                     'message': self.parse_message()
+                     'message': msg
                   }
             )
             j_rp = response.json()

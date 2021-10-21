@@ -77,19 +77,19 @@ class FWIOT_device_scanner(models.Model):
         for each in alerts:
             if each.condition_fields == 'last_time':
                each.alert_record(device.last_online, 'last_time')
-            elif each.condition_fields == 'mac':
+            elif each.condition_fields == 'mac' and data:
 
                type = self._get_type(data)
                if (each.type == 'in' and type == 'in') or (each.type == 'out' and type == 'out'):
                   each.alert_record(data.get('mac', False), 'mac')
 
-            elif each.condition_fields == 'ssid':
+            elif each.condition_fields == 'ssid' and data:
 
                type = self._get_type(data)
                if (each.type == 'in' and type == 'in') or (each.type == 'out' and type == 'out'):
                    each.alert_record(data.get('ssid', False), 'ssid')
 
-            elif each.condition_fields == 'tx_power':
+            elif each.condition_fields == 'tx_power' and data:
                each.alert_record(data.get('txPower', False), 'tx_power')
-            elif each.condition_fields == 'rssi':
+            elif each.condition_fields == 'rssi' and data:
                each.alert_record(data.get('rssi', False), 'rssi')               

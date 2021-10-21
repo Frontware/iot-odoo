@@ -46,11 +46,11 @@ class FWIOT_device_thermometer(models.Model):
         """
         alert record
         """ 
-        temp = data.get('temp', False)
+        temp = (data or {}).get('temp', False)
 
         alerts = self.env['fwiot_device_alert'].search([('device_id','=', device.id),('active','=',True)])
         for each in alerts:
             if each.condition_fields == 'last_time':
                each.alert_record(device.last_online, 'last_time')
-            elif each.condition_fields == 'temperature':
+            elif each.condition_fields == 'temperature' and data:
                each.alert_record(temp, 'temperature')
