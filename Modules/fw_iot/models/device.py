@@ -42,9 +42,24 @@ class FWIOT_device(models.Model):
     has_action = fields.Boolean(compute='_compute_device_implement')
     has_data = fields.Boolean(compute='_compute_device_implement')
     has_setting = fields.Boolean(compute='_compute_device_implement')
+    show_ribbon = fields.Char(compute='_compute_device_status',readonly=True)
 
     alerts = fields.One2many('fwiot_device_alert', 'device_id', string='Alert trigger')
     
+    def _compute_device_status(self):
+        for each in self:
+            if self.state != 'confirm' or not each.last_online:
+               each.show_ribbon = '' 
+
+            elif (self.status == 'Online') and (self.state == 'confirm'):
+               each.show_ribbon = 'green' 
+            else:
+                dt = (datetime.now() - each.last_online).total_seconds() / (60 * 60 * 24)
+                if dt < 1:
+                   each.show_ribbon = 'yellow' 
+                else:
+                   each.show_ribbon = 'red'                 
+
     def _compute_image_128(self):
         for record in self:
             record.image_128 = record.image_variant_128
