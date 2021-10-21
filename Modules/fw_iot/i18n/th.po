@@ -1303,3 +1303,17 @@ msgstr "ออก"
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__type
 msgid "For"
 msgstr "สำหรับ"
+
+#. module: fw_iot
+#: code:addons/fw_iot/models/device.py:0
+#, python-format
+msgid "Schedule & alert"
+msgstr "งานอัตโนมัติและการเเจ้งเตือน"
+
+#. module: fw_iot
+#: code:addons/fw_iot/models/device_alert.py:0
+#, python-format
+msgid ""
+"If you schedule refresh data every %s, you shouldn't set alert for offline "
+"every %s minutes"
+msgstr "หากคุณกำหนดเวลารีเฟรชข้อมูลทุกๆ %s คุณไม่ควรตั้งค่าการแจ้งเตือนสำหรับออฟไลน์ทุกๆ %s นาที"

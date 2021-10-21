@@ -215,3 +215,41 @@ class FWIOT_device_alert(models.Model):
                return err
         
         return err               
+
+    @api.onchange('condition_last_min','condition_fields')    
+    def _onchange_last_min(self):
+        f = self.condition_fields
+        fv = self.condition_last_min
+        if f == 'last_time':
+           sch = self.device_id.get_schedule()
+           sch_min = sch.interval_number
+           if sch.interval_type == 'months':
+              # 30 days
+              sch_min = sch.interval_number * 60 * 24 * 30
+           elif sch.interval_type == 'weeks':   
+              # 7 days
+              sch_min = sch.interval_number * 60 * 24 * 7
+           elif sch.interval_type == 'days':   
+              sch_min = sch.interval_number * 60 * 24
+           elif sch.interval_type == 'hours':   
+              sch_min = sch.interval_number * 60
+           elif sch.interval_type == 'minutes': 
+              pass
+           if sch_min > fv:
+              langdb = self.env['ir.translation']
+              ft = self.env['ir.model.fields.selection'].search([
+                     ('field_id.model', '=', 'ir.cron'),
+                     ('field_id.name', '=', 'interval_type'),
+                     ('value', '=', sch.interval_type),
+               ])
+              sch_t = langdb.search([('name','=','ir.model.fields.selection,name'),('module','=','base'),('res_id','=',ft.id or 0)])
+              sch_tt = sch.interval_type
+              if sch_t and sch_t.id:
+                 sch_tt = sch_t.value
+
+              sch_min_t = '%s %s' % (sch.interval_number, sch_tt)
+              return {'warning': {
+                 'title': _('Schedule & alert'),
+                 'message': _('If you schedule refresh data every %s, you shouldn\'t set alert for offline every %s minutes') % (sch_min_t, fv) 
+              }}
+

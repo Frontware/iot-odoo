@@ -1284,3 +1284,17 @@ msgstr ""
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__type
 msgid "For"
 msgstr ""
+
+#. module: fw_iot
+#: code:addons/fw_iot/models/device.py:0
+#, python-format
+msgid "Schedule & alert"
+msgstr ""
+
+#. module: fw_iot
+#: code:addons/fw_iot/models/device_alert.py:0
+#, python-format
+msgid ""
+"If you schedule refresh data every %s, you shouldn't set alert for offline "
+"every %s minutes"
+msgstr ""

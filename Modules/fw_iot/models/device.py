@@ -285,18 +285,23 @@ class FWIOT_device(models.Model):
         for ids in records:
             ids.action_fetch()            
 
+    def get_schedule(self):
+        sch_model = self._get_device_implement().get('data', {}).get('schedule_id', False)
+        if not sch_model:
+           return
+                
+        return self.env.ref(sch_model)
+
     def action_schedule(self):
         """
         update schedule settings
         """
         if not self.is_implement:
            return 
-        
-        sch_model = self._get_device_implement().get('data', {}).get('schedule_id', False)
-        if not sch_model:
+                        
+        sch = self.get_schedule()
+        if not sch:
            return
-                
-        sch = self.env.ref(sch_model)
         
         sch_id = self.env['fwiot_device_cron_wizard'].create({
             'interval_active': sch.active,
