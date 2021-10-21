@@ -21,6 +21,7 @@ class FWIOT_device_scanner(models.Model):
     tx_power = fields.Integer('txPower')
     rssi  = fields.Integer('rssi')
     bluetooth = fields.Boolean('is bluetooth')
+    type = fields.Selection([('in','In'), ('out','Out')], string='Type')
 
     def insert_record(self, device, data):
         """
@@ -39,10 +40,21 @@ class FWIOT_device_scanner(models.Model):
         
         r = self.search([('device_id','=', device.id),('date','=', d)])
         if not r.id:
+
+           ble = False 
+           type = 'in' 
+           if 'wifi/out' in data['topic']:
+              type = 'out'
+           if 'bluetooth/out' in data['topic']:
+              type = 'out'            
+           if '/bluetooth/' in data['topic']:
+              ble = True
+
            return self.create({
                "device_id": device.id,
                "date": d,
-               "bluetooth": data.get('rssi', False) != 0,
+               "type": type,
+               "bluetooth": ble,
                "mac": data.get('mac', False),
                "ssid": data.get('ssid', False),
                "tx_power": data.get('txPower', False),

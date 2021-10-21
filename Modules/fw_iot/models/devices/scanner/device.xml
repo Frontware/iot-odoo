@@ -18,6 +18,7 @@
                     <field name="ssid"/>
                     <field name="tx_power"/>
                     <field name="rssi"/>
+                    <field name="type"/>
                 </tree>
             </field>
         </record>
@@ -31,6 +32,7 @@
                     <group>
                         <field name="date" readonly="1"/>
                         <field name="bluetooth" invisible="1"/>
+                        <field name="type" readonly="1"/>
                     </group>
                     <group string="WiFi" attrs="{'invisible':[('bluetooth','=',True)]}">
                         <field name="mac" readonly="1"/>
@@ -59,6 +61,7 @@
                     <filter string="WiFi" name="wifi" domain="[('bluetooth','=',False)]"/>
                     <group expand="0" string="Group By">
                         <filter string="Date" name="date" domain="[]" context="{'group_by': 'date'}"/>
+                        <filter string="Type" name="type" domain="[]" context="{'group_by': 'type'}"/>
                     </group>
                 </search>
             </field>
