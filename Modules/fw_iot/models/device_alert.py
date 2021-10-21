@@ -13,6 +13,8 @@ class FWIOT_device_alert(models.Model):
 
     lang = fields.Char(compute='_get_user_lang',readonly=True,default=lambda self: self.env.user.lang)
     device_id = fields.Many2one('fwiot_device', string='Device', default=lambda self: self.env.context.get('device_id'))
+    device_image = fields.Image(related='device_id.image_1920',readonly=True)
+    device_image_128 = fields.Image(related='device_id.image_128',readonly=True)
     name = fields.Char(string='Name')
     active = fields.Boolean(string='Active',default=True)
     type = fields.Selection([('in','In'), ('out','Out')], string='For',default='in')

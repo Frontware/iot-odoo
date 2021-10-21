@@ -32,6 +32,7 @@
                             </div>
                         </button>  
                     </div>
+                    <field name="device_image" widget='image' class="oe_avatar" options='{"zoom": true, "preview_image":"device_image_128"}'/>
                     <div class="oe_title">
                         <h1>
                             <field name="name" placeholder="Action" required="1"/>
