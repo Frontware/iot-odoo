@@ -11,7 +11,6 @@ class FWIOT_device_alert(models.Model):
     _description = "Frontware IOT device alert trigger"
     _inherit = ['mail.thread']
 
-    lang = fields.Char(compute='_get_user_lang',readonly=True,default=lambda self: self.env.user.lang)
     device_id = fields.Many2one('fwiot_device', string='Device', default=lambda self: self.env.context.get('device_id'))
     device_image = fields.Image(related='device_id.image_1920',readonly=True)
     device_image_128 = fields.Image(related='device_id.image_128',readonly=True)
@@ -42,13 +41,9 @@ class FWIOT_device_alert(models.Model):
         context={'active_test': False})
 
     tg_bot_token = fields.Text(compute='get_tg_bot_token',readonly=True,string='Telegram Bot Token',default=lambda self: self.get_tg_bot_token())
-    tg_recipients = fields.Text(string='To (Telegram)')
-
-    line_recipients = fields.Text(string='To (LINE)')
+    tg_recipient_ids = fields.Many2many('hr.employee','fwiot_emp_tg','alert_id','employee_id',domain="[('telegram_id','!=',False)]",string='To (Telegram)', context={'active_test': False})
     
-    def _get_user_lang(self):
-        for each in self:
-            each.lang = self.env.user.lang
+    line_recipient_ids = fields.Many2many('hr.employee','fwiot_emp_line','alert_id','employee_id',domain="[('line_token','!=',False)]",string='To (LINE)', context={'active_test': False})  
 
     @api.depends('message_type')
     def _get_allow_partners(self):
@@ -80,11 +75,11 @@ class FWIOT_device_alert(models.Model):
         if self.message_type == 'odoo':
            self.send_to_odoo([self.env.user.partner_id.id], self.parse_message())   
         elif self.message_type == 'tg':
-           r = self.send_to_tg(self.tg_recipients, self.parse_message())   
+           r = self.send_to_tg(self.tg_recipient_ids, self.parse_message())   
            if r:
               raise UserError(_('Error while send message to Telegram:\r\n %s') % r) 
         elif self.message_type == 'line':
-           r = self.send_to_LINE(self.line_recipients, self.parse_message())   
+           r = self.send_to_LINE(self.line_recipient_ids, self.parse_message())   
            if r:
               raise UserError(_('Error while send message to LINE:\r\n %s') % r) 
 
@@ -125,16 +120,14 @@ class FWIOT_device_alert(models.Model):
         if not recipients:
            err = _('no recipient') 
            return err
-
-        ls = (recipients or '').split('\n')
         
         send_text = 'https://api.telegram.org/bot%s/sendMessage?chat_id=%s&text='
                 
-        for each in ls:
+        for each in recipients:
             if not each:
                continue
             response = requests.get(send_text % (
-                    self.get_tg_bot_token(), each) +
+                    self.get_tg_bot_token(), each.telegram_id) +
                     urllib.parse.quote(msg)
                     )
             j_rp = response.json()
@@ -188,12 +181,12 @@ class FWIOT_device_alert(models.Model):
            self.send_to_odoo([x.id for x in self.odoo_recipient_ids], msg)
 
         elif self.message_type == 'tg':
-           r = self.send_to_tg(self.tg_recipients, msg)   
+           r = self.send_to_tg(self.tg_recipient_ids, msg)   
            if r:
               raise UserError(_('Error while send message to Telegram:\r\n %s') % r) 
 
         elif self.message_type == 'line':
-           r = self.send_to_LINE(self.line_recipients, msg)   
+           r = self.send_to_LINE(self.line_recipient_ids, msg)   
            if r:
               raise UserError(_('Error while send message to LINE:\r\n %s') % r) 
 
@@ -206,16 +199,14 @@ class FWIOT_device_alert(models.Model):
         if not recipients:
            err = _('no recipient') 
            return err
-
-        ls = (recipients or '').split('\n')
              
-        for each in ls:
+        for each in recipients:
             if not each:
                continue
             response = requests.post('https://notify-api.line.me/api/notify',
             headers={
                      'content-type': 'application/x-www-form-urlencoded',
-                     'Authorization':'Bearer '+each
+                     'Authorization':'Bearer '+ each.line_token
                   },data={
                      'message': msg
                   }

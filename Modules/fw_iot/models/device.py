@@ -60,10 +60,6 @@ class FWIOT_device(models.Model):
                 else:
                    each.show_ribbon = 'red'                 
 
-    def _compute_image_128(self):
-        for record in self:
-            record.image_128 = record.image_variant_128
-
     def _get_status(self):
         """
         get status

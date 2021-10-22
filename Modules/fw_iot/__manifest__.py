@@ -6,7 +6,7 @@
     "author": "Frontware International",
     "category": "Miscellanous",
     "depends": [
-        "mail"
+        "mail","hr"
     ],
     "data": [
         "security/security.xml",
@@ -17,6 +17,8 @@
         "views/device.xml",
         "views/menu.xml",
         "views/device_status.xml",
+
+        "views/employee.xml",
 
         "wizard/fwiot_device_create_wizard.xml",
         "wizard/fwiot_device_lock_wizard.xml",

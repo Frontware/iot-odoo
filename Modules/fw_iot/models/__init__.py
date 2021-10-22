@@ -9,3 +9,4 @@ from . import device_data
 from . import device_status
 
 from . import devices
+from . import employee
