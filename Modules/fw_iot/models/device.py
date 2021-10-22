@@ -285,12 +285,13 @@ class FWIOT_device(models.Model):
         return action
 
     @api.model
-    def _cron_get_data(self):
+    def _cron_get_data(self, type):
         """
         get data
         """
         records = self.search([
             ('state', '=', 'confirm'),
+            ('type.code','=', type)
         ])
 
         for ids in records:

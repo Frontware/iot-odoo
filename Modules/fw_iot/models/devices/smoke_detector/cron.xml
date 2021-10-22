@@ -9,7 +9,7 @@
         <field name="nextcall" eval="(DateTime.now().replace(hour=2, minute=0) + timedelta(days=1)).strftime('%Y-%m-%d %H:%M:%S')" />
         <field name="doall" eval="False"/>
         <field name="model_id" ref="model_fwiot_device"/>
-        <field name="code">model._cron_get_data()</field>
+        <field name="code">model._cron_get_data('SMOKE',)</field>
         <field name="state">code</field>
     </record>
 </data>

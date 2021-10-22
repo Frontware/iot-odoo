@@ -122,9 +122,9 @@ class FWIOT_device_alert(models.Model):
            return err
         
         send_text = 'https://api.telegram.org/bot%s/sendMessage?chat_id=%s&text='
-                
+
         for each in recipients:
-            if not each:
+            if not each.telegram_id:
                continue
             response = requests.get(send_text % (
                     self.get_tg_bot_token(), each.telegram_id) +
@@ -201,7 +201,7 @@ class FWIOT_device_alert(models.Model):
            return err
              
         for each in recipients:
-            if not each:
+            if not each.line_token:
                continue
             response = requests.post('https://notify-api.line.me/api/notify',
             headers={
