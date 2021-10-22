@@ -15,6 +15,7 @@
                 <tree string="Action">
                     <field name="name"/>
                     <field name="message_type"/>
+                    <field name="recipients"/>
                 </tree>
             </field>
         </record>

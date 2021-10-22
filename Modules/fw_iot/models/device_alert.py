@@ -45,6 +45,18 @@ class FWIOT_device_alert(models.Model):
     
     line_recipient_ids = fields.Many2many('hr.employee','fwiot_emp_line','alert_id','employee_id',domain="[('line_token','!=',False)]",string='To (LINE)', context={'active_test': False})  
 
+    recipients = fields.Char(compute='_compute_recipients',string='To',readonly=True)
+
+    @api.depends('message_type','odoo_recipient_ids','tg_recipient_ids','line_recipient_ids')
+    def _compute_recipients(self):
+       for each in self:
+           if each.message_type == 'odoo':
+              each.recipients = ','.join([x.display_name for x in each.odoo_recipient_ids])
+           elif each.message_type == 'tg':
+              each.recipients = ','.join([x.display_name for x in each.tg_recipient_ids])
+           elif each.message_type == 'line':
+              each.recipients = ','.join([x.display_name for x in each.line_recipient_ids])
+
     @api.depends('message_type')
     def _get_allow_partners(self):
         if self.message_type != 'odoo':
