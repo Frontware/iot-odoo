@@ -19,6 +19,7 @@
         "views/device_status.xml",
 
         "views/employee.xml",
+        "views/device_templates.xml",
 
         "wizard/fwiot_device_create_wizard.xml",
         "wizard/fwiot_device_lock_wizard.xml",

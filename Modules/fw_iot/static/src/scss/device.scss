@@ -1,0 +1,25 @@
+.o_web_client .o_fwiot_device_kanban {
+
+    .o_follow_btn.o_following {
+        .o_unfollow {
+            display: none;
+        }
+
+        &:hover {
+            .o_following {
+                display: none;
+            }
+            .o_unfollow {
+                display: inline;
+            }
+        }
+    }
+
+    .o_employee_summary_icons > span {
+        white-space: nowrap;
+    }
+
+    span.version {
+        color: gray
+    }
+}

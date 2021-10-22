@@ -48,10 +48,10 @@ class FWIOT_device(models.Model):
     
     def _compute_device_status(self):
         for each in self:
-            if self.state != 'confirm' or not each.last_online:
+            if each.state != 'confirm' or not each.last_online:
                each.show_ribbon = '' 
 
-            elif (self.status == 'Online') and (self.state == 'confirm'):
+            elif (each.status == 'Online') and (each.state == 'confirm'):
                each.show_ribbon = 'green' 
             else:
                 dt = (datetime.now() - each.last_online).total_seconds() / (60 * 60 * 24)
@@ -134,7 +134,7 @@ class FWIOT_device(models.Model):
             'last_online': jt,
             'last_fetch' : datetime.now()
         })
-
+        
         # store last setting
         j_set = j_status.get('json_settings', False)
         if j_set:
