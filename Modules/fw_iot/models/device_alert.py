@@ -131,6 +131,8 @@ class FWIOT_device_alert(models.Model):
         send_text = 'https://api.telegram.org/bot%s/sendMessage?chat_id=%s&text='
                 
         for each in ls:
+            if not each:
+               continue
             response = requests.get(send_text % (
                     self.get_tg_bot_token(), each) +
                     urllib.parse.quote(msg)
@@ -164,15 +166,15 @@ class FWIOT_device_alert(models.Model):
            if value and type(value) == list:                               
               for l in value:
                   # found at least 1
-                  chke = eval('"%s" %s "%s"' % (l, self.condition_type, msg))   
+                  chke = eval('"%s" %s "%s"' % (l, self.condition_type, self.condition_value))   
                   if chke:
                      tosend = chke
                      break
 
            elif type(value) != str:
-              tosend = eval('%s %s %s' % (value, self.condition_type, msg)) 
+              tosend = eval('%s %s %s' % (value, self.condition_type, self.condition_value)) 
            else:
-              tosend = eval('"%s" %s "%s"' % (value, self.condition_type, msg))   
+              tosend = eval('"%s" %s "%s"' % (value, self.condition_type, self.condition_value))   
 
         if not tosend:
            return 
@@ -203,6 +205,8 @@ class FWIOT_device_alert(models.Model):
         ls = (recipients or '').split('\n')
              
         for each in ls:
+            if not each:
+               continue
             response = requests.post('https://notify-api.line.me/api/notify',
             headers={
                      'content-type': 'application/x-www-form-urlencoded',
