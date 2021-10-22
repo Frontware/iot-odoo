@@ -27,6 +27,8 @@ class FWIOT_device_nfc_reader(models.Model):
         """
         if not data.get('ts', False):
            return
+        if '/status' in data['topic']:
+           return
 
         d = datetime.fromtimestamp(data['ts'])
         if self.insert_history(device, data, d):

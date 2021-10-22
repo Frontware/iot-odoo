@@ -31,7 +31,7 @@ class FWIOT_device_scanner(models.Model):
         """
         if not data.get('ts', False):
            return
-        if not data.get('ts', False):
+        if '/status' in data['topic']:
            return
 
         d = datetime.fromtimestamp(data['ts'])

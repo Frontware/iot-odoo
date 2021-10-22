@@ -19,7 +19,10 @@ class FWIOT_device_smoke_detector(models.Model):
     def insert_record(self, device, data):
         """
         insert record with data
-        """        
+        """      
+        if '/status' in data['topic']:
+           return
+
         d = datetime.fromtimestamp(data)
         if self.insert_history(device, {"d":data}, d):
            return
