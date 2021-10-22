@@ -78,13 +78,13 @@ class FWIOT_device_alert(models.Model):
         """
         self.ensure_one()
         if self.message_type == 'odoo':
-           self.send_to_odoo([self.env.user.partner_id.id])
+           self.send_to_odoo([self.env.user.partner_id.id], self.parse_message())   
         elif self.message_type == 'tg':
-           r = self.send_to_tg(self.tg_recipients)   
+           r = self.send_to_tg(self.tg_recipients, self.parse_message())   
            if r:
               raise UserError(_('Error while send message to Telegram:\r\n %s') % r) 
         elif self.message_type == 'line':
-           r = self.send_to_LINE(self.line_recipients)   
+           r = self.send_to_LINE(self.line_recipients, self.parse_message())   
            if r:
               raise UserError(_('Error while send message to LINE:\r\n %s') % r) 
 
