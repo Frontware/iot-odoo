@@ -154,7 +154,7 @@ class FWIOT_device_alert(models.Model):
     
     def alert_record(self, value, field):
         tosend = False
-        msg = self.parse_message(self.condition_value)
+        msg = self.parse_message(str(value or ''))
         if field == 'last_time':
            min = (datetime.now() - self.device_id.last_online).total_seconds() / 60
            if self.condition_last_min < min:
@@ -170,9 +170,14 @@ class FWIOT_device_alert(models.Model):
                   if chke:
                      tosend = chke
                      break
+           # when no value
+           elif not value:
+               if self.condition_type == '==':
+                  tosend = True
 
            elif type(value) != str:
-              tosend = eval('%s %s %s' % (value, self.condition_type, self.condition_value)) 
+              print('%s %s %s' % (value, self.condition_type, self.condition_value))
+              tosend = eval('%s %s %s' % (value, self.condition_type, self.condition_value))                
            else:
               tosend = eval('"%s" %s "%s"' % (value, self.condition_type, self.condition_value))   
 

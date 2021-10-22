@@ -72,7 +72,7 @@
                         <field name="message" nolabel="1" required="1" placeholder="Message to send"/>
                         </group>    
                         <br/>
-                        <span>* condition value: %value%</span>
+                        <span>* current value: %value%</span>
                         <br/>
                         <span>* device name: %device%</span>
                     </group>
