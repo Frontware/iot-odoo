@@ -143,9 +143,6 @@ class FWIOT_device(models.Model):
            if j_set_mod:
               self.env[j_set_mod].save_setting(j_setting)
 
-        if not self.has_data:
-           return 
-
         if not self.is_implement:
            return 
 
@@ -157,19 +154,41 @@ class FWIOT_device(models.Model):
         
         if r.content:
            # list
-           jj = json.loads(r.content)
+           jj = json.loads(r.content)           
            m = self._get_device_model()
-           mctl = self.env[m]
+           mctl = False
+           if self.has_data:
+              mctl = self.env[m]
            last = False           
-           for j in jj:
+           for j in jj or []:
                jd = json.loads(j['data'])
                if not type(jd) is dict:
                   jd = {'data': jd} 
-               jd['topic'] = j['topic']
-               if mctl.insert_record(self, jd):
+               jd['topic'] = j['topic']               
+               d = datetime.fromtimestamp(jd.get('ts',False))
+               if self.insert_history(jd, d):
+                  continue 
+
+               if self.has_data and mctl.insert_record(self, jd):
                   last = jd
-           
-           mctl.alert_record(self, last)
+           if self.has_data:
+              mctl.alert_record(self, last)
+
+    def insert_history(self, data, d):
+        """
+        insert status data
+        """
+        if not data.get('status', False):
+           return
+
+        his = self.env['fwiot_device_status']       
+        r = his.search([('device_id','=', self.id),('date','=', d)])
+        if not r.id:
+           return his.create({
+               "device_id": self.id,
+               "date": d,
+               "status": data.get('status')
+           }) 
 
     def _get_device_implement(self):
         """

@@ -35,8 +35,6 @@ class FWIOT_device_scanner(models.Model):
            return
 
         d = datetime.fromtimestamp(data['ts'])
-        if self.insert_history(device, data, d):
-           return
         
         type = self._get_type(data)
         r = self.search([('device_id','=', device.id),('date','=', d),('type','=', type)])

@@ -30,9 +30,6 @@ class FWIOT_device_thermometer(models.Model):
            return
 
         d = datetime.fromtimestamp(data['ts'])
-        if self.insert_history(device, data, d):
-           return
-
         if not data.get('temp', False):
            return
         
