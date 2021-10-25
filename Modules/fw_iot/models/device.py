@@ -164,9 +164,10 @@ class FWIOT_device(models.Model):
                jd = json.loads(j['data'])
                if not type(jd) is dict:
                   jd = {'data': jd} 
-               jd['topic'] = j['topic']               
-               d = datetime.fromtimestamp(jd.get('ts',False))
-               if self.insert_history(jd, d):
+               jd['topic'] = j['topic']   
+               
+               if self.insert_history(jd):
+                  # this is status record 
                   continue 
 
                if self.has_data and mctl.insert_record(self, jd):
@@ -174,12 +175,13 @@ class FWIOT_device(models.Model):
            if self.has_data:
               mctl.alert_record(self, last)
 
-    def insert_history(self, data, d):
+    def insert_history(self, data):
         """
         insert status data
         """
         if not data.get('status', False):
            return
+        d = datetime.fromtimestamp(data.get('ts',False))
 
         his = self.env['fwiot_device_status']       
         r = his.search([('device_id','=', self.id),('date','=', d)])
@@ -189,6 +191,8 @@ class FWIOT_device(models.Model):
                "date": d,
                "status": data.get('status')
            }) 
+        else:
+           return True 
 
     def _get_device_implement(self):
         """
