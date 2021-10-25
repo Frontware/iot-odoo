@@ -163,6 +163,8 @@ class FWIOT_device(models.Model):
            last = False           
            for j in jj:
                jd = json.loads(j['data'])
+               if not type(jd) is dict:
+                  jd = {'data': jd} 
                jd['topic'] = j['topic']
                if mctl.insert_record(self, jd):
                   last = jd

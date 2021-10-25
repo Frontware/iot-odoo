@@ -38,13 +38,13 @@ class FWIOT_device_scanner(models.Model):
         if self.insert_history(device, data, d):
            return
         
-        r = self.search([('device_id','=', device.id),('date','=', d)])
+        type = self._get_type(data)
+        r = self.search([('device_id','=', device.id),('date','=', d),('type','=', type)])
         if not r.id:
 
            ble = False 
            if '/bluetooth/' in data['topic']:
               ble = True
-           type = self._get_type(data)
 
            return self.create({
                "device_id": device.id,

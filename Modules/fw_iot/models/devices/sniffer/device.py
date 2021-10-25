@@ -37,8 +37,9 @@ class FWIOT_device_sniffer(models.Model):
         if not data.get('macs', False):
            return
         
+        type = self._get_type(data)
         d = datetime.fromtimestamp(data['ts'])
-        r = self.search([('device_id','=', device.id),('date','=', d)])
+        r = self.search([('device_id','=', device.id),('date','=', d),('type','=',type)])
         if not r.id:
            mac_ids = []
            for m in data.get('macs', []):
@@ -47,8 +48,6 @@ class FWIOT_device_sniffer(models.Model):
                   mmi = self.env['fwiot_device_mac'].create({'name':m})  
                
                mac_ids.append(mmi.id) 
-
-           type = self._get_type(data)
 
            return self.create({
                "device_id": device.id,
