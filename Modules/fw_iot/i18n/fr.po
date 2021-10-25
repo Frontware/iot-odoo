@@ -637,7 +637,7 @@ msgstr "เปิดไฟ LED เมื่ออ่าน RFID"
 #. module: fw_iot
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__rfids
 msgid "RFID list"
-msgstr "รายการ RFID"
+msgstr "Liste RFID"
 
 #. module: fw_iot
 #: model:ir.model.fields,help:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__rfids
@@ -653,7 +653,7 @@ msgstr "จำนวน RIFD สูงสุดคือ 100 จำนวนป�
 #. module: fw_iot
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_setting_wizard_form
 msgid "Only these RFIDs"
-msgstr "เฉพาะ RFID นี้เท่านั้น"
+msgstr "Uniquement ces RFID/NFC"
 
 #. module: fw_iot
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_setting_wizard_form
@@ -688,7 +688,7 @@ msgstr ""
 #. module: fw_iot
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__bluetooth
 msgid "is bluetooth"
-msgstr ""
+msgstr "est bluetooth"
 
 #. module: fw_iot
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_edit
@@ -716,18 +716,18 @@ msgstr "ฟร้อนท์แวร์ไอโอที: ค่าติด�
 #. module: fw_iot
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner_setting_wizard__scan_wifi
 msgid "Scan wifi"
-msgstr "สแกน wifi"
+msgstr "Scan wifi"
 
 #. module: fw_iot
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner_setting_wizard__scan_bluetooth
 msgid "Scan bluetooth"
-msgstr "สแกนบลูทูธ"
+msgstr "Scan bluetooth"
 
 #. module: fw_iot
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner_setting_wizard__scan_delay
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer_setting_wizard__scan_delay
 msgid "Scan delay"
-msgstr "ถ่วงเวลาสแกน"
+msgstr "Délais entre 2 scans"
 
 #. module: fw_iot
 #: model:ir.model.fields,help:fw_iot.field_fwiot_device_scanner_setting_wizard__scan_delay
@@ -749,7 +749,7 @@ msgstr "รายการที่อยู่ mac ที่เราต้อ�
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner_setting_wizard__exclude
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer_setting_wizard__exclude
 msgid "Exclude MAC"
-msgstr "ไม่รวม MAC นี้"
+msgstr "Exclure ces addresses MAC"
 
 #. module: fw_iot
 #: model:ir.model.fields,help:fw_iot.field_fwiot_device_scanner_setting_wizard__exclude
@@ -760,7 +760,7 @@ msgstr "รายการ mac ไม่ต้องรายงาน ไม่
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_setting_wizard_form
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_setting_wizard_form
 msgid "Only these MACS"
-msgstr "เฉพาะ MAC นี้"
+msgstr "Uniquement ces adresses MAC"
 
 #. module: fw_iot
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_setting_wizard_form
@@ -783,7 +783,7 @@ msgstr "ฟร้อนท์แวร์ไอโอที: smoke detector"
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_tree
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_edit
 msgid "Smoke detector"
-msgstr "เครื่องตรวจจับควัน"
+msgstr "Détecteur de fumée"
 
 #. module: fw_iot
 #: model_terms:ir.actions.act_window,help:fw_iot.fwiot_device_smoke_detector_action
@@ -825,7 +825,7 @@ msgstr ""
 #. module: fw_iot
 #: model:ir.model,name:fw_iot.model_fwiot_device_sniffer_setting_wizard
 msgid "Frontware IOT device: show sniffer setting"
-msgstr "ฟร้อนท์แวร์ไอโอที: ค่าติดตั้งของอุปกรณ์ sniffer"
+msgstr "Frontware IOT: paramètre du sniffer"
 
 #. module: fw_iot
 #: model:ir.model.fields,help:fw_iot.field_fwiot_device_sniffer_setting_wizard__scan_delay
@@ -858,12 +858,12 @@ msgstr "ฟร้อนท์แวร์ไอโอที: thermometer"
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermometer_edit
 #: model_terms:ir.actions.act_window,help:fw_iot.fwiot_device_thermometer_action
 msgid "Temperature"
-msgstr "อุณหภูมิ"
+msgstr "Température"
 
 #. module: fw_iot
 #: model_terms:ir.actions.act_window,help:fw_iot.fwiot_device_thermometer_action
 msgid "No temperature's data yet on this device"
-msgstr "ไม่พบข้อมูลอุณหภูมิของอุปกรณ์นี้"
+msgstr "Aucune donnée de temperature disponible pour cet objet connecté"
 
 #. module: fw_iot
 #: model:ir.model,name:fw_iot.model_fwiot_device_thermo_setting_wizard
@@ -883,7 +883,7 @@ msgstr "หากตั้งค่าไว้ บอร์ดจะเข้�
 #. module: fw_iot
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_setting_wizard__resolution
 msgid "Resolution"
-msgstr "ความละเอียดการวัด"
+msgstr "Résolution"
 
 #. module: fw_iot
 #: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_thermo_setting_wizard__resolution__9
@@ -965,7 +965,7 @@ msgstr "ช่วงเวลา"
 #. module: fw_iot
 #: model:ir.model.fields,help:fw_iot.field_fwiot_device_cron_wizard__interval_number
 msgid "Repeat every x."
-msgstr "ทำซ้ำทุกๆ x"
+msgstr "Répéter x fois"
 
 #. module: fw_iot
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_cron_wizard__interval_type
