@@ -15,7 +15,7 @@
                 <tree string="Device" delete="0" create="0" edit="0">
                     <field name="date"/>
                     <field name="type"/>
-                    <field name="macs" widget="many2many_tags"/>
+                    <field name="mac" />
                 </tree>
             </field>
         </record>
@@ -28,7 +28,7 @@
                 <sheet string="Device">
                     <group>
                         <field name="date" readonly="1"/>
-                        <field name="macs" readonly="1"/>
+                        <field name="mac" readonly="1"/>
                         <field name="type" readonly="1"/>
                     </group>
                 </sheet>
@@ -42,7 +42,7 @@
             <field name="arch" type="xml">
                 <search string="Search Data">
                     <field name="date_only" string="Date"/>
-                    <field name="macs"/>
+                    <field name="mac"/>
                     <group expand="0" string="Group By">
                         <filter string="Date" name="date" domain="[]" context="{'group_by': 'date'}"/>
                         <filter string="Type" name="type" domain="[]" context="{'group_by': 'type'}"/>

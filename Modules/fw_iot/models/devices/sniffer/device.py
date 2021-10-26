@@ -16,7 +16,7 @@ class FWIOT_device_sniffer(models.Model):
     _description = "Frontware IOT device: sniffer"
     _order = 'date desc'
 
-    macs = fields.Many2many('fwiot_device_mac', 'fwiot_device_sniffer_mac', 'device_id', 'mac_id', string='MACs')
+    mac = fields.Char(string="MAC")
     type = fields.Selection([('in','In'), ('out','Out')], string='Type')
 
     def insert_record(self, device, data):
@@ -34,22 +34,16 @@ class FWIOT_device_sniffer(models.Model):
         
         type = self._get_type(data)
         d = datetime.fromtimestamp(data['ts'])
-        r = self.search([('device_id','=', device.id),('date','=', d),('type','=',type)])
+        r = self.search([('device_id','=', device.id),('date','=', d),('type','=',type)],limit=1)
         if not r.id:
            mac_ids = []
            for m in data.get('macs', []):
-               mmi = self.env['fwiot_device_mac'].search([('name','=', m)])
-               if not mmi.id:
-                  mmi = self.env['fwiot_device_mac'].create({'name':m})  
-               
-               mac_ids.append(mmi.id) 
-
-           return self.create({
-               "device_id": device.id,
-               "date": d,
-               "type": type,
-               "macs": [(6, 0, mac_ids)],
-           }) 
+               return self.create({
+                     "device_id": device.id,
+                     "date": d,
+                     "type": type,
+                     "mac": m,
+               }) 
 
     def _get_type(self, data):
         if 'wifi/out' in data['topic']:
