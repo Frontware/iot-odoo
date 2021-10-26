@@ -9,7 +9,6 @@
                     <sheet>
                         <group>
                             <group>
-                                <field name="deep_sleep"  attrs="{'readonly': [('device_locked','=',True)]}" />
                                 <field name="scan_delay" attrs="{'readonly': [('device_locked','=',True)]}" />
                                 <field name="device_locked" invisible="1" />
                             </group>

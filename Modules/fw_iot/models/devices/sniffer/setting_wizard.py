@@ -13,20 +13,12 @@ class FWIOTDeviceSnifferSettingWizard(models.TransientModel):
     _description = 'Frontware IOT device: show sniffer setting'
 
     scan_delay = fields.Integer(string='Scan delay', help='time in seconds between 2 scans.')
-    deep_sleep = fields.Boolean(string='Deep sleep', help='if set to true then board goes to deep sleep mode between 2 scans. Useful when use with battery. scan_delay should be at least 5 minutes.')
     macs = fields.Text(string="Only MAC",help='list of mac addresses we want to report. If empty then we report all mac addresses.')
     exclude = fields.Text(string="Exclude MAC",help='list of mac don\'t have to report. exclude is ignored if macs is present in json.')
-
-    @api.onchange('scan_delay', 'deep_sleep')
-    def when_change_delay(self):
-        if self.deep_sleep:
-           if self.scan_delay < 300:
-              self.scan_delay = 300  
 
     def get_action_data(self):
         return {
             "scan_delay": self.scan_delay,
-            "deep_sleep": self.deep_sleep,
             "macs": (self.macs or '').split("\n"),
             "exclude": (self.exclude or '').split("\n"),
         }
@@ -45,7 +37,6 @@ class FWIOTDeviceSnifferSettingWizard(models.TransientModel):
               es += e + '\n'
         self.create({
             "scan_delay": data.get('scan_delay', 0),
-            "deep_sleep": data.get('deep_sleep', False),
             "macs": ls,
             "exclude": es,
         })        
