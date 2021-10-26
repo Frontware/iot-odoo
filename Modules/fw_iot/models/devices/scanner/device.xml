@@ -62,6 +62,7 @@
                     <group expand="0" string="Group By">
                         <filter string="Date" name="date" domain="[]" context="{'group_by': 'date'}"/>
                         <filter string="Type" name="type" domain="[]" context="{'group_by': 'type'}"/>
+                        <filter string="Device" name="device" domain="[]" context="{'group_by': 'device_id'}"/>
                     </group>
                 </search>
             </field>

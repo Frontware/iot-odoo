@@ -193,12 +193,10 @@
             <field name="arch" type="xml">
                 <search string="Device">
                     <field name="name"/>
-                    <field name="device_id"/>
                     <field name="token"/>
                     <field name="type"/>
                     <group expand="0" string="Group By">
                         <filter string="Device type" name="type" domain="[]" context="{'group_by': 'type'}"/>
-                        <filter string="Device" name="device" domain="[]" context="{'group_by': 'device_id'}"/>
                     </group>
                 </search>
             </field>
