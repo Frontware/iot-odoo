@@ -42,7 +42,7 @@ DEVICE_IMPLEMENT = [
         "code": ["SNIF"],
         "model": "fwiot_device_sniffer",
         "alert": {
-            "fields": ["macs"]
+            "fields": ["mac"]
         },
         "data": {
             "action": "fw_iot.fwiot_device_sniffer_action",

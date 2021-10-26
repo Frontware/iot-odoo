@@ -14,7 +14,7 @@
             <field name="arch" type="xml">
                 <tree string="Check" delete="0" create="0" edit="0">
                     <field name="date"/>
-                    <field name="rfid" />
+                    <field name="rfid" class="text-right"/>
                 </tree>
             </field>
         </record>
