@@ -32,18 +32,20 @@ class FWIOT_device_sniffer(models.Model):
         if not data.get('macs', False):
            return
         
+        ret = False
         type = self._get_type(data)
         d = datetime.fromtimestamp(data['ts'])
         r = self.search([('device_id','=', device.id),('date','=', d),('type','=',type)],limit=1)
         if not r.id:
            mac_ids = []
            for m in data.get('macs', []):
-               return self.create({
+               ret = self.create({
                      "device_id": device.id,
                      "date": d,
                      "type": type,
                      "mac": m,
-               }) 
+               })
+        return ret
 
     def _get_type(self, data):
         if 'wifi/out' in data['topic']:
