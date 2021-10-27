@@ -184,11 +184,11 @@ class FWIOT_device_alert(models.Model):
                      break
            # when no value
            elif not value:
-               if self.condition_type == '==':
+               # no value != any
+               if self.condition_type == '!=':
                   tosend = True
 
            elif type(value) != str:
-              print('%s %s %s' % (value, self.condition_type, self.condition_value))
               tosend = eval('%s %s %s' % (value, self.condition_type, self.condition_value))                
            else:
               tosend = eval('"%s" %s "%s"' % (value, self.condition_type, self.condition_value))   

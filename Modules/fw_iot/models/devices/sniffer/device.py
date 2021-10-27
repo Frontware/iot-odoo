@@ -63,4 +63,4 @@ class FWIOT_device_sniffer(models.Model):
             elif each.condition_fields == 'mac' and data:
                type = self._get_type(data)
                if (each.type == 'in' and type == 'in') or (each.type == 'out' and type == 'out'):
-                  each.alert_record(data.get('mac', False), 'mac')
+                  each.alert_record(data.get('macs', False), 'mac')
