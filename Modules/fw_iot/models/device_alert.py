@@ -177,6 +177,7 @@ class FWIOT_device_alert(models.Model):
         elif field == self.condition_fields:
            if value and type(value) == list:                               
               for l in value:
+                  msg = self.parse_message(str(l or ''))
                   # found at least 1
                   chke = eval('"%s" %s "%s"' % (l, self.condition_type, self.condition_value))   
                   if chke:
