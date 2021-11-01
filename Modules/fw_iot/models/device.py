@@ -310,13 +310,17 @@ class FWIOT_device(models.Model):
         return action
 
     @api.model
-    def _cron_get_data(self, type):
+    def _cron_get_data(self, type0):
         """
         get data
         """
+        ttype = type0
+        for d in DEVICE_IMPLEMENT:
+            if type0 in d['code']:
+               ttype = d['code'][0]
         records = self.search([
             ('state', '=', 'confirm'),
-            ('type.code','=', type)
+            ('type.code','=', ttype)
         ])
 
         for ids in records:

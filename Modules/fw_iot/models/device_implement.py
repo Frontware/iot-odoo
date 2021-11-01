@@ -9,7 +9,7 @@ DEVICE_IMPLEMENT = [
         }
     },
     {
-        "code": ["THERM1M"],
+        "code": ["THERM1M","THERM2M","THERM3M"],
         "model": "fwiot_device_thermometer",
         "alert": {
             "fields": ["temperature"]
