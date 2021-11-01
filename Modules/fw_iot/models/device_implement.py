@@ -79,5 +79,20 @@ DEVICE_IMPLEMENT = [
             "action": "fw_iot.fwiot_device_smoke_detector_setting_wizard_action",
             "model": "fwiot_device_smoke_detector_setting_wizard"
         }
+    },
+    {
+        "code": ["THERMIDITY"],
+        "model": "fwiot_device_thermo_humidity",
+        "alert": {
+            "fields": ["temperature","humidity"]
+        },
+        "data": {
+            "action": "fw_iot.fwiot_device_thermo_humidity_action",
+            "schedule_id": "fw_iot.ir_cron_thermo_humidity_get_data"
+        },
+        "setting": {
+            "action": "fw_iot.fwiot_device_thermo_humidity_setting_wizard_action",
+            "model": "fwiot_device_thermo_humidity_setting_wizard"
+        }
     }
 ]

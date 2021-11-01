@@ -42,11 +42,15 @@
         "models/devices/smoke_detector/device.xml",
         "models/devices/smoke_detector/setting_wizard.xml",
 
+        "models/devices/thermo_humidity/device.xml",
+        "models/devices/thermo_humidity/setting_wizard.xml",
+
         "models/devices/nfc_reader/cron.xml",
         "models/devices/scanner/cron.xml",
         "models/devices/smoke_detector/cron.xml",
         "models/devices/sniffer/cron.xml",
         "models/devices/thermometer/cron.xml",
+        "models/devices/thermo_humidity/cron.xml",
     ],
     "installable": True,
     "active": False,

@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!-- 
+    purpose : device
+    
+    remarks :
+    
+    2021-10-04 KPO created
+ -->
+<odoo>
+    <data>
+        <record id="fwiot_device_thermo_humidity_tree" model="ir.ui.view">
+            <field name="name">fwiot_device_thermo_humidity_tree</field>
+            <field name="model">fwiot_device_thermo_humidity</field>
+            <field name="arch" type="xml">
+                <tree string="Data" delete="0" create="0" edit="0">
+                    <field name="date"/>
+                    <field name="temperature"/>
+                    <field name="humidity"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="fwiot_device_thermo_humidity_edit" model="ir.ui.view">
+            <field name="name">fwiot_device_thermo_humidity_edit</field>
+            <field name="model">fwiot_device_thermo_humidity</field>
+            <field name="arch" type="xml">
+                <form string="Data" delete="0" create="0" edit="0">
+                <sheet string="Data">
+                    <group>
+                        <field name="date" readonly="1"/>
+                        <field name="temperature" readonly="1"/>
+                        <field name="humidity" readonly="1"/>
+                    </group>
+                </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="fwiot_device_thermo_humidity_filter" model="ir.ui.view">
+            <field name="name">fwiot_device_thermo_humidity_filter</field>
+            <field name="model">fwiot_device_thermo_humidity</field>
+            <field name="arch" type="xml">
+                <search string="Search Data">
+                    <field name="date_only"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Date" name="date" domain="[]" context="{'group_by': 'date'}"/>
+                        <filter string="Device" name="device" domain="[]" context="{'group_by': 'device_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="fwiot_device_thermo_humidity_action">
+            <field name="name">Temperature</field>
+            <field name="res_model">fwiot_device_thermo_humidity</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="fwiot_device_thermo_humidity_tree"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_empty_folder">
+                No data yet on this device
+              </p>
+            </field>
+        </record>
+    </data>
+</odoo>       

@@ -36,6 +36,7 @@ msgstr "ฟร้อนท์แวร์ไอโอที"
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer__device_id
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermometer__device_id
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__device_id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_humidity__device_id
 #: code:addons/fw_iot/models/device.py:0
 #, python-format
 msgid "Device"
@@ -487,6 +488,7 @@ msgstr ""
 #: code:addons/fw_iot/models/devices/smoke_detector/setting_wizard.py.py:0
 #: code:addons/fw_iot/models/devices/sniffer/setting_wizard.py.py:0
 #: code:addons/fw_iot/models/devices/thermometer/setting_wizard.py.py:0
+#: code:addons/fw_iot/models/devices/thermo_humidity/setting_wizard.py.py:0
 #, python-format
 msgid "Error while send new settings to device"
 msgstr "ไม่สามารถที่จะส่งค่าติดตั้งของอุปกรณ์"
@@ -499,6 +501,7 @@ msgstr "ไม่สามารถที่จะส่งค่าติดต
 #: code:addons/fw_iot/models/devices/smoke_detector/setting_wizard.py.py:0
 #: code:addons/fw_iot/models/devices/sniffer/setting_wizard.py.py:0
 #: code:addons/fw_iot/models/devices/thermometer/setting_wizard.py.py:0
+#: code:addons/fw_iot/models/devices/thermo_humidity/setting_wizard.py.py:0
 #, python-format
 msgid "Error while send new settings to device : %s"
 msgstr "ไม่สามารถที่จะส่งค่าติดตั้งของอุปกรณ์ : %s"
@@ -510,6 +513,7 @@ msgstr "ไม่สามารถที่จะส่งค่าติดต
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_setting_wizard_form
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_setting_wizard_form
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_setting_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_humidity_setting_wizard_form
 msgid "Update"
 msgstr "ยืนยัน"
 
@@ -520,6 +524,7 @@ msgstr "ยืนยัน"
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_setting_wizard_form
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_setting_wizard_form
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_setting_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_humidity_setting_wizard_form
 msgid "Close"
 msgstr "ปิด"
 
@@ -530,6 +535,7 @@ msgstr "ปิด"
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_setting_wizard_form
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_setting_wizard_form
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_setting_wizard_action
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_humidity_setting_wizard_form
 msgid "Settings"
 msgstr "ค่าติดตั้ง"
 
@@ -557,6 +563,9 @@ msgstr "ฟร้อนท์แวร์ไอโอที: nfc_reader"
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_status__date
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_status__date_only
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_status_filter
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_humidity__date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_humidity__date_only
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_humidity_filter
 msgid "Date"
 msgstr "วันที่"
 
@@ -579,6 +588,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_filter
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermometer_filter
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_status_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_humidity_filter
 msgid "Search Data"
 msgstr "ค้นหาข้อมูล"
 
@@ -589,6 +599,7 @@ msgstr "ค้นหาข้อมูล"
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_filter
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermometer_filter
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_status_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_humidity_filter
 msgid "Group By"
 msgstr "จัดกลุ่ม"
 
@@ -606,6 +617,7 @@ msgstr "ฟร้อนท์แวร์ไอโอที: ค่าติด�
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__delay
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector_setting_wizard__delay
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_setting_wizard__delay
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_humidity_setting_wizard__delay
 msgid "Delay (sec)"
 msgstr "ถ่วงเวลา (วินาที)"
 
@@ -804,6 +816,7 @@ msgstr "จำนวนวินาทีระหว่างรอ mqtt ping, 
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector_setting_wizard__deep_sleep
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer_setting_wizard__deep_sleep
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_setting_wizard__deep_sleep
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_humidity_setting_wizard__deep_sleep
 msgid "Deep sleep"
 msgstr "โหมดหลับลึก"
 
@@ -857,6 +870,7 @@ msgstr "ฟร้อนท์แวร์ไอโอที: thermometer"
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermometer_tree
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermometer_edit
 #: model_terms:ir.actions.act_window,help:fw_iot.fwiot_device_thermometer_action
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_humidity__temperature
 msgid "Temperature"
 msgstr "อุณหภูมิ"
 
@@ -872,11 +886,13 @@ msgstr "ฟร้อนท์แวร์ไอโอที: ค่าติด�
 
 #. module: fw_iot
 #: model:ir.model.fields,help:fw_iot.field_fwiot_device_thermo_setting_wizard__delay
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_thermo_humidity_setting_wizard__delay
 msgid "number of seconds between 2 temperatures scan"
 msgstr "จำนวนวินาทีระหว่างการสแกนอุณหภูมิ 2 ครั้ง"
 
 #. module: fw_iot
 #: model:ir.model.fields,help:fw_iot.field_fwiot_device_thermo_setting_wizard__deep_sleep
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_thermo_humidity_setting_wizard__delay
 msgid "if set to true then the board is set to deep sleep mode between 2 scans. Useful when use witn battery. Delay should be at least 5 minutes long."
 msgstr "หากตั้งค่าไว้ บอร์ดจะเข้าสู่โหมดหลับลึกระหว่างการสแกน 2 ครั้ง มีประโยชน์เมื่อใช้กับแบตเตอรี่ ค่าถ่วงเวลาควรมีค่าอย่างน้อย 5 นาที"
 
@@ -918,6 +934,7 @@ msgstr "ข้อมูลสุดท้ายเมื่อ"
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_setting_wizard_form
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_setting_wizard_form
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_setting_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_humidity_setting_wizard_form
 msgid ""
 "<div class=\"text-danger\" attrs=\"{'invisible': [('device_locked','=',False)]}\">\n"
 "                        This device is locked\n"
@@ -1332,3 +1349,23 @@ msgid ""
 "If you schedule refresh data every %s, you shouldn't set alert for offline "
 "every %s minutes"
 msgstr "หากคุณกำหนดเวลารีเฟรชข้อมูลทุกๆ %s คุณไม่ควรตั้งค่าการแจ้งเตือนสำหรับออฟไลน์ทุกๆ %s นาที"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_humidity__humidity
+msgid "Humidity"
+msgstr "ความชื้น"
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_thermo_humidity
+msgid "Frontware IOT device: thermometer humidity"
+msgstr "ฟร้อนท์แวร์ไอโอที: ตัววัดอุณหภูมิ, ความชื้น "
+
+#. module: fw_iot
+#: model_terms:ir.actions.act_window,help:fw_iot.fwiot_device_thermo_humidity_action
+msgid "No data yet on this device"
+msgstr "ไม่พบข้อมูลของอุปกรณ์นี้"
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_thermo_humidity_setting_wizard
+msgid "Frontware IOT device: show thermometer humidity setting"
+msgstr "ฟร้อนท์แวร์ไอโอที: ค่าติดตั้งของอุปกรณ์ อุณหภูมิ ความชื้น"
