@@ -11,7 +11,7 @@ Module Odoo to get FW IoT Data
 
 Manage and connect to FW IoT devices:
 
-- Thermometers
+- [Thermometers](https://graph.org/Odoo-Thailand-in-the-Cloud--solution-for-SMEs-10-06)
 - Bluetooth & Wifi scanner
 - [NFC scanner](https://www.weladee.com/iot_nfc_reader_gate_station)
 - [Bluetooth beacons](https://www.weladee.com/smart_iot_beacon)
