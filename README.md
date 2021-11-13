@@ -21,7 +21,7 @@ This module allows you to manage your FW IoT devices in Odoo, you can configure 
 The notifications can be triggerd to Telegram, Line & Email.
 
 
-
+[![](https://telegra.ph/file/38f99b6f640cee460b102.png)](https://graph.org/IoT-temperature-control-with-Odoo-11-13)
 
 
 ## Getting started
