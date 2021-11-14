@@ -101,7 +101,6 @@ class FWIOT_device(models.Model):
             "csv_url": j.get('csv_url', False),
             "json_url": j.get('json_url', False),
             "status": j.get('status', False),
-            "status": j.get('status', False),
             "firmware_version": j.get('version', False),
             "last_online": jt,
         })
