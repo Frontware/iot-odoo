@@ -11,7 +11,7 @@ Module Odoo to get FW IoT Data
 
 Manage and connect to FW IoT devices:
 
-- Thermometers
+- [Thermometers](https://graph.org/IoT-temperature-control-with-Odoo-11-13)
 - Bluetooth & Wifi scanner
 - [NFC scanner](https://www.weladee.com/iot_nfc_reader_gate_station)
 - [Bluetooth beacons](https://www.weladee.com/smart_iot_beacon)
@@ -21,7 +21,7 @@ This module allows you to manage your FW IoT devices in Odoo, you can configure 
 The notifications can be triggerd to Telegram, Line & Email.
 
 
-
+[![](https://telegra.ph/file/38f99b6f640cee460b102.png)](https://graph.org/IoT-temperature-control-with-Odoo-11-13)
 
 
 ## Getting started
