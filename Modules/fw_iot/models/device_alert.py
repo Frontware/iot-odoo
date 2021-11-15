@@ -129,6 +129,8 @@ class FWIOT_device_alert(models.Model):
         odoobot = self.env.ref('base.partner_root')        
         self.message_post(body=msg, 
                           partner_ids=partners,author_id=odoobot.id)
+        
+        self._message_log(body=_('send notification to odoo: %s') % msg)
 
     def send_to_tg(self, recipients, msg):
         """
@@ -154,6 +156,7 @@ class FWIOT_device_alert(models.Model):
                err = j_rp.get('description', _('unexpected error'))
                return err
         
+            self._message_log(body=_('send notification to telegram: %s') % msg)                          
         return err               
 
     def get_tg_bot_token(self):
@@ -236,6 +239,7 @@ class FWIOT_device_alert(models.Model):
                err = j_rp.get('message', _('unexpected error'))
                return err
         
+            self._message_log(body=_('send notification to LINE: %s') % msg)
         return err               
 
     @api.onchange('condition_last_min','condition_fields')    

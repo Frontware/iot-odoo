@@ -34,6 +34,8 @@ class FWIOT_device_thermo_humidity(models.Model):
         d = datetime.fromtimestamp(data['ts'])
         if not data.get('temp', False):
            return
+        if not data.get('hum', False):
+           return
         
         r = self.search([('device_id','=', device.id),('date','=', d)])
         if not r.id:

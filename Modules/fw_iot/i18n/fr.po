@@ -12,1232 +12,28 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: fr\n"
+"Language: th\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. module: fw_iot
-#: model:ir.ui.menu,name:fw_iot.menu_main_fwiot
-msgid "Frontware IoT"
-msgstr "Frontware IoT"
-
-#. module: fw_iot
-#: model:ir.ui.menu,name:fw_iot.menu_fwiot_device
-#: model:ir.actions.act_window,name:fw_iot.open_view_device
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_tree
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_filter
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_tree
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_edit
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_tree
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_edit
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader__device_id
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__device_id
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector__device_id
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer__device_id
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermometer__device_id
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__device_id
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_humidity__device_id
-#: code:addons/fw_iot/models/device.py:0
-#, python-format
-msgid "Device"
-msgstr "Objet"
-
-#. module: fw_iot
-#: model:ir.ui.menu,name:fw_iot.menu_fwiot_device_type
-#: model:ir.actions.act_window,name:fw_iot.open_view_device_type
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__type
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_filter
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_type_tree
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_type_edit
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_type_filter
-#: model:ir.actions.act_window,name:fw_iot.fwiot_device_scanner_action
-msgid "Device type"
-msgstr "Type d'objet"
-
-#. module: fw_iot
-#: model_terms:ir.actions.act_window,help:fw_iot.open_view_device
-msgid "Import device by connect to fwiot"
-msgstr "Importe les objet dans Odoo"
-
-#. module: fw_iot
-#: model_terms:ir.actions.act_window,help:fw_iot.open_view_device
-msgid "Define API key in configuration and sync all data."
-msgstr "Encodez la clé API dans la config et synchronizer toutes les données"
-
-#. module: fw_iot
-#: model_terms:ir.actions.act_window,help:fw_iot.open_view_device_type
-msgid "Import device type by connect to fwiot"
-msgstr "Importer les types d'objet via la connexion à Frontware IoT"
-
-#. module: fw_iot
-#: model_terms:ir.actions.act_window,help:fw_iot.open_view_device_type
-msgid "Define api key in configuration and sync all data."
-msgstr "Encoder la clé API afin de synchronizer l'objet connecté"
-
-#. module: fw_iot
-#: model:ir.model,name:fw_iot.model_fwiot_device_type
-msgid "Frontware IOT device type"
-msgstr "type d'objet connecté Frontware IoT"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_type__name
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__name
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__name
-msgid "Name"
-msgstr "Nom"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_type__code
-msgid "Code"
-msgstr "Code"
-
-#. module: fw_iot
-#: model:ir.model,name:fw_iot.model_fwiot_device
-msgid "Frontware IOT device"
-msgstr "Frontware IoT objet"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__active
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__active
-msgid "Active"
-msgstr "Actif"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__guid
-msgid "API Key"
-msgstr ""
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__unlock_code
-msgid "Unlock code"
-msgstr "Code de dévérouillage"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__note
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
-msgid "Note"
-msgstr "Note"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__state
-msgid "State"
-msgstr "Etat"
-
-#. module: fw_iot
-#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device__state__draft
-msgid "Draft"
-msgstr "ฉบับร่าง"
-
-#. module: fw_iot
-#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device__state__confirm
-msgid "Confirm"
-msgstr "Confirmation"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__token
-msgid "Token"
-msgstr "Token"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__serial
-msgid "Serial"
-msgstr "Num de série"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__status
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__status
-msgid "Status"
-msgstr "Statut"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__last_fetch
-msgid "Last updated"
-msgstr "Dernière mise à jour"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__locked
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
-msgid "Lock"
-msgstr "Vérouiller"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__is_implement
-msgid "is implement"
-msgstr "est implémenté"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__has_action
-msgid "has action"
-msgstr "a une action"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__has_data
-msgid "has data"
-msgstr "a des données"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__has_setting
-msgid "has setting"
-msgstr "à des paramètres"
-
-#. module: fw_iot
-#: code:addons/fw_iot/models/device.py:0
-#, python-format
-msgid "You must enter API Key"
-msgstr "Veuillez encoder la clé API"
-
-#. module: fw_iot
-#: code:addons/fw_iot/models/device.py:0
-#, python-format
-msgid "Error while try to check this device status"
-msgstr "Erreur lors de la vérification du statut de l'objet connecté"
-
-#. module: fw_iot
-#: model:ir.actions.act_window,name:fw_iot.fwiot_device_create_wizard_action
-#: model:ir.actions.act_window,name:fw_iot.fwiot_device_lock_wizard_action
-#: code:addons/fw_iot/models/device.py:0
-#, python-format
-msgid "Device status"
-msgstr "Statut de l'objet"
-
-#. module: fw_iot
-#: code:addons/fw_iot/models/device.py:0
-#, python-format
-msgid "Error while try to get this device data"
-msgstr "Erreur durant le chargement des données"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
-msgid "Confirm"
-msgstr "Confirmation"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
-msgid "Fetch data"
-msgstr "Chargement des données"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
-msgid "<span class=\"o_stat_text\">Schedule</span>"
-msgstr "<span class=\"o_stat_text\">Planning</span>"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
-msgid "<span class=\"o_stat_text\">Setting</span>"
-msgstr "<span class=\"o_stat_text\">Paramètres</span>"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
-msgid "<span class=\"o_stat_text\">Unlock</span>"
-msgstr "<span class=\"o_stat_text\">Dévérouillage</span>"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
-msgid "<span class=\"o_stat_text\">Lock</span>"
-msgstr "<span class=\"o_stat_text\">Vérouillage</span>"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
-msgid "<span class=\"o_stat_text\">Data</span>"
-msgstr "<span class=\"o_stat_text\">Données</span>"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
-msgid "<span class=\"o_stat_text\">No implement</span>"
-msgstr "<span class=\"o_stat_text\">Non implémenté</span>"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
-msgid "Offline"
-msgstr "Hors ligne"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
-msgid "Online"
-msgstr "En ligne"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
-msgid "Device Name"
-msgstr "Nom de l'objet"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
-msgid "Device token"
-msgstr "Token de l'objet"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
-msgid "Infomation"
-msgstr "Infomation"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
-msgid "Authentication"
-msgstr ""
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
-msgid "Note..."
-msgstr "Note..."
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_type_edit
-msgid "Device code"
-msgstr "Code de l'objet"
-
-#. module: fw_iot
-#: model:ir.model,name:fw_iot.model_fwiot_device_mac
-msgid "Frontware IOT device mac address"
-msgstr "Addresse mac de l'objet connecté"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_mac__name
-msgid "MAC"
-msgstr ""
-
-#. module: fw_iot
-#: model:ir.model,name:fw_iot.model_fwiot_device_create_wizard
-msgid "Frontware IOT: show device status from iot"
-msgstr "Frontware IoT: statut d el'objet connecté"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__type
-msgid "Type"
-msgstr "Type"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__type_code
-msgid "Type Code"
-msgstr "Code Type"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__serial
-msgid "Serial"
-msgstr "Série"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__active
-msgid "Active"
-msgstr "Actif"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__locked
-msgid "Locked"
-msgstr "Vérouillé"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__token
-msgid "Token"
-msgstr ""
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__settings
-msgid "JSON settings"
-msgstr "Paramétrage JSON"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__web_hook_url
-msgid "Web Hook URL"
-msgstr ""
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__web_hook_header
-msgid "Web Hook header"
-msgstr ""
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__csv_url
-msgid "CSV URL"
-msgstr ""
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__json_url
-msgid "JSON URL"
-msgstr ""
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_create_wizard_form
-msgid "Info"
-msgstr "Info"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_create_wizard_form
-msgid "Status"
-msgstr "Status"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_create_wizard_form
-msgid "Settings"
-msgstr "Paramètres"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_create_wizard_form
-msgid "Webhook"
-msgstr ""
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_create_wizard_form
-msgid "Data"
-msgstr "Données"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_create_wizard_form
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_lock_wizard_form
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_cron_wizard_form
-msgid "Confirm"
-msgstr "Confirmation"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_create_wizard_form
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_lock_wizard_form
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_cron_wizard_form
-msgid "Cancel"
-msgstr "Annuler"
-
-#. module: fw_iot
-#: model:ir.model,name:fw_iot.model_fwiot_device_lock_wizard
-msgid "Frontware IOT: confirm lock / unlock device"
-msgstr "Frontware IOT: confirmez vérouillage / dévérouillage"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_fwiot_device_lock_wizard__lock
-msgid "Lock"
-msgstr "Vérouillage"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_fwiot_device_lock_wizard__code
-msgid "Code"
-msgstr ""
-
-#. module: fw_iot
-#: code:addons/fw_iot/models/device.py:0
-#, python-format
-msgid "unlock"
-msgstr "dévérouillage"
-
-#. module: fw_iot
-#: code:addons/fw_iot/models/device.py:0
-#, python-format
-msgid "lock"
-msgstr "vérouillage"
-
-#. module: fw_iot
-#: code:addons/fw_iot/models/device.py:0
-#, python-format
-msgid "Error while try to %s this device"
-msgstr "Erreur survenue surant %s pour cet objet connecté"
-
-#. module: fw_iot
-#: code:addons/fw_iot/models/device.py:0
-#, python-format
-msgid "Error while try to %s this device: %s"
-msgstr ""
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_lock_wizard_form
-msgid "Do you want to lock this device?"
-msgstr "VOulez vous vérouiller cet objet connecté?"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_lock_wizard_form
-msgid "Do you want to unlock this device?"
-msgstr "Voulez vous dévérouiller cet objet connecté?"
-
-#. module: fw_iot
-#: model:ir.model,name:fw_iot.model_fwiot_device_beacon_setting_wizard
-msgid "Frontware IOT: show beacon setting"
-msgstr "Frontware IOT: montrer les paramètres du beacon"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_beacon_setting_wizard__uuid
-msgid "UUID"
-msgstr ""
-
-#. module: fw_iot
-#: model:ir.model.fields,help:fw_iot.field_fwiot_device_beacon_setting_wizard__uuid
-msgid "Proximity ID for iBeacon"
-msgstr "Proximity ID de l'iBeacon"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_beacon_setting_wizard__major
-msgid "major"
-msgstr ""
-
-#. module: fw_iot
-#: model:ir.model.fields,help:fw_iot.field_fwiot_device_beacon_setting_wizard__major
-msgid "major (0 to 65535) for beacon"
-msgstr "major (0 à 65535) pour le beacon"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_beacon_setting_wizard__minor
-msgid "minor"
-msgstr ""
-
-#. module: fw_iot
-#: model:ir.model.fields,help:fw_iot.field_fwiot_device_beacon_setting_wizard__minor
-msgid "minor (0 to 65535) for beacon"
-msgstr ""
-
-#. module: fw_iot
-#: code:addons/fw_iot/models/device.py:0
-#: code:addons/fw_iot/models/devices/beacon/setting_wizard.py.py:0
-#: code:addons/fw_iot/models/devices/nfc_reader/setting_wizard.py.py:0
-#: code:addons/fw_iot/models/devices/scanner/setting_wizard.py.py:0
-#: code:addons/fw_iot/models/devices/smoke_detector/setting_wizard.py.py:0
-#: code:addons/fw_iot/models/devices/sniffer/setting_wizard.py.py:0
-#: code:addons/fw_iot/models/devices/thermometer/setting_wizard.py.py:0
-#: code:addons/fw_iot/models/devices/thermo_humidity/setting_wizard.py.py:0
-#, python-format
-msgid "Error while send new settings to device"
-msgstr "Erreur lors de la mise à jour des paramètres à l'objet connecté"
-
-#. module: fw_iot
-#: code:addons/fw_iot/models/device.py:0
-#: code:addons/fw_iot/models/devices/beacon/setting_wizard.py.py:0
-#: code:addons/fw_iot/models/devices/nfc_reader/setting_wizard.py.py:0
-#: code:addons/fw_iot/models/devices/scanner/setting_wizard.py.py:0
-#: code:addons/fw_iot/models/devices/smoke_detector/setting_wizard.py.py:0
-#: code:addons/fw_iot/models/devices/sniffer/setting_wizard.py.py:0
-#: code:addons/fw_iot/models/devices/thermometer/setting_wizard.py.py:0
-#: code:addons/fw_iot/models/devices/thermo_humidity/setting_wizard.py.py:0
-#, python-format
-msgid "Error while send new settings to device : %s"
-msgstr "Erreur lors de l'envoi des paramètres à l'objet connecté: %s"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_beacon_setting_wizard_form
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_setting_wizard_form
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_setting_wizard_form
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_setting_wizard_form
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_setting_wizard_form
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_setting_wizard_form
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_humidity_setting_wizard_form
-msgid "Update"
-msgstr "Mise-à-jour"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_beacon_setting_wizard_form
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_setting_wizard_form
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_setting_wizard_form
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_setting_wizard_form
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_setting_wizard_form
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_setting_wizard_form
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_humidity_setting_wizard_form
-msgid "Close"
-msgstr "Fermer"
-
-#. module: fw_iot
-#: model:ir.actions.act_window,name:fw_iot.fwiot_device_beacon_setting_wizard_action
-#: model:ir.actions.act_window,name:fw_iot.fwiot_device_nfc_reader_setting_wizard_action
-#: model:ir.actions.act_window,name:fw_iot.fwiot_device_scanner_setting_wizard_action
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_setting_wizard_form
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_setting_wizard_form
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_setting_wizard_action
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_humidity_setting_wizard_form
-msgid "Settings"
-msgstr "Paramètres"
-
-#. module: fw_iot
-#: model:ir.model,name:fw_iot.model_fwiot_device_nfc_reader
-msgid "Frontware IOT device: nfc_reader"
-msgstr "Objet connecté: nfc_reader"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader__date
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader__date_only
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_filter
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__date
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__date_only
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_filter
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector__date
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector__date_only
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_filter
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer__date
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer__date_only
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_filter
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermometer__date
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermometer__date_only
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermometer_filter
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_status__date
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_status__date_only
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_status_filter
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_humidity__date
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_humidity__date_only
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_humidity_filter
-msgid "Date"
-msgstr "Date"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader__rfid
-msgid "RFID"
-msgstr ""
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_tree
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_edit
-#: model:ir.actions.act_window,name:fw_iot.fwiot_device_nfc_reader_action
-msgid "Check"
-msgstr ""
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_filter
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_filter
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_filter
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_filter
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermometer_filter
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_status_filter
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_humidity_filter
-msgid "Search Data"
-msgstr "Recherher les données"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_filter
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_filter
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_filter
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_filter
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermometer_filter
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_status_filter
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_humidity_filter
-msgid "Group By"
-msgstr "Groupé par"
-
-#. module: fw_iot
-#: model_terms:ir.actions.act_window,help:fw_iot.fwiot_device_nfc_reader_filter
-msgid "No check's data yet on this device"
-msgstr "Aucune donnée disponibles pour cet objet connecté"
-
-#. module: fw_iot
-#: model:ir.model,name:fw_iot.model_fwiot_device_nfc_reader_setting_wizard
-msgid "Frontware IOT: show nfc reader setting"
-msgstr "Frontware IOT: montrer les paramètres du lecteur NFC"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__delay
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector_setting_wizard__delay
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_setting_wizard__delay
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_humidity_setting_wizard__delay
-msgid "Delay (sec)"
-msgstr "Délais (sec)"
-
-#. module: fw_iot
-#: model:ir.model.fields,help:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__delay
-msgid "minimum time between 2 scans of same tag. Default is 3 seconds. There is no delay between scans of 2 different tags."
-msgstr "Tempps minimum dentre 2 scan du même tag: 3 secondes par défaut. Pas de délais minimum entre des tags différents."
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__beep
-msgid "Play beep"
-msgstr "Beep"
-
-#. module: fw_iot
-#: model:ir.model.fields,help:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__beep
-msgid "play a beep when a RFID tag is read."
-msgstr "Beep lorsque qu'un tag est scanné"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__led
-msgid "Switch LED on"
-msgstr "LED allumé"
-
-#. module: fw_iot
-#: model:ir.model.fields,help:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__led
-msgid "switch LED on when RFID is read."
-msgstr "เปิดไฟ LED เมื่ออ่าน RFID"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__rfids
-msgid "RFID list"
-msgstr "Liste RFID"
-
-#. module: fw_iot
-#: model:ir.model.fields,help:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__rfids
-msgid "if exists then it will send MQTT or Beep or Led only if scan an ID that is in the list. (max 100)"
-msgstr "หากมีอยู่แล้วจะส่ง MQTT หรือ ส่งเสียงบี๊บ หรือ เปิดไฟ Led เฉพาะเมื่อสแกน ID ที่อยู่ในรายการ (สูงสุด 100)"
-
-#. module: fw_iot
-#: code:addons/fw_iot/models/devices/nfc_reader/setting_wizard.py.py:0
-#, python-format
-msgid "Maximum of RIFDs list is 100, current list number is %s"
-msgstr "จำนวน RIFD สูงสุดคือ 100 จำนวนปัจจุบันคือ"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_setting_wizard_form
-msgid "Only these RFIDs"
-msgstr "Uniquement ces RFID/NFC"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_setting_wizard_form
-msgid "<span>* Separate each RFID by enter</span>"
-msgstr "<span>* แยกแต่ละ RFID โดย enter</span>"
-
-#. module: fw_iot
-#: model:ir.model,name:fw_iot.model_fwiot_device_scanner
-msgid "Frontware IOT device: scanner"
-msgstr "ฟร้อนท์แวร์ไอโอที: scanner"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__mac
-msgid "MAC"
-msgstr ""
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__ssid
-msgid "SSID"
-msgstr ""
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__tx_power
-msgid "txPower"
-msgstr ""
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__rssi
-msgid "rssi"
-msgstr ""
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__bluetooth
-msgid "is bluetooth"
-msgstr "est bluetooth"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_edit
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_filter
-msgid "WiFi"
-msgstr ""
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_edit
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_filter
-msgid "Bluetooth"
-msgstr ""
-
-#. module: fw_iot
-#: model_terms:ir.actions.act_window,help:fw_iot.fwiot_device_scanner_action
-#: model_terms:ir.actions.act_window,help:fw_iot.fwiot_device_sniffer_action
-msgid "No data yet on this device"
-msgstr ""
-
-#. module: fw_iot
-#: model:ir.model,name:fw_iot.model_fwiot_device_scanner_setting_wizard
-msgid "Frontware IOT device: show scanner setting"
-msgstr "ฟร้อนท์แวร์ไอโอที: ค่าติดตั้งของอุปกรณ์ scanner"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner_setting_wizard__scan_wifi
-msgid "Scan wifi"
-msgstr "Scan wifi"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner_setting_wizard__scan_bluetooth
-msgid "Scan bluetooth"
-msgstr "Scan bluetooth"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner_setting_wizard__scan_delay
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer_setting_wizard__scan_delay
-msgid "Scan delay"
-msgstr "Délais entre 2 scans"
-
-#. module: fw_iot
-#: model:ir.model.fields,help:fw_iot.field_fwiot_device_scanner_setting_wizard__scan_delay
-msgid "number of seconds between 2 scans. Ignored if scan_wifi and scan_bluetooth are false. Set to 120 seconds for any value < 30"
-msgstr "จำนวนวินาทีระหว่างการสแกน 2 ครั้ง ไม่ใช้ค่านี้หาก scan_wifi และ scan_bluetooth ไม่ได้เลือก ตั้งค่าเป็น 120 วินาทีถ้าค่า < 30"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner_setting_wizard__macs
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer_setting_wizard__macs
-msgid "Only MAC"
-msgstr "เฉพาะ MAC นี้"
-
-#. module: fw_iot
-#: model:ir.model.fields,help:fw_iot.field_fwiot_device_scanner_setting_wizard__macs
-msgid "list of mac addresses we want to report. If empty then we report all mac addresses."
-msgstr "รายการที่อยู่ mac ที่เราต้องการรายงาน หากว่างเปล่า เราจะรายงานที่อยู่ Mac ทั้งหมด"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner_setting_wizard__exclude
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer_setting_wizard__exclude
-msgid "Exclude MAC"
-msgstr "Exclure ces addresses MAC"
-
-#. module: fw_iot
-#: model:ir.model.fields,help:fw_iot.field_fwiot_device_scanner_setting_wizard__exclude
-msgid "list of mac don\'t have to report. exclude is ignored if macs is present in json."
-msgstr "รายการ mac ไม่ต้องรายงาน ไม่รวมจะถูกละเว้นหากมี macs อยู่ใน json"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_setting_wizard_form
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_setting_wizard_form
-msgid "Only these MACS"
-msgstr "Uniquement ces adresses MAC"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_setting_wizard_form
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_setting_wizard_form
-msgid "Exclude these MACS"
-msgstr "ไม่รวม MAC นี้"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_setting_wizard_form
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_setting_wizard_form
-msgid "<span>* Separate each MAC by enter</span>"
-msgstr "<span>* แยกแต่ละ MAC โดย enter</span>"
-
-#. module: fw_iot
-#: model:ir.model,name:fw_iot.model_fwiot_device_smoke_detector
-msgid "Frontware IOT device: smoke detector"
-msgstr "ฟร้อนท์แวร์ไอโอที: smoke detector"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_tree
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_edit
-msgid "Smoke detector"
-msgstr "Détecteur de fumée"
-
-#. module: fw_iot
-#: model_terms:ir.actions.act_window,help:fw_iot.fwiot_device_smoke_detector_action
-msgid "No any data on this device"
-msgstr "ไม่มีข้อมูลใด ๆ บนอุปกรณ์นี้"
-
-#. module: fw_iot
-#: model:ir.model,name:fw_iot.model_fwiot_device_smoke_detector_setting_wizard
-msgid "Frontware IOT device: show smoke_detector setting"
-msgstr "ฟร้อนท์แวร์ไอโอที: ค่าติดตั้งของอุปกรณ์ smoke_detector"
-
-#. module: fw_iot
-#: model:ir.model.fields,help:fw_iot.field_fwiot_device_smoke_detector_setting_wizard__delay
-msgid "the number of seconds between 2 stay alive mqtt ping, minimum = 15 secs"
-msgstr "จำนวนวินาทีระหว่างรอ mqtt ping, ขั้นต่ำ = 15 วินาที"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector_setting_wizard__deep_sleep
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer_setting_wizard__deep_sleep
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_setting_wizard__deep_sleep
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_humidity_setting_wizard__deep_sleep
-msgid "Deep sleep"
-msgstr "โหมดหลับลึก"
-
-#. module: fw_iot
-#: model:ir.model.fields,help:fw_iot.field_fwiot_device_smoke_detector_setting_wizard__deep_sleep
-msgid "if set to true then the board is set to deep sleep mode. if set to false then device is OFF until smoke is detected."
-msgstr "หากตั้งค่าเป็น true แสดงว่าบอร์ดถูกตั้งค่าเป็นโหมดหลับลึก หากตั้งค่าเป็นเท็จ อุปกรณ์จะปิดจนกว่าจะตรวจพบควัน"
-
-#. module: fw_iot
-#: model:ir.model,name:fw_iot.model_fwiot_device_sniffer
-msgid "Frontware IOT device: sniffer"
-msgstr "ฟร้อนท์แวร์ไอโอที: sniffer"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_model_fwiot_device_sniffer__macs
-msgid "MACs"
-msgstr ""
-
-#. module: fw_iot
-#: model:ir.model,name:fw_iot.model_fwiot_device_sniffer_setting_wizard
-msgid "Frontware IOT device: show sniffer setting"
-msgstr "Frontware IOT: paramètre du sniffer"
-
-#. module: fw_iot
-#: model:ir.model.fields,help:fw_iot.field_fwiot_device_sniffer_setting_wizard__scan_delay
-msgid "time in seconds between 2 scans."
-msgstr "เวลาเป็นวินาทีระหว่างการสแกน 2 ครั้ง"
-
-#. module: fw_iot
-#: model:ir.model.fields,help:fw_iot.field_fwiot_device_sniffer_setting_wizard__deep_sleep
-msgid "if set to true then board goes to deep sleep mode between 2 scans. Useful when use with battery. scan_delay should be at least 5 minutes."
-msgstr "หากตั้งค่าเป็น true บอร์ดจะเข้าสู่โหมดหลับลึกระหว่างการสแกน 2 ครั้ง มีประโยชน์เมื่อใช้กับแบตเตอรี่ scan_delay ควรมีอย่างน้อย 5 นาที"
-
-#. module: fw_iot
-#: model:ir.model.fields,help:fw_iot.field_fwiot_device_sniffer_setting_wizard__macs
-msgid "list of mac addresses we want to report. If empty then we report all mac addresses."
-msgstr "รายการที่อยู่ mac ที่เราต้องการรายงาน หากว่างเปล่า เราจะรายงานที่อยู่ Mac ทั้งหมด"
-
-#. module: fw_iot
-#: model:ir.model.fields,help:fw_iot.field_fwiot_device_sniffer_setting_wizard__exclude
-msgid "list of mac addresses we want to report. If empty then we report all mac addresses."
-msgstr "รายการ mac ไม่ต้องรายงาน ไม่รวมจะถูกละเว้นหากมี macs อยู่ใน json"
-
-#. module: fw_iot
-#: model:ir.model,name:fw_iot.model_fwiot_device_thermometer
-msgid "Frontware IOT device: thermometer"
-msgstr "ฟร้อนท์แวร์ไอโอที: thermometer"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermometer__temperature
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermometer_tree
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermometer_edit
-#: model_terms:ir.actions.act_window,help:fw_iot.fwiot_device_thermometer_action
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_humidity__temperature
-msgid "Temperature"
-msgstr "Température"
-
-#. module: fw_iot
-#: model_terms:ir.actions.act_window,help:fw_iot.fwiot_device_thermometer_action
-msgid "No temperature's data yet on this device"
-msgstr "Aucune donnée de temperature disponible pour cet objet connecté"
-
-#. module: fw_iot
-#: model:ir.model,name:fw_iot.model_fwiot_device_thermo_setting_wizard
-msgid "Frontware IOT device: show thermometer setting"
-msgstr "ฟร้อนท์แวร์ไอโอที: ค่าติดตั้งของอุปกรณ์ thermometer"
-
-#. module: fw_iot
-#: model:ir.model.fields,help:fw_iot.field_fwiot_device_thermo_setting_wizard__delay
-#: model:ir.model.fields,help:fw_iot.field_fwiot_device_thermo_humidity_setting_wizard__delay
-msgid "number of seconds between 2 temperatures scan"
-msgstr "จำนวนวินาทีระหว่างการสแกนอุณหภูมิ 2 ครั้ง"
-
-#. module: fw_iot
-#: model:ir.model.fields,help:fw_iot.field_fwiot_device_thermo_setting_wizard__deep_sleep
-#: model:ir.model.fields,help:fw_iot.field_fwiot_device_thermo_humidity_setting_wizard__delay
-msgid "if set to true then the board is set to deep sleep mode between 2 scans. Useful when use witn battery. Delay should be at least 5 minutes long."
-msgstr "หากตั้งค่าไว้ บอร์ดจะเข้าสู่โหมดหลับลึกระหว่างการสแกน 2 ครั้ง มีประโยชน์เมื่อใช้กับแบตเตอรี่ ค่าถ่วงเวลาควรมีค่าอย่างน้อย 5 นาที"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_setting_wizard__resolution
-msgid "Resolution"
-msgstr "Résolution"
-
-#. module: fw_iot
 #: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_thermo_setting_wizard__resolution__9
-msgid "9"
-msgstr "1 ทศนิยม"
+msgid "1 digit precision"
+msgstr ""
 
 #. module: fw_iot
 #: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_thermo_setting_wizard__resolution__10
-msgid "10"
-msgstr "2 ทศนิยม"
+msgid "2 digit precision"
+msgstr ""
 
 #. module: fw_iot
 #: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_thermo_setting_wizard__resolution__11
-msgid "11"
-msgstr "3 ทศนิยม"
+msgid "3 digit precision"
+msgstr ""
 
 #. module: fw_iot
 #: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_thermo_setting_wizard__resolution__12
-msgid "12"
-msgstr "4 ทศนิยม"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__last_online
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__last_online
-msgid "Last online"
-msgstr "ข้อมูลสุดท้ายเมื่อ"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_beacon_setting_wizard_form
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_setting_wizard_form
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_setting_wizard_form
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_setting_wizard_form
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_setting_wizard_form
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_setting_wizard_form
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_humidity_setting_wizard_form
-msgid ""
-"<div class=\"text-danger\" attrs=\"{'invisible': [('device_locked','=',False)]}\">\n"
-"                        This device is locked\n"
-"                        </div>"
+msgid "4 digit precision"
 msgstr ""
-"<div class=\"text-danger\" attrs=\"{'invisible': [('device_locked','=',False)]}\">\n"
-"                        อุปกรณ์นี้ล๊อค\n"
-"                        </div>"
-
-#. module: fw_iot
-#: model:ir.model,name:fw_iot.model_fwiot_device_cron_wizard
-msgid "Frontware IOT: device\'s schedule setting"
-msgstr "ฟร้อนท์แวร์ไอโอที: แสดงงานอัตโนมัติของอุปกรณ์"
-
-#. module: fw_iot
-#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_cron_wizard__interval_type__days
-msgid "Days"
-msgstr "Jours"
-
-#. module: fw_iot
-#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_cron_wizard__interval_type__hours
-msgid "Hours"
-msgstr "heures"
-
-#. module: fw_iot
-#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_cron_wizard__interval_type__minutes
-msgid "Minutes"
-msgstr "Minutes"
-
-#. module: fw_iot
-#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_cron_wizard__interval_type__months
-msgid "Months"
-msgstr "Mois"
-
-#. module: fw_iot
-#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_cron_wizard__interval_type__weeks
-msgid "Weeks"
-msgstr "Semaines"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_cron_wizard__interval_number
-msgid "Interval Number"
-msgstr "ช่วงเวลา"
-
-#. module: fw_iot
-#: model:ir.model.fields,help:fw_iot.field_fwiot_device_cron_wizard__interval_number
-msgid "Repeat every x."
-msgstr "Répéter x fois"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_cron_wizard__interval_type
-msgid "Interval Unit"
-msgstr "หน่วยของช่วงเวลา"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_cron_wizard__interval_active
-msgid "Active"
-msgstr "Actif"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_cron_wizard__schedule_id
-msgid "งานอัตโนมัติ"
-msgstr "เปิดใช้งาน"
-
-#. module: fw_iot
-#: model:ir.actions.act_window,name:fw_iot.fwiot_device_cron_wizard_action
-msgid "Device's Schedule"
-msgstr "งานอัตโนมัติของอุปกรณ์"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_cron_wizard_form
-msgid "Execute Every"
-msgstr "ทำซ้ำทุกๆ"
-
-#. module: fw_iot
-#: model:ir.model,name:fw_iot.model_fwiot_device_alert
-msgid "Frontware IOT: device\'s alert trigger"
-msgstr "ฟร้อนท์แวร์ไอโอที: การแจ้งเตือนของอุปกรณ์"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__condition_fields
-msgid "If"
-msgstr "Si"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__condition_type
-msgid "operator"
-msgstr "ตัวเปรียบเทียบ"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__condition_value
-msgid "Compare value"
-msgstr "ค่าเปรียบเทียบ"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__condition_last_min
-msgid "last seen"
-msgstr "ล่าสุดที่พบ"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__message_type
-msgid "Message type"
-msgstr "ชนิดของการส่ง"
-
-#. module: fw_iot
-#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_alert__message_type__odoo
-msgid "Email / Odoo Bot"
-msgstr "อีเมล / Odoo Bot"
-
-#. module: fw_iot
-#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_alert__message_type__tg
-msgid "Telegram"
-msgstr "เทเลแกรม"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__message
-msgid "Message"
-msgstr "Message"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__allow_partner_ids
-msgid "allowed partner"
-msgstr "ผู้รับที่ได้รับอนุญาติ"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__odoo_recipient_ids
-msgid "To (Partners)"
-msgstr "A (partenaires)"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__tg_bot_token
-msgid "Telegram Bot Token"
-msgstr "Telegram Bot Token"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__tg_recipient_ids
-msgid "To (Telegram)"
-msgstr "A (Telegram)"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__line_recipient_ids
-msgid "To (LINE)"
-msgstr "A (Line)"
-
-#. module: fw_iot
-#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_alert__message_type__last_time
-#: code:addons/fw_iot/models/device_alert.py:0
-#, python-format
-msgid "a device is not active for "
-msgstr "อุปกรณ์นี้ไม่ได้ใช้งานมา"
-
-#. module: fw_iot
-#: code:addons/fw_iot/models/device_alert.py:0
-#, python-format
-msgid "Error while send message to Telegram:\r\n %s"
-msgstr "เกิดความผิดพลาดในการส่งข้อความไปยังเทเลแกรม:\r\n %s"
-
-#. module: fw_iot
-#: code:addons/fw_iot/models/device_alert.py:0
-#, python-format
-msgid "Error while send message to LINE:\r\n %s"
-msgstr "เกิดความผิดพลาดในการส่งข้อความไปยัง LINE:\r\n %s"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_tree
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_filter
-msgid "Action"
-msgstr "Action"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
-msgid "<span class=\"o_stat_text\">Test</span>"
-msgstr "<span class=\"o_stat_text\">ทดสอบ</span>"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
-msgid "Condition"
-msgstr "เงื่อนไข"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
-msgid "Send message"
-msgstr "Envoi du message"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
-msgid "To"
-msgstr "A"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_hr_emp
-msgid ""
-"<br/>\n"
-"                          <span>The user scan this qrcode, join the bot and get Telegram ID</span>\n"
-"                          <br/>"
-msgstr ""
-"<br/>\n"
-"                          <span>ผู้ใช้สแกน qrcode นี้,เข้าร่วมบอทและรับ Telegram ID</span>\n"
-"                          <br/>"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
-msgid "No Telegram Bot Token define"
-msgstr "ไม่มีการกำหนด Telegram Bot Token"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
-msgid ""
-"<span "
-"attrs=\"{'invisible':[('condition_fields','!=','last_time')]}\">&amp;nbsp;minute(s)</span>"
-msgstr ""
-"<span "
-"attrs=\"{'invisible':[('condition_fields','!=','last_time')]}\">&amp;nbsp;นาที</span>"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
-msgid ""
-"<br/>\n"
-"                            <span>* Separate each Telegram id by enter</span>"
-msgstr ""
-"<br/>\n"
-"                            <span>* แยก Telegram id แต่ละตัวด้วยการขึ้นบรรทัดใหม่</span>"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
-msgid ""
-"<br/>\n"
-"                        <span>* current value: %value%</span>\n"
-"                        <br/>\n"
-"                        <span>* device name: %device%</span>"
-msgstr ""
-"<br/>\n"
-"                        <span>* ค่าปัจจุบัน: %value%</span>\n"
-"                        <br/>\n"
-"                        <span>* ชื่ออุปกรณ์: %device%</span>"
-
-#. module: fw_iot
-#: code:addons/fw_iot/models/device_alert.py:0
-#, python-format
-msgid "no recipient"
-msgstr "ไม่ได้กำหนดผู้รับ"
-
-#. module: fw_iot
-#: code:addons/fw_iot/models/device_alert.py:0
-#, python-format
-msgid "unexpected error"
-msgstr "Erreur"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
-msgid "<span class=\"o_stat_text\">Notification</span>"
-msgstr "<span class=\"o_stat_text\">การแจ้งเตือน</span>"
-
-#. module: fw_iot
-#: model_terms:ir.actions.act_window,help:fw_iot.fwiot_device_status_filter
-msgid "No status's data yet on this device"
-msgstr "ไม่พบข้อมูลของอุปกรณ์นี้"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_status_filter
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_status__status
-msgid "Status"
-msgstr "การใช้งาน"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_status_tree
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_status_edit
-#: model:ir.actions.act_window,name:fw_iot.fwiot_device_status_action
-msgid "Status history"
-msgstr "ประวัติการใช้งาน"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
-msgid "<span class=\"o_stat_text\">History</span>"
-msgstr "<span class=\"o_stat_text\">ประวัติ</span>"
-
-#. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__firmware_version
-msgid "Firmware version number"
-msgstr "เวอรชั่นของซอฟต์แวร์"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
-msgid ""
-"<br/>\n"
-"                            <span>* Separate each LINE token by enter</span>"
-msgstr ""
-"<br/>\n"
-"                            <span>* แยก LINE token แต่ละตัวด้วยการขึ้นบรรทัดใหม่</span>"
-
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_hr_emp
-msgid ""
-"<br/>\n"
-"                            <span>The user can get their LINE token, by</span>\n"
-"                            <br/>\n"
-"                            <span>1. scan this qrcode and add to friend</span>"
-msgstr ""
-"<br/>\n"
-"                            <span>ผู้ใช้สามารถใส่ LINE token โดย</span>\n"
-"                            <br/>\n"
-"                            <span>1. สแกน qrcode นี้และเพิ่มเป็นเพื่อน</span>"
 
 #. module: fw_iot
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_hr_emp
@@ -1279,6 +75,28 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_hr_emp
 msgid ""
 "<br/>\n"
+"                            <span>7. click \"Copy\"</span>"
+msgstr ""
+"<br/>\n"
+"                            <span>7. คลิก \"คัดลอก\"</span>"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_hr_emp
+msgid ""
+"<br/>\n"
+"                            <span>The user can get their LINE token, by</span>\n"
+"                            <br/>\n"
+"                            <span>1. scan this qrcode and add to friend</span>"
+msgstr ""
+"<br/>\n"
+"                            <span>ผู้ใช้สามารถใส่ LINE token โดย</span>\n"
+"                            <br/>\n"
+"                            <span>1. สแกน qrcode นี้และเพิ่มเป็นเพื่อน</span>"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_hr_emp
+msgid ""
+"<br/>\n"
 "                            <span>then click \"Generate token\"</span> \n"
 "                            <br/>\n"
 "                            <span>6. enter token name, select user's LINE name then click \"Generate token\"</span>"
@@ -1292,44 +110,608 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_hr_emp
 msgid ""
 "<br/>\n"
-"                            <span>7. click \"Copy\"</span>"
+"                          <span>The user scan this qrcode, join the bot and get Telegram ID</span>\n"
+"                          <br/>"
 msgstr ""
 "<br/>\n"
-"                            <span>7. คลิก \"คัดลอก\"</span>"
-#. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_hr_emp
-msgid "How to get your Telegram ID"
-msgstr "วิธีการหา Telegram ID ของคุณ"
-
+"                          <span>ผู้ใช้สแกน qrcode นี้,เข้าร่วมบอทและรับ Telegram ID</span>\n"
+"                          <br/>"
 
 #. module: fw_iot
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_hr_emp
-msgid "How to get your LINE token"
-msgstr "วิธีการหา LINE token ของคุณ"
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+msgid ""
+"<br/>\n"
+"                        <span>* current value: %value%</span>\n"
+"                        <br/>\n"
+"                        <span>* device name: %device%</span>"
+msgstr ""
+"<br/>\n"
+"                        <span>* ค่าปัจจุบัน: %value%</span>\n"
+"                        <br/>\n"
+"                        <span>* ชื่ออุปกรณ์: %device%</span>"
 
 #. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer__type
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__type
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+msgid ""
+"<span "
+"attrs=\"{'invisible':[('condition_fields','!=','last_time')]}\">&amp;nbsp;minute(s)</span>"
+msgstr ""
+"<span "
+"attrs=\"{'invisible':[('condition_fields','!=','last_time')]}\">&amp;nbsp;นาที</span>"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+msgid ""
+"<span "
+"attrs=\"{'invisible':[('condition_fields','=','last_time')]}\">&amp;nbsp;</span>"
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_kanban
+msgid ""
+"<span class=\"fa fa-circle text-danger\" role=\"img\" aria-label=\"Offline\" title=\"Offline\" name=\"status_offline\">\n"
+"                                                </span>"
+msgstr ""
+"<span class=\"fa fa-circle text-danger\" role=\"img\" aria-label=\"Offline\" title=\"Hors ligne\" name=\"status_offline\">\n"
+"                                                </span>"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_kanban
+msgid ""
+"<span class=\"fa fa-circle text-success\" role=\"img\" aria-label=\"Online\" title=\"Online\" name=\"status_online\">\n"
+"                                                </span>"
+msgstr ""
+"<span class=\"fa fa-circle text-success\" role=\"img\" aria-label=\"Online\" title=\"En ligne\" name=\"status_online\">\n"
+"                                                </span>"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_kanban
+msgid ""
+"<span class=\"fa fa-circle text-warning\" role=\"img\" aria-label=\"Offline less than 1 day\" title=\"Offline less than 1 day\" name=\"status_yellow\">\n"
+"                                                </span>"
+msgstr ""
+"<span class=\"fa fa-circle text-warning\" role=\"img\" aria-label=\"Offline less than 1 day\" title=\"ออฟไลน์ยังไม่ข้ามวันนี้\" name=\"status_yellow\">\n"
+"                                                </span>"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
+msgid "<span class=\"o_stat_text\">Data</span>"
+msgstr "<span class=\"o_stat_text\">Données</span>"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
+msgid "<span class=\"o_stat_text\">History</span>"
+msgstr "<span class=\"o_stat_text\">ประวัติ</span>"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
+msgid "<span class=\"o_stat_text\">Lock</span>"
+msgstr "<span class=\"o_stat_text\">Vérouillage</span>"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
+msgid "<span class=\"o_stat_text\">No implement</span>"
+msgstr "<span class=\"o_stat_text\">Non implémenté</span>"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
+msgid "<span class=\"o_stat_text\">Notification</span>"
+msgstr "<span class=\"o_stat_text\">การแจ้งเตือน</span>"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
+msgid "<span class=\"o_stat_text\">Schedule</span>"
+msgstr "<span class=\"o_stat_text\">Planning</span>"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
+msgid "<span class=\"o_stat_text\">Setting</span>"
+msgstr "<span class=\"o_stat_text\">Paramètres</span>"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+msgid "<span class=\"o_stat_text\">Test</span>"
+msgstr "<span class=\"o_stat_text\">ทดสอบ</span>"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
+msgid "<span class=\"o_stat_text\">Unlock</span>"
+msgstr "<span class=\"o_stat_text\">Dévérouillage</span>"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+msgid "<span>&amp;nbsp;</span>"
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_setting_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_setting_wizard_form
+msgid "<span>* Separate each MAC by enter</span>"
+msgstr "<span>* แยกแต่ละ MAC โดย enter</span>"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_setting_wizard_form
+msgid "<span>* Separate each RFID by enter</span>"
+msgstr "<span>* แยกแต่ละ RFID โดย enter</span>"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__guid
+msgid "API Key"
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_tree
+msgid "Action"
+msgstr "Action"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__message_needaction
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__message_needaction
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_type__message_needaction
+msgid "Action Needed"
+msgstr "สิ่งที่ต้องกระทำ"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__active
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__active
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__active
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_cron_wizard__interval_active
+msgid "Active"
+msgstr "Actif"
+
+#. module: fw_iot
+#: model:res.groups,name:fw_iot.group_fwiot_manager
+msgid "Administrator"
+msgstr "ผู้ดูแลระบบ"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__alerts
+msgid "Alert trigger"
+msgstr "เริ่มการแจ้งเตือน"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__message_attachment_count
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__message_attachment_count
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_type__message_attachment_count
+msgid "Attachment Count"
+msgstr "จำนวนเอกสาร"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
+msgid "Authentication"
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_edit
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_filter
-msgid "Type"
-msgstr "Type"
+msgid "Bluetooth"
+msgstr ""
 
 #. module: fw_iot
-#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_sniffer__type__in
-#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_scanner__type__in
-#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_alert__type__in
-msgid "In"
-msgstr "เข้า"
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__csv_url
+msgid "CSV URL"
+msgstr ""
 
 #. module: fw_iot
-#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_sniffer__type__out
-#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_scanner__type__out
-#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_alert__type__out
-#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_create_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_cron_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_lock_wizard_form
+msgid "Cancel"
+msgstr "Annuler"
+
+#. module: fw_iot
+#: model:ir.actions.act_window,name:fw_iot.fwiot_device_nfc_reader_action
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_edit
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_tree
+msgid "Check"
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_beacon_setting_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_setting_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_setting_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_setting_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_setting_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_humidity_setting_wizard
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_setting_wizard_form
+msgid "Close"
+msgstr "Fermer"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__device_type_code
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_lock_wizard__code
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_type__code
+msgid "Code"
+msgstr "Code"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+msgid "Condition"
+msgstr "เงื่อนไข"
+
+#. module: fw_iot
+#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device__state__confirm
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_create_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_cron_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_lock_wizard_form
+msgid "Confirm"
+msgstr "Confirmation"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__create_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__create_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_beacon_setting_wizard__create_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__create_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_cron_wizard__create_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_generic__create_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_generic_setting_wizard__create_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_lock_wizard__create_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_mac__create_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader__create_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__create_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__create_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner_setting_wizard__create_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector__create_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector_setting_wizard__create_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer__create_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer_setting_wizard__create_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_status__create_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_humidity__create_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_humidity_setting_wizard__create_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_setting_wizard__create_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermometer__create_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_type__create_uid
+msgid "Created by"
+msgstr "สร้างโดย"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__create_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__create_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_beacon_setting_wizard__create_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__create_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_cron_wizard__create_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_generic__create_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_generic_setting_wizard__create_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_lock_wizard__create_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_mac__create_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader__create_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__create_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__create_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner_setting_wizard__create_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector__create_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector_setting_wizard__create_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer__create_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer_setting_wizard__create_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_status__create_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_humidity__create_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_humidity_setting_wizard__create_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_setting_wizard__create_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermometer__create_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_type__create_date
+msgid "Created on"
+msgstr "สร้างเมื่อ"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_create_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_humidity_edit
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_humidity_tree
+msgid "Data"
+msgstr "Données"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_generic__date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_generic__date_only
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader__date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader__date_only
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__date_only
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector__date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector__date_only
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer__date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer__date_only
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_status__date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_status__date_only
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_humidity__date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_humidity__date_only
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermometer__date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermometer__date_only
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_filter
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_filter
-msgid "Out"
-msgstr "ออก"
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_status_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_humidity_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermometer_filter
+msgid "Date"
+msgstr "วันที่"
+
+#. module: fw_iot
+#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_cron_wizard__interval_type__days
+msgid "Days"
+msgstr "Jours"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector_setting_wizard__deep_sleep
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_humidity_setting_wizard__deep_sleep
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_setting_wizard__deep_sleep
+msgid "Deep sleep"
+msgstr "โหมดหลับลึก"
+
+#. module: fw_iot
+#: model_terms:ir.actions.act_window,help:fw_iot.open_view_device
+msgid "Define API key in configuration and sync all data."
+msgstr "Encodez la clé API dans la config et synchronizer toutes les données"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__delay
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector_setting_wizard__delay
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_humidity_setting_wizard__delay
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_setting_wizard__delay
+msgid "Delay (sec)"
+msgstr "Délais (sec)"
+
+#. module: fw_iot
+#: code:addons/fw_iot/models/device.py:0
+#: model:ir.actions.act_window,name:fw_iot.fwiot_device_scanner_action
+#: model:ir.actions.act_window,name:fw_iot.fwiot_device_sniffer_action
+#: model:ir.actions.act_window,name:fw_iot.open_view_device
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__device_id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_beacon_setting_wizard__device_id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_generic__device_id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_generic_setting_wizard__device_id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader__device_id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__device_id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__device_id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner_setting_wizard__device_id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector__device_id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector_setting_wizard__device_id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer__device_id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer_setting_wizard__device_id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_status__device_id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_humidity__device_id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_humidity_setting_wizard__device_id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_setting_wizard__device_id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermometer__device_id
+#: model:ir.ui.menu,name:fw_iot.menu_fwiot_device
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_edit
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_tree
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_edit
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_tree
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_humidity_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermometer_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_tree
+#, python-format
+msgid "Device"
+msgstr "Objet"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_beacon_setting_wizard__device_locked
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_generic_setting_wizard__device_locked
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__device_locked
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner_setting_wizard__device_locked
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector_setting_wizard__device_locked
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer_setting_wizard__device_locked
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_humidity_setting_wizard__device_locked
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_setting_wizard__device_locked
+msgid "Device Locked"
+msgstr "อุปกรณ์ล็อค"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
+msgid "Device Name"
+msgstr "Nom de l'objet"
+
+#. module: fw_iot
+#: code:addons/fw_iot/models/device.py:0
+#, python-format
+msgid "Device action"
+msgstr "การกระทำของอุปกรณ์"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_type_edit
+msgid "Device code"
+msgstr "Code de l'objet"
+
+#. module: fw_iot
+#: code:addons/fw_iot/models/device.py:0
+#: model:ir.actions.act_window,name:fw_iot.fwiot_device_create_wizard_action
+#: model:ir.actions.act_window,name:fw_iot.fwiot_device_lock_wizard_action
+#, python-format
+msgid "Device status"
+msgstr "Statut de l'objet"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
+msgid "Device token"
+msgstr "Token de l'objet"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__type
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_type_edit
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_type_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_type_tree
+msgid "Device type"
+msgstr "Type d'objet"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_kanban
+msgid "Device's Name"
+msgstr "ชื่ออุปกรณ์"
+
+#. module: fw_iot
+#: model:ir.actions.act_window,name:fw_iot.fwiot_device_cron_wizard_action
+msgid "Device's Schedule"
+msgstr "งานอัตโนมัติของอุปกรณ์"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__display_name
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__display_name
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_beacon_setting_wizard__display_name
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__display_name
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_cron_wizard__display_name
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_generic__display_name
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_generic_setting_wizard__display_name
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_lock_wizard__display_name
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_mac__display_name
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader__display_name
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__display_name
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__display_name
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner_setting_wizard__display_name
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector__display_name
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector_setting_wizard__display_name
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer__display_name
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer_setting_wizard__display_name
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_status__display_name
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_humidity__display_name
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_humidity_setting_wizard__display_name
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_setting_wizard__display_name
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermometer__display_name
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_type__display_name
+#: model:ir.model.fields,field_description:fw_iot.field_hr_employee__display_name
+msgid "Display Name"
+msgstr "ชื่อ"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_lock_wizard_form
+msgid "Do you want to lock this device?"
+msgstr "VOulez vous vérouiller cet objet connecté?"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_lock_wizard_form
+msgid "Do you want to unlock this device?"
+msgstr "Voulez vous dévérouiller cet objet connecté?"
+
+#. module: fw_iot
+#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device__state__draft
+msgid "Draft"
+msgstr "ฉบับร่าง"
+
+#. module: fw_iot
+#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_alert__message_type__odoo
+msgid "Email / Odoo Bot"
+msgstr "อีเมล / Odoo Bot"
+
+#. module: fw_iot
+#: code:addons/fw_iot/models/device_alert.py:0
+#: code:addons/fw_iot/models/device_alert.py:0
+#, python-format
+msgid ""
+"Error while send message to LINE:\r\n"
+" %s"
+msgstr "เกิดความผิดพลาดในการส่งข้อความไปยัง LINE:\r\n %s"
+
+#. module: fw_iot
+#: code:addons/fw_iot/models/device_alert.py:0
+#: code:addons/fw_iot/models/device_alert.py:0
+#, python-format
+msgid ""
+"Error while send message to Telegram:\r\n"
+" %s"
+msgstr "เกิดความผิดพลาดในการส่งข้อความไปยังเทเลแกรม:\r\n %s"
+
+#. module: fw_iot
+#: code:addons/fw_iot/models/device_wizard.py:0
+#, python-format
+msgid "Error while send new settings to device"
+msgstr "Erreur lors de la mise à jour des paramètres à l'objet connecté"
+
+#. module: fw_iot
+#: code:addons/fw_iot/models/device_wizard.py:0
+#, python-format
+msgid "Error while send new settings to device : %s"
+msgstr "Erreur lors de l'envoi des paramètres à l'objet connecté: %s"
+
+#. module: fw_iot
+#: code:addons/fw_iot/wizard/fwiot_device_lock_wizard.py:0
+#, python-format
+msgid "Error while try to %s this device"
+msgstr "Erreur survenue surant %s pour cet objet connecté"
+
+#. module: fw_iot
+#: code:addons/fw_iot/wizard/fwiot_device_lock_wizard.py:0
+#, python-format
+msgid "Error while try to %s this device: %s"
+msgstr "ไม่สามารถที่จะ%sอุปกรณ์: %s"
+
+#. module: fw_iot
+#: code:addons/fw_iot/models/device.py:0
+#, python-format
+msgid "Error while try to check this device status"
+msgstr "Erreur lors de la vérification du statut de l'objet connecté"
+
+#. module: fw_iot
+#: code:addons/fw_iot/models/device.py:0
+#, python-format
+msgid "Error while try to get this device data"
+msgstr "Erreur durant le chargement des données"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner_setting_wizard__exclude
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer_setting_wizard__exclude
+msgid "Exclude MAC"
+msgstr "Exclure ces addresses MAC"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_setting_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_setting_wizard_form
+msgid "Exclude these MACS"
+msgstr "ไม่รวม MAC นี้"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_cron_wizard_form
+msgid "Execute Every"
+msgstr "ทำซ้ำทุกๆ"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
+msgid "Fetch data"
+msgstr "Chargement des données"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__firmware_version
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__firmware_version
+msgid "Firmware version number"
+msgstr "เวอรชั่นของซอฟต์แวร์"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
+msgid ""
+"Follow this device to automatically track the events associated to this "
+"device."
+msgstr ""
+"ติดตามการเปลี่ยนแปลงข้อมูลของอุปกรณ์นี้"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__message_follower_ids
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__message_follower_ids
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_type__message_follower_ids
+msgid "Followers"
+msgstr "ผู้ติดตาม"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__message_channel_ids
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__message_channel_ids
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_type__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "ช่องทางติดตาม"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__message_partner_ids
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__message_partner_ids
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_type__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "คู่ค้าที่ติดตาม"
 
 #. module: fw_iot
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__type
@@ -1337,10 +719,271 @@ msgid "For"
 msgstr "สำหรับ"
 
 #. module: fw_iot
-#: code:addons/fw_iot/models/device.py:0
-#, python-format
-msgid "Schedule & alert"
-msgstr "Planifier une alerte"
+#: model:ir.module.category,name:fw_iot.module_category_services_fwiot
+msgid "Frontware IOT"
+msgstr "ฟร้อนท์แวร์ไอโอที"
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device
+msgid "Frontware IOT device"
+msgstr "Frontware IoT objet"
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_alert
+msgid "Frontware IOT device alert trigger"
+msgstr "ฟร้อนท์แวร์ไอโอที: การตั้งค่าเตือนของอุปกรณ์"
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_mac
+msgid "Frontware IOT device mac address"
+msgstr "Addresse mac de l'objet connecté"
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_type
+msgid "Frontware IOT device type"
+msgstr "type d'objet connecté Frontware IoT"
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_generic
+msgid "Frontware IOT device: generic"
+msgstr "ฟร้อนท์แวร์ไอโอที: อุปกรณ์พื้นฐาน"
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_generic_setting_wizard
+msgid "Frontware IOT device: generic setting"
+msgstr "ฟร้อนท์แวร์ไอโอที: ค่าติดตั้งอุปกรณ์พื้นฐาน"
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_nfc_reader
+msgid "Frontware IOT device: nfc_reader"
+msgstr "Objet connecté: nfc_reader"
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_scanner
+msgid "Frontware IOT device: scanner"
+msgstr "ฟร้อนท์แวร์ไอโอที: scanner"
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_smoke_detector_setting_wizard
+msgid "Frontware IOT device: show smoke_detector setting"
+msgstr "ฟร้อนท์แวร์ไอโอที: ค่าติดตั้งของอุปกรณ์ smoke_detector"
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_sniffer_setting_wizard
+msgid "Frontware IOT device: show sniffer setting"
+msgstr "Frontware IOT: paramètre du sniffer"
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_thermo_setting_wizard
+msgid "Frontware IOT device: show thermometer setting"
+msgstr "ฟร้อนท์แวร์ไอโอที: ค่าติดตั้งของอุปกรณ์ thermometer"
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_thermo_humidity_setting_wizard
+msgid "Frontware IOT device: show thermometer-humidity setting"
+msgstr "ฟร้อนท์แวร์ไอโอที: ค่าติดตั้งของอุปกรณ์ thermometer humidity"
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_smoke_detector
+msgid "Frontware IOT device: smoke detector"
+msgstr "ฟร้อนท์แวร์ไอโอที: smoke detector"
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_sniffer
+msgid "Frontware IOT device: sniffer"
+msgstr "ฟร้อนท์แวร์ไอโอที: sniffer"
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_status
+msgid "Frontware IOT device: status"
+msgstr "ฟร้อนท์แวร์ไอโอที: สถานะอุปกรณ์"
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_thermometer
+msgid "Frontware IOT device: thermometer"
+msgstr "ฟร้อนท์แวร์ไอโอที: thermometer"
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_thermo_humidity
+msgid "Frontware IOT device: thermometer humidity"
+msgstr "ฟร้อนท์แวร์ไอโอที: thermometer humidity"
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_lock_wizard
+msgid "Frontware IOT: confirm lock / unlock device"
+msgstr "Frontware IOT: confirmez vérouillage / dévérouillage"
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_cron_wizard
+msgid "Frontware IOT: device's schedule setting"
+msgstr "ฟร้อนท์แวร์ไอโอที: ค่าติดตั้งงานอัตโนมัติของอุปกรณ์"
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_beacon_setting_wizard
+msgid "Frontware IOT: show beacon setting"
+msgstr "Frontware IOT: montrer les paramètres du beacon"
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_create_wizard
+msgid "Frontware IOT: show device status from iot"
+msgstr "Frontware IoT: statut d el'objet connecté"
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_nfc_reader_setting_wizard
+msgid "Frontware IOT: show nfc reader setting"
+msgstr "Frontware IOT: montrer les paramètres du lecteur NFC"
+
+#. module: fw_iot
+#: model:ir.ui.menu,name:fw_iot.menu_main_fwiot
+msgid "Frontware IoT"
+msgstr "ฟร้อนท์แวร์ไอโอที"
+
+#. module: fw_iot
+#: model:ir.actions.server,name:fw_iot.ir_cron_nfc_reader_get_data_ir_actions_server
+#: model:ir.cron,cron_name:fw_iot.ir_cron_nfc_reader_get_data
+#: model:ir.cron,name:fw_iot.ir_cron_nfc_reader_get_data
+msgid "Frontware IoT, fetch nfc reader data"
+msgstr "ฟร้อนท์แวร์ไอโอที: ดึงข้อมูลของอุปกรณ์ nfc reader"
+
+#. module: fw_iot
+#: model:ir.actions.server,name:fw_iot.ir_cron_scanner_get_data_ir_actions_server
+#: model:ir.cron,cron_name:fw_iot.ir_cron_scanner_get_data
+#: model:ir.cron,name:fw_iot.ir_cron_scanner_get_data
+msgid "Frontware IoT, fetch scanner data"
+msgstr "ฟร้อนท์แวร์ไอโอที: ดึงข้อมูลของอุปกรณ์ scanner"
+
+#. module: fw_iot
+#: model:ir.actions.server,name:fw_iot.ir_cron_smoke_get_data_ir_actions_server
+#: model:ir.cron,cron_name:fw_iot.ir_cron_smoke_get_data
+#: model:ir.cron,name:fw_iot.ir_cron_smoke_get_data
+msgid "Frontware IoT, fetch smoke detector data"
+msgstr "ฟร้อนท์แวร์ไอโอที: ดึงข้อมูลของอุปกรณ์ smoke detector"
+
+#. module: fw_iot
+#: model:ir.actions.server,name:fw_iot.ir_cron_sniffer_get_data_ir_actions_server
+#: model:ir.cron,cron_name:fw_iot.ir_cron_sniffer_get_data
+#: model:ir.cron,name:fw_iot.ir_cron_sniffer_get_data
+msgid "Frontware IoT, fetch sniffer data"
+msgstr "ฟร้อนท์แวร์ไอโอที: ดึงข้อมูลของอุปกรณ์ sniffer"
+
+#. module: fw_iot
+#: model:ir.actions.server,name:fw_iot.ir_cron_thermometer_get_data_ir_actions_server
+#: model:ir.cron,cron_name:fw_iot.ir_cron_thermometer_get_data
+#: model:ir.cron,name:fw_iot.ir_cron_thermometer_get_data
+msgid "Frontware IoT, fetch thermometer data"
+msgstr "ฟร้อนท์แวร์ไอโอที: ดึงข้อมูลของอุปกรณ์ thermometer"
+
+#. module: fw_iot
+#: model:ir.actions.server,name:fw_iot.ir_cron_thermo_humid_get_data_ir_actions_server
+#: model:ir.actions.server,name:fw_iot.ir_cron_thermo_humidity_get_data_ir_actions_server
+#: model:ir.cron,cron_name:fw_iot.ir_cron_thermo_humid_get_data
+#: model:ir.cron,cron_name:fw_iot.ir_cron_thermo_humidity_get_data
+#: model:ir.cron,name:fw_iot.ir_cron_thermo_humid_get_data
+#: model:ir.cron,name:fw_iot.ir_cron_thermo_humidity_get_data
+msgid "Frontware IoT, fetch thermometer-humidity data"
+msgstr "ฟร้อนท์แวร์ไอโอที: ดึงข้อมูลของอุปกรณ์ thermometer-humidity"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_status_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_humidity_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermometer_filter
+msgid "Group By"
+msgstr "Groupé par"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__has_action
+msgid "Has Action"
+msgstr "a une action"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__has_data
+msgid "Has Data"
+msgstr "a des données"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__has_setting
+msgid "Has Setting"
+msgstr "à des paramètres"
+
+#. module: fw_iot
+#: model:ir.module.category,description:fw_iot.module_category_services_fwiot
+msgid "Helps you manage your iot device"
+msgstr "จัดการอุปกรณ์ฟร้อนท์แวร์ไอโอที"
+
+#. module: fw_iot
+#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_cron_wizard__interval_type__hours
+msgid "Hours"
+msgstr "heures"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_hr_emp
+msgid "How to get your LINE token"
+msgstr "วิธีการรับ LINE token ของคุณ"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_hr_emp
+msgid "How to get your Telegram ID"
+msgstr "วิธีการรับ Telegram ID ของคุณ"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_humidity__humidity
+msgid "Humidity"
+msgstr "ความชื้น"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_beacon_setting_wizard__id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_cron_wizard__id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_generic__id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_generic_setting_wizard__id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_lock_wizard__id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_mac__id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader__id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner_setting_wizard__id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector__id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector_setting_wizard__id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer__id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer_setting_wizard__id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_status__id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_humidity__id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_humidity_setting_wizard__id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_setting_wizard__id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermometer__id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_type__id
+#: model:ir.model.fields,field_description:fw_iot.field_hr_employee__id
+msgid "ID"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__condition_fields
+msgid "If"
+msgstr "Si"
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device__message_needaction
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device__message_unread
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_alert__message_needaction
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_alert__message_unread
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_type__message_needaction
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_type__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "ถ้าเลือก ข้อความใหม่จะต้องการการตอบสนอง"
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device__message_has_error
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_alert__message_has_error
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_type__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "ถ้าเลือก ข้อความอาจจะมีความผิดพลาด"
 
 #. module: fw_iot
 #: code:addons/fw_iot/models/device_alert.py:0
@@ -1351,21 +994,865 @@ msgid ""
 msgstr "หากคุณกำหนดเวลารีเฟรชข้อมูลทุกๆ %s คุณไม่ควรตั้งค่าการแจ้งเตือนสำหรับออฟไลน์ทุกๆ %s นาที"
 
 #. module: fw_iot
-#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_humidity__humidity
-msgid "Humidity"
-msgstr "ความชื้น"
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__image_1920
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__device_image
+msgid "Image"
+msgstr "ภาพ"
 
 #. module: fw_iot
-#: model:ir.model,name:fw_iot.model_fwiot_device_thermo_humidity
-msgid "Frontware IOT device: thermometer humidity"
-msgstr "ฟร้อนท์แวร์ไอโอที: ตัววัดอุณหภูมิ, ความชื้น "
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__image_1024
+msgid "Image 1024"
+msgstr "ภาพขนาด 1024"
 
 #. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__image_128
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__device_image_128
+msgid "Image 128"
+msgstr "ภาพขนาด 128"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__image_256
+msgid "Image 256"
+msgstr "ภาพขนาด 256"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__image_512
+msgid "Image 512"
+msgstr "ภาพขนาด 512"
+
+#. module: fw_iot
+#: model_terms:ir.actions.act_window,help:fw_iot.open_view_device
+msgid "Import device by connect to fwiot"
+msgstr "นำเข้ารายชื่ออุปกรณ์โดยเชื่อมต่อไปยังฟร้อนท์แวร์ไอโอที"
+
+#. module: fw_iot
+#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_alert__type__in
+#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_scanner__type__in
+#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_sniffer__type__in
+msgid "In"
+msgstr "เข้า"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_create_wizard_form
+msgid "Info"
+msgstr "Info"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
+msgid "Infomation"
+msgstr "Infomation"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_cron_wizard__interval_number
+msgid "Interval Number"
+msgstr "ช่วงเวลา"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_cron_wizard__interval_type
+msgid "Interval Unit"
+msgstr "หน่วยของช่วงเวลา"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_hr_emp
+msgid "IoT"
+msgstr "ไอโอที"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__message_is_follower
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__message_is_follower
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_type__message_is_follower
+msgid "Is Follower"
+msgstr "ถูกติดตาม"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__is_implement
+msgid "Is Implement"
+msgstr "est implémenté"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__json_url
+msgid "JSON URL"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__settings
+msgid "JSON settings"
+msgstr "Paramétrage JSON"
+
+#. module: fw_iot
+#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_alert__message_type__line
+msgid "LINE"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_hr_employee__lang
+msgid "Lang"
+msgstr "ภาษา"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device____last_update
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert____last_update
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_beacon_setting_wizard____last_update
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard____last_update
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_cron_wizard____last_update
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_generic____last_update
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_generic_setting_wizard____last_update
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_lock_wizard____last_update
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_mac____last_update
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader____last_update
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader_setting_wizard____last_update
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner____last_update
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner_setting_wizard____last_update
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector____last_update
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector_setting_wizard____last_update
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer____last_update
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer_setting_wizard____last_update
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_status____last_update
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_humidity____last_update
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_humidity_setting_wizard____last_update
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_setting_wizard____last_update
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermometer____last_update
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_type____last_update
+#: model:ir.model.fields,field_description:fw_iot.field_hr_employee____last_update
+msgid "Last Modified on"
+msgstr "แก้ไขล่าสุดเมื่อ"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__write_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__write_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_beacon_setting_wizard__write_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__write_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_cron_wizard__write_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_generic__write_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_generic_setting_wizard__write_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_lock_wizard__write_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_mac__write_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader__write_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__write_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__write_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner_setting_wizard__write_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector__write_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector_setting_wizard__write_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer__write_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer_setting_wizard__write_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_status__write_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_humidity__write_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_humidity_setting_wizard__write_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_setting_wizard__write_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermometer__write_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_type__write_uid
+msgid "Last Updated by"
+msgstr "แก้ไขล่าสุดโดย"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__write_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__write_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_beacon_setting_wizard__write_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__write_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_cron_wizard__write_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_generic__write_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_generic_setting_wizard__write_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_lock_wizard__write_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_mac__write_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader__write_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__write_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__write_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner_setting_wizard__write_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector__write_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector_setting_wizard__write_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer__write_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer_setting_wizard__write_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_status__write_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_humidity__write_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_humidity_setting_wizard__write_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_setting_wizard__write_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermometer__write_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_type__write_date
+msgid "Last Updated on"
+msgstr "แก้ไขล่าสุดเมื่อ"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__last_online
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__last_online
+msgid "Last online"
+msgstr "ข้อมูลสุดท้ายเมื่อ"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__last_fetch
+msgid "Last updated"
+msgstr "Dernière mise à jour"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_hr_employee__line_token
+msgid "Line token"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__locked
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_lock_wizard__lock
+msgid "Lock"
+msgstr "Vérouiller"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__locked
+msgid "Locked"
+msgstr "ล็อค"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_mac__name
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__mac
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer__mac
+msgid "MAC"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__message_main_attachment_id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__message_main_attachment_id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_type__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "เอกสารหลัก"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__message
+msgid "Message"
+msgstr "Message"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__message_has_error
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__message_has_error
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_type__message_has_error
+msgid "Message Delivery error"
+msgstr "ช้อความที่ส่งไม่ได้"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+msgid "Message to send"
+msgstr "ข้อความที่ส่ง"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__message_type
+msgid "Message type"
+msgstr "ชนิดข้อความ"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__message_ids
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__message_ids
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_type__message_ids
+msgid "Messages"
+msgstr "ข้อความ"
+
+#. module: fw_iot
+#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_cron_wizard__interval_type__minutes
+msgid "Minutes"
+msgstr "Minutes"
+
+#. module: fw_iot
+#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_cron_wizard__interval_type__months
+msgid "Months"
+msgstr "Mois"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__name
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__name
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_type__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+msgid "No Telegram Bot Token define"
+msgstr "ไม่มีการกำหนด Telegram Bot Token"
+
+#. module: fw_iot
+#: model_terms:ir.actions.act_window,help:fw_iot.fwiot_device_smoke_detector_action
+msgid "No any data on this device"
+msgstr "ไม่มีข้อมูลใด ๆ บนอุปกรณ์นี้"
+
+#. module: fw_iot
+#: model_terms:ir.actions.act_window,help:fw_iot.fwiot_device_nfc_reader_action
+msgid "No check's data yet on this device"
+msgstr "Aucune donnée disponibles pour cet objet connecté"
+
+#. module: fw_iot
+#: model_terms:ir.actions.act_window,help:fw_iot.fwiot_device_scanner_action
+#: model_terms:ir.actions.act_window,help:fw_iot.fwiot_device_sniffer_action
 #: model_terms:ir.actions.act_window,help:fw_iot.fwiot_device_thermo_humidity_action
 msgid "No data yet on this device"
 msgstr "ไม่พบข้อมูลของอุปกรณ์นี้"
 
 #. module: fw_iot
-#: model:ir.model,name:fw_iot.model_fwiot_device_thermo_humidity_setting_wizard
-msgid "Frontware IOT device: show thermometer humidity setting"
-msgstr "ฟร้อนท์แวร์ไอโอที: ค่าติดตั้งของอุปกรณ์ อุณหภูมิ ความชื้น"
+#: model_terms:ir.actions.act_window,help:fw_iot.fwiot_device_status_action
+msgid "No status's data yet on this device"
+msgstr "ไม่พบข้อมูลของอุปกรณ์นี้"
+
+#. module: fw_iot
+#: model_terms:ir.actions.act_window,help:fw_iot.fwiot_device_thermometer_action
+msgid "No temperature's data yet on this device"
+msgstr "Aucune donnée de temperature disponible pour cet objet connecté"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__note
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
+msgid "Note"
+msgstr "Note"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
+msgid "Note..."
+msgstr "Note..."
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__message_needaction_counter
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__message_needaction_counter
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_type__message_needaction_counter
+msgid "Number of Actions"
+msgstr "จำนวนที่กระทำ"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__message_has_error_counter
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__message_has_error_counter
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_type__message_has_error_counter
+msgid "Number of errors"
+msgstr "จำนวนข้อผิดพลาด"
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device__message_needaction_counter
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_alert__message_needaction_counter
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_type__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "จำนวนข้อความที่ต้องการการกระทำ"
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device__message_has_error_counter
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_alert__message_has_error_counter
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_type__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "จำนวนข้อความที่ส่งไม่ได้"
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device__message_unread_counter
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_alert__message_unread_counter
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_type__message_unread_counter
+msgid "Number of unread messages"
+msgstr "จำนวนข้อความที่ยังไม่ได้อ่าน"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
+msgid "Offline"
+msgstr "Hors ligne"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
+msgid "Online"
+msgstr "En ligne"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner_setting_wizard__macs
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer_setting_wizard__macs
+msgid "Only MAC"
+msgstr "เฉพาะ MAC นี้"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_setting_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_setting_wizard_form
+msgid "Only these MACS"
+msgstr "Uniquement ces adresses MAC"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_setting_wizard_form
+msgid "Only these RFIDs"
+msgstr "Uniquement ces RFID/NFC"
+
+#. module: fw_iot
+#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_alert__type__out
+#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_scanner__type__out
+#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_sniffer__type__out
+msgid "Out"
+msgstr "ออก"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__beep
+msgid "Play beep"
+msgstr "Beep"
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_beacon_setting_wizard__uuid
+msgid "Proximity ID for iBeacon"
+msgstr "Proximity ID de l'iBeacon"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_filter
+msgid "RFID"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__rfids
+msgid "RFID list"
+msgstr "Liste RFID"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+msgid "Recipient"
+msgstr "ผู้รับ"
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_cron_wizard__interval_number
+msgid "Repeat every x."
+msgstr "Répéter x fois"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_setting_wizard__resolution
+msgid "Resolution"
+msgstr "Résolution"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__ssid
+msgid "SSID"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner_setting_wizard__scan_bluetooth
+msgid "Scan bluetooth"
+msgstr "Scan bluetooth"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner_setting_wizard__scan_delay
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer_setting_wizard__scan_delay
+msgid "Scan delay"
+msgstr "Délais entre 2 scans"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner_setting_wizard__scan_wifi
+msgid "Scan wifi"
+msgstr "Scan wifi"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_cron_wizard__schedule_id
+msgid "Schedule"
+msgstr "งานอัตโนมัติ"
+
+#. module: fw_iot
+#: code:addons/fw_iot/models/device_alert.py:0
+#, python-format
+msgid "Schedule & alert"
+msgstr "Planifier une alerte"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_status_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_humidity_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermometer_filter
+msgid "Search Data"
+msgstr "Recherher les données"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+msgid "Send message"
+msgstr "Envoi du message"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__serial
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__serial
+msgid "Serial"
+msgstr "Num de série"
+
+#. module: fw_iot
+#: model:ir.actions.act_window,name:fw_iot.fwiot_device_beacon_setting_wizard_action
+#: model:ir.actions.act_window,name:fw_iot.fwiot_device_nfc_reader_setting_wizard_action
+#: model:ir.actions.act_window,name:fw_iot.fwiot_device_scanner_setting_wizard_action
+#: model:ir.actions.act_window,name:fw_iot.fwiot_device_smoke_detector_setting_wizard_action
+#: model:ir.actions.act_window,name:fw_iot.fwiot_device_sniffer_setting_wizard_action
+#: model:ir.actions.act_window,name:fw_iot.fwiot_device_thermo_humidity_setting_wizard_action
+#: model:ir.actions.act_window,name:fw_iot.fwiot_device_thermo_setting_wizard_action
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_create_wizard_form
+msgid "Settings"
+msgstr "Paramètres"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__show_ribbon
+msgid "Show Ribbon"
+msgstr "แสดงแถบ"
+
+#. module: fw_iot
+#: model:ir.actions.act_window,name:fw_iot.fwiot_device_smoke_detector_action
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_edit
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_tree
+msgid "Smoke detector"
+msgstr "Détecteur de fumée"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__state
+msgid "State"
+msgstr "Etat"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__status
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__status
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_status__status
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_create_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_status_filter
+msgid "Status"
+msgstr "Statut"
+
+#. module: fw_iot
+#: model:ir.actions.act_window,name:fw_iot.fwiot_device_status_action
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_status_edit
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_status_tree
+msgid "Status history"
+msgstr "ประวัติการใช้งาน"
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device__state
+msgid "Status of the device."
+msgstr "สถานะอุปกรณ์"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__led
+msgid "Switch LED on"
+msgstr "LED allumé"
+
+#. module: fw_iot
+#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_alert__message_type__tg
+msgid "Telegram"
+msgstr "เทเลแกรม"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__tg_bot_token
+msgid "Telegram Bot Token"
+msgstr "Telegram Bot Token"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_hr_employee__telegram_id
+msgid "Telegram ID"
+msgstr "เทเลแกรม ID"
+
+#. module: fw_iot
+#: model:ir.actions.act_window,name:fw_iot.fwiot_device_thermo_humidity_action
+#: model:ir.actions.act_window,name:fw_iot.fwiot_device_thermometer_action
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_humidity__temperature
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermometer__temperature
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermometer_edit
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermometer_tree
+msgid "Temperature"
+msgstr "Température"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_beacon_setting_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_setting_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_setting_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_setting_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_setting_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_humidity_setting_wizard
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_setting_wizard_form
+msgid "This device is locked"
+msgstr "อุปกรณ์ถูกล๊อค"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__recipients
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+msgid "To"
+msgstr "A"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__line_recipient_ids
+msgid "To (LINE)"
+msgstr "A (Line)"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__odoo_recipient_ids
+msgid "To (Partners)"
+msgstr "A (partenaires)"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__tg_recipient_ids
+msgid "To (Telegram)"
+msgstr "A (Telegram)"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__token
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__token
+msgid "Token"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__type
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__type
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer__type
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_filter
+msgid "Type"
+msgstr "Type"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__type_code
+msgid "Type Code"
+msgstr "Code Type"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_beacon_setting_wizard__uuid
+msgid "UUID"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__unlock_code
+msgid "Unlock code"
+msgstr "Code de dévérouillage"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__message_unread
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__message_unread
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_type__message_unread
+msgid "Unread Messages"
+msgstr "ข้อความที่ยังไม่ได้อ่าน"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device__message_unread_counter
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__message_unread_counter
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_type__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "จำนวนข้อความที่ยังไม่ได้อ่าน"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_beacon_setting_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_setting_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_setting_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_setting_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_setting_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_humidity_setting_wizard
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_setting_wizard_form
+msgid "Update"
+msgstr "Mise-à-jour"
+
+#. module: fw_iot
+#: model:res.groups,name:fw_iot.group_fwiot_user
+msgid "User"
+msgstr "ผู้ใช้งานทั่วไป"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__web_hook_url
+msgid "Web Hook URL"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_create_wizard__web_hook_header
+msgid "Web Hook header"
+msgstr ""
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_create_wizard_form
+msgid "Webhook"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_cron_wizard__interval_type__weeks
+msgid "Weeks"
+msgstr "Semaines"
+
+#. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_edit
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_filter
+msgid "WiFi"
+msgstr ""
+
+#. module: fw_iot
+#: code:addons/fw_iot/models/device.py:0 code:addons/fw_iot/models/device.py:0
+#, python-format
+msgid "You must enter API Key"
+msgstr "Veuillez encoder la clé API"
+
+#. module: fw_iot
+#: code:addons/fw_iot/models/device_alert.py:0
+#, python-format
+msgid "a device is not active for "
+msgstr "อุปกรณ์นี้ไม่ได้ใช้งานมา"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__allow_partner_ids
+msgid "allowed partner"
+msgstr "คู่ค้าที่อนุญาติ"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__condition_value
+msgid "compare value"
+msgstr "ค่าเปรียบเทียบ"
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__rfids
+msgid ""
+"if exists then it will send MQTT or Beep or Led only if scan an ID that is "
+"in the list. (max 100)"
+msgstr "หากมีอยู่แล้วจะส่ง MQTT หรือ ส่งเสียงบี๊บ หรือ เปิดไฟ Led เฉพาะเมื่อสแกน ID ที่อยู่ในรายการ (สูงสุด 100)"
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_thermo_humidity_setting_wizard__deep_sleep
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_thermo_setting_wizard__deep_sleep
+msgid ""
+"if set to true then the board is set to deep sleep mode between 2 scans. "
+"Useful when use witn battery. Delay should be at least 5 minutes long."
+msgstr "หากตั้งค่าเป็น true แสดงว่าบอร์ดถูกตั้งค่าเป็นโหมดหลับลึก หากตั้งค่าเป็นเท็จ อุปกรณ์จะปิดจนกว่าจะตรวจพบควัน"
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_smoke_detector_setting_wizard__deep_sleep
+msgid ""
+"if set to true then the board is set to deep sleep mode. if set to false "
+"then device is OFF until smoke is detected."
+msgstr "หากตั้งค่าเป็น true แสดงว่าบอร์ดถูกตั้งค่าเป็นโหมดหลับลึก หากตั้งค่าเป็นเท็จ อุปกรณ์จะปิดจนกว่าจะตรวจพบควัน"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__bluetooth
+msgid "is bluetooth"
+msgstr "est bluetooth"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__condition_last_min
+msgid "last seen"
+msgstr "ล่าสุดที่พบ"
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_scanner_setting_wizard__macs
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_sniffer_setting_wizard__macs
+msgid ""
+"list of mac addresses we want to report. If empty then we report all mac "
+"addresses."
+msgstr "รายการที่อยู่ mac ที่เราต้องการรายงาน หากว่างเปล่า เราจะรายงานที่อยู่ Mac ทั้งหมด"
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_scanner_setting_wizard__exclude
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_sniffer_setting_wizard__exclude
+msgid ""
+"list of mac don't have to report. exclude is ignored if macs is present in "
+"json."
+msgstr "รายการ mac ไม่ต้องรายงาน ไม่รวมจะถูกละเว้นหากมี macs อยู่ใน json"
+
+#. module: fw_iot
+#: code:addons/fw_iot/wizard/fwiot_device_lock_wizard.py:0
+#, python-format
+msgid "lock"
+msgstr "vérouillage"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_beacon_setting_wizard__major
+msgid "major"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_beacon_setting_wizard__major
+msgid "major (0 to 65535) for beacon"
+msgstr "major (0 à 65535) pour le beacon"
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__delay
+msgid ""
+"minimum time between 2 scans of same tag. Default is 3 second. There is no "
+"delay between scans of 2 different tags."
+msgstr "เวลาขั้นต่ำระหว่างการสแกนแท็กเดียวกัน 2 ครั้ง ค่าเริ่มต้นคือ 3 วินาที ไม่มีถ่วงเวลาระหว่างการสแกน 2 แท็กที่แตกต่างกัน"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_beacon_setting_wizard__minor
+msgid "minor"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_beacon_setting_wizard__minor
+msgid "minor (0 to 65535) for beacon"
+msgstr ""
+
+#. module: fw_iot
+#: code:addons/fw_iot/models/device_alert.py:0
+#: code:addons/fw_iot/models/device_alert.py:0
+#, python-format
+msgid "no recipient"
+msgstr "ไม่ได้กำหนดผู้รับ"
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_scanner_setting_wizard__scan_delay
+msgid ""
+"number of seconds between 2 scans. Ignored if scan_wifi and scan_bluetooth "
+"are false. Set to 120 seconds for any value < 30"
+msgstr "จำนวนวินาทีระหว่างการสแกน 2 ครั้ง ไม่ใช้ค่านี้หาก scan_wifi และ scan_bluetooth ไม่ได้เลือก ตั้งค่าเป็น 120 วินาทีถ้าค่า < 30"
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_thermo_humidity_setting_wizard__delay
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_thermo_setting_wizard__delay
+msgid "number of seconds between 2 temperatures scan"
+msgstr "จำนวนวินาทีระหว่างการสแกนอุณหภูมิ 2 ครั้ง"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__condition_type
+msgid "operator"
+msgstr "ตัวเปรียบเทียบ"
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__beep
+msgid "play a beep when a RFID tag is read."
+msgstr "Beep lorsque qu'un tag est scanné"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__rssi
+msgid "rssi"
+msgstr ""
+
+#. module: fw_iot
+#: code:addons/fw_iot/models/device_alert.py:0
+#, python-format
+msgid "send notification to LINE: %s"
+msgstr "ส่งข้อความเตือนไปยัง LINE: %s"
+
+#. module: fw_iot
+#: code:addons/fw_iot/models/device_alert.py:0
+#, python-format
+msgid "send notification to odoo: %s"
+msgstr "ส่งข้อความเตือนไปยัง โอดู: %s"
+
+#. module: fw_iot
+#: code:addons/fw_iot/models/device_alert.py:0
+#, python-format
+msgid "send notification to telegram: %s"
+msgstr "ส่งข้อความเตือนไปยัง เทเลแกรม: %s"
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_scanner_setting_wizard
+msgid "show scanner setting"
+msgstr "ค่าติดตั้งของอุปกรณ์ scanner"
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__led
+msgid "switch LED on when RFID is read."
+msgstr "เปิดไฟ LED เมื่ออ่าน RFID"
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_hr_employee
+msgid "synchronous Employee to weladee"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_smoke_detector_setting_wizard__delay
+msgid ""
+"the number of seconds between 2 stay alive mqtt ping, minimum = 15 secs"
+msgstr "จำนวนวินาทีระหว่างรอ mqtt ping, ขั้นต่ำ = 15 วินาที"
+
+#. module: fw_iot
+#: model:ir.model.fields,help:fw_iot.field_fwiot_device_sniffer_setting_wizard__scan_delay
+msgid "time in seconds between 2 scans."
+msgstr "เวลาเป็นวินาทีระหว่างการสแกน 2 ครั้ง"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__tx_power
+msgid "txPower"
+msgstr ""
+
+#. module: fw_iot
+#: code:addons/fw_iot/models/device_alert.py:0
+#: code:addons/fw_iot/models/device_alert.py:0
+#, python-format
+msgid "unexpected error"
+msgstr "Erreur"
+
+#. module: fw_iot
+#: code:addons/fw_iot/wizard/fwiot_device_lock_wizard.py:0
+#, python-format
+msgid "unlock"
+msgstr "dévérouillage"
