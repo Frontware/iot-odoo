@@ -392,6 +392,18 @@ class FWIOT_device(models.Model):
             )
         return ff
 
+    @api.model
+    def get_condition_fields_def(self, device_id):
+        """
+        get fields def list from device
+        """
+        ff = []
+        langdb = self.env['ir.translation']
+        fdb = self.env['ir.model.fields']
+        dv = self.browse(device_id)._get_device_implement()
+
+        return dv.get('alert', {}).get('fields_def', {})
+
     def action_view_history(self):
         """
         show history data

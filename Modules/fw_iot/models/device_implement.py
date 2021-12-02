@@ -94,5 +94,28 @@ DEVICE_IMPLEMENT = [
             "action": "fw_iot.fwiot_device_thermo_humidity_setting_wizard_action",
             "model": "fwiot_device_thermo_humidity_setting_wizard"
         }
+    },
+    {
+        "code": ["REMOTE433"],
+        "model": "fwiot_device_remote_433",
+        "alert": {
+            "fields": ["button_press","door_open","button_long_press"],
+            "fields_def": {
+                "button_press": {
+                    "type": "boolean"
+                },
+                "door_open": {
+                    "type": "boolean"
+                },
+                "button_long_press": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "data": {
+            "action": "fw_iot.fwiot_device_remote_433_action",
+            "schedule_id": "fw_iot.ir_cron_remote_433_get_data"
+        },
+        "setting": {}
     }
 ]

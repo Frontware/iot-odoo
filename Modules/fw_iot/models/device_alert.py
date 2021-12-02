@@ -25,6 +25,8 @@ class FWIOT_device_alert(models.Model):
     device_type_code = fields.Char(
         related='device_id.type.code', readonly=True)
 
+    condition_fields_type = fields.Char(
+        compute='_get_condition_fields_def', string="field type", default='text')
     condition_fields = fields.Selection(
         selection='_get_condition_fields', string="If")
     condition_type = fields.Selection([('!=', '<>'),
@@ -32,7 +34,13 @@ class FWIOT_device_alert(models.Model):
                                        ('<', '<'),
                                        ('>', '>')
                                        ], string="operator")
+    condition_type_bool = fields.Selection([('!=', '<>'),
+                                       ('==', '='),
+                                       ], string="operator")
     condition_value = fields.Char(string='compare value')
+    condition_value_bool = fields.Selection([('False', 'No'),
+                                       ('True', 'Yes'),
+                                       ], string="operator")
     condition_last_min = fields.Integer(string='last seen')
 
     message_type = fields.Selection([
@@ -100,7 +108,13 @@ class FWIOT_device_alert(models.Model):
         tt = _('a device is not active for ')
         return self.env['fwiot_device'].get_condition_fields(self.env.context.get('device_id')) + \
             [('last_time', tt)]
-
+    
+    @api.model
+    def _get_condition_fields_def(self):        
+        deff = self.env['fwiot_device'].get_condition_fields_def(self.env.context.get('device_id'))
+        for each in self:
+            each.condition_fields_type = deff.get(each.condition_fields,{}).get('type', 'text')
+        
     def action_test(self):
         """
         test send message from odoo bot
@@ -206,10 +220,16 @@ class FWIOT_device_alert(models.Model):
                         tosend = chke
                         break
             # when no value
-            elif not value:
+            elif not value and type(value) != bool:
                 # no value != any
                 if self.condition_type == '!=':
                     tosend = True
+
+            elif type(value) == bool:
+                v1 = self.condition_value.lower()
+                v1 = v1[0].upper() + v1[1:]
+                tosend = eval('%s %s %s' % (
+                    value, self.condition_type, v1))
 
             elif type(value) != str:
                 tosend = eval('%s %s %s' % (
@@ -269,6 +289,8 @@ class FWIOT_device_alert(models.Model):
     def _onchange_last_min(self):
         f = self.condition_fields
         fv = self.condition_last_min
+        deff = self.env['fwiot_device'].get_condition_fields_def(self.env.context.get('device_id'))
+        self.condition_fields_type = deff.get(f,{}).get('type', 'text')
         if f == 'last_time':
             sch = self.device_id.get_schedule()
             sch_min = sch.interval_number

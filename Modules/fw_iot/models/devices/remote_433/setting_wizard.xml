@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="fwiot_device_remote_433_setting_wizard" model="ir.ui.view">
+            <field name="name">fwiot_device_remote_433_setting_wizard</field>
+            <field name="model">fwiot_device_remote_433_setting_wizard</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                            </group>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="action_update" string="Update" type="object" attrs="{'invisible': [('device_locked','=',True)]}" class="oe_highlight"/>
+                        <button string="Close" class="btn-secondary" special="cancel"/>
+                        <div class="text-danger" attrs="{'invisible': [('device_locked','=',False)]}">
+                        This device is locked
+                        </div>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="fwiot_device_remote_433_setting_wizard_action" model="ir.actions.act_window">
+            <field name="name">Settings</field>
+            <field name="res_model">fwiot_device_remote_433_setting_wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>

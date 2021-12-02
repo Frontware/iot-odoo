@@ -49,6 +49,7 @@
                     </group>
                     <group string="Condition">
                         <field name="device_type_code" invisible="1" />
+                        <field name="condition_fields_type" />
                         <div attrs="{'invisible':[('device_type_code','not in',['SNIF','SCANNER'])]}">
                             <label for="type" />
                             <field name="type" class="oe_inline" />
@@ -59,10 +60,18 @@
                             <span>&amp;nbsp;</span>
                             <field name="condition_fields" class="oe_inline" required="1" />
                             <span>&amp;nbsp;</span>
-                            <field name="condition_type" class="oe_inline" attrs="{'invisible':[('condition_fields','=','last_time')],'required':[('condition_fields','!=','last_time')]}" />
+
+                            <!--normal-->
+                            <field name="condition_type" class="oe_inline" attrs="{'invisible':['|',('condition_fields_type','=','boolean'),('condition_fields','=','last_time')],'required':[('condition_fields_type','=','text'),('condition_fields','!=','last_time')]}" />
                             <span  attrs="{'invisible':[('condition_fields','=','last_time')]}">&amp;nbsp;</span>
-                            <field name="condition_value" class="oe_inline"  attrs="{'invisible':[('condition_fields','=','last_time')],'required':[('condition_fields','!=','last_time')]}" />
-                            <span  attrs="{'invisible':[('condition_fields','=','last_time')]}">&amp;nbsp;</span>
+                            <span attrs="{'invisible':[('condition_fields_type','!=','boolean')]}">&amp;nbsp;=&amp;nbsp;</span>
+
+                            <!--normal-->
+                            <field name="condition_value" class="oe_inline" attrs="{'invisible':['|',('condition_fields_type','!=','text'),('condition_fields','=','last_time')],'required':[('condition_fields_type','=','text'),('condition_fields','!=','last_time')]}" />
+                            <!--boolean-->
+                            <field name="condition_value_bool" class="oe_inline"  attrs="{'invisible':['|',('condition_fields_type','!=','boolean'),('condition_fields','=','last_time')],'required':[('condition_fields_type','=','boolean'),('condition_fields','!=','last_time')]}" />
+                            <span attrs="{'invisible':[('condition_fields','=','last_time')]}">&amp;nbsp;</span>
+
                             <field name="condition_last_min" class="oe_inline"  attrs="{'invisible':[('condition_fields','!=','last_time')],'required':[('condition_fields','=','last_time')]}" />
                             <span  attrs="{'invisible':[('condition_fields','!=','last_time')]}">&amp;nbsp;minute(s)</span>
                         </div>
