@@ -49,7 +49,7 @@
                     </group>
                     <group string="Condition">
                         <field name="device_type_code" invisible="1" />
-                        <field name="condition_fields_type" />
+                        <field name="condition_fields_type"  invisible="1" />
                         <div attrs="{'invisible':[('device_type_code','not in',['SNIF','SCANNER'])]}">
                             <label for="type" />
                             <field name="type" class="oe_inline" />

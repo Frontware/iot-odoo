@@ -120,6 +120,13 @@ msgid ""
 msgstr ""
 
 #. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+msgid ""
+"<span attrs=\"{'invisible':[('condition_fields','=','last_time')]}\">&amp;nbsp;</span>\n"
+"                            <span attrs=\"{'invisible':[('condition_fields_type','!=','boolean')]}\">&amp;nbsp;=&amp;nbsp;</span>"
+msgstr ""
+
+#. module: fw_iot
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_kanban
 msgid ""
 "<span class=\"fa fa-circle text-danger\" role=\"img\" aria-label=\"Offline\" title=\"Offline\" name=\"status_offline\">\n"
@@ -319,6 +326,8 @@ msgstr ""
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_mac__create_uid
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader__create_uid
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__create_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433__create_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433_setting_wizard__create_uid
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__create_uid
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner_setting_wizard__create_uid
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector__create_uid
@@ -346,6 +355,8 @@ msgstr ""
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_mac__create_date
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader__create_date
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__create_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433__create_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433_setting_wizard__create_date
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__create_date
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner_setting_wizard__create_date
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector__create_date
@@ -362,7 +373,10 @@ msgid "Created on"
 msgstr ""
 
 #. module: fw_iot
+#: model:ir.actions.act_window,name:fw_iot.fwiot_device_remote_433_action
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_create_wizard_form
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_remote_433_edit
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_remote_433_tree
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_humidity_edit
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_humidity_tree
 msgid "Data"
@@ -373,6 +387,8 @@ msgstr ""
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_generic__date_only
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader__date
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader__date_only
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433__date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433__date_only
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__date
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__date_only
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector__date
@@ -386,6 +402,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermometer__date
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermometer__date_only
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_remote_433_filter
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_filter
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_filter
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_filter
@@ -431,6 +448,8 @@ msgstr ""
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_generic_setting_wizard__device_id
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader__device_id
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__device_id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433__device_id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433_setting_wizard__device_id
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__device_id
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner_setting_wizard__device_id
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector__device_id
@@ -446,6 +465,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_edit
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_filter
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_remote_433_filter
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_edit
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_filter
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_tree
@@ -464,6 +484,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_beacon_setting_wizard__device_locked
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_generic_setting_wizard__device_locked
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__device_locked
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433_setting_wizard__device_locked
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner_setting_wizard__device_locked
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector_setting_wizard__device_locked
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer_setting_wizard__device_locked
@@ -533,6 +554,8 @@ msgstr ""
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_mac__display_name
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader__display_name
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__display_name
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433__display_name
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433_setting_wizard__display_name
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__display_name
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner_setting_wizard__display_name
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector__display_name
@@ -710,6 +733,11 @@ msgid "Frontware IOT device type"
 msgstr ""
 
 #. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_remote_433
+msgid "Frontware IOT device: door open, button press"
+msgstr ""
+
+#. module: fw_iot
 #: model:ir.model,name:fw_iot.model_fwiot_device_generic
 msgid "Frontware IOT device: generic"
 msgstr ""
@@ -727,6 +755,11 @@ msgstr ""
 #. module: fw_iot
 #: model:ir.model,name:fw_iot.model_fwiot_device_scanner
 msgid "Frontware IOT device: scanner"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_remote_433_setting_wizard
+msgid "Frontware IOT device: show remote 433 setting"
 msgstr ""
 
 #. module: fw_iot
@@ -812,6 +845,13 @@ msgid "Frontware IoT, fetch nfc reader data"
 msgstr ""
 
 #. module: fw_iot
+#: model:ir.actions.server,name:fw_iot.ir_cron_remote_433_get_data_ir_actions_server
+#: model:ir.cron,cron_name:fw_iot.ir_cron_remote_433_get_data
+#: model:ir.cron,name:fw_iot.ir_cron_remote_433_get_data
+msgid "Frontware IoT, fetch remote 433 data"
+msgstr ""
+
+#. module: fw_iot
 #: model:ir.actions.server,name:fw_iot.ir_cron_scanner_get_data_ir_actions_server
 #: model:ir.cron,cron_name:fw_iot.ir_cron_scanner_get_data
 #: model:ir.cron,name:fw_iot.ir_cron_scanner_get_data
@@ -852,6 +892,7 @@ msgstr ""
 #. module: fw_iot
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_filter
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_remote_433_filter
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_filter
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_filter
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_filter
@@ -913,6 +954,8 @@ msgstr ""
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_mac__id
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader__id
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433__id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433_setting_wizard__id
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__id
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner_setting_wizard__id
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector__id
@@ -1067,6 +1110,8 @@ msgstr ""
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_mac____last_update
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader____last_update
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader_setting_wizard____last_update
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433____last_update
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433_setting_wizard____last_update
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner____last_update
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner_setting_wizard____last_update
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector____last_update
@@ -1095,6 +1140,8 @@ msgstr ""
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_mac__write_uid
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader__write_uid
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__write_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433__write_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433_setting_wizard__write_uid
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__write_uid
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner_setting_wizard__write_uid
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector__write_uid
@@ -1122,6 +1169,8 @@ msgstr ""
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_mac__write_date
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader__write_date
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__write_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433__write_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433_setting_wizard__write_date
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner__write_date
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_scanner_setting_wizard__write_date
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_smoke_detector__write_date
@@ -1225,6 +1274,11 @@ msgid "Name"
 msgstr ""
 
 #. module: fw_iot
+#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_alert__condition_value_bool__false
+msgid "No"
+msgstr ""
+
+#. module: fw_iot
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
 msgid "No Telegram Bot Token define"
 msgstr ""
@@ -1240,6 +1294,7 @@ msgid "No check's data yet on this device"
 msgstr ""
 
 #. module: fw_iot
+#: model_terms:ir.actions.act_window,help:fw_iot.fwiot_device_remote_433_action
 #: model_terms:ir.actions.act_window,help:fw_iot.fwiot_device_scanner_action
 #: model_terms:ir.actions.act_window,help:fw_iot.fwiot_device_sniffer_action
 #: model_terms:ir.actions.act_window,help:fw_iot.fwiot_device_thermo_humidity_action
@@ -1347,6 +1402,7 @@ msgid "Proximity ID for iBeacon"
 msgstr ""
 
 #. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader__rfid
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_filter
 msgid "RFID"
 msgstr ""
@@ -1405,6 +1461,7 @@ msgstr ""
 
 #. module: fw_iot
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_remote_433_filter
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_scanner_filter
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_smoke_detector_filter
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_sniffer_filter
@@ -1624,6 +1681,11 @@ msgid "WiFi"
 msgstr ""
 
 #. module: fw_iot
+#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_alert__condition_value_bool__true
+msgid "Yes"
+msgstr ""
+
+#. module: fw_iot
 #: code:addons/fw_iot/models/device.py:0 code:addons/fw_iot/models/device.py:0
 #, python-format
 msgid "You must enter API Key"
@@ -1641,8 +1703,28 @@ msgid "allowed partner"
 msgstr ""
 
 #. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433__button_long_press
+msgid "button long press"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433__button_press
+msgid "button press"
+msgstr ""
+
+#. module: fw_iot
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__condition_value
 msgid "compare value"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433__door_open
+msgid "door open"
+msgstr ""
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__condition_fields_type
+msgid "field type"
 msgstr ""
 
 #. module: fw_iot
@@ -1748,6 +1830,8 @@ msgstr ""
 
 #. module: fw_iot
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__condition_type
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__condition_type_bool
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__condition_value_bool
 msgid "operator"
 msgstr ""
 

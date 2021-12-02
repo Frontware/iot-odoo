@@ -147,6 +147,13 @@ msgid ""
 msgstr ""
 
 #. module: fw_iot
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
+msgid ""
+"<span attrs=\"{'invisible':[('condition_fields','=','last_time')]}\">&amp;nbsp;</span>\n"
+"                            <span attrs=\"{'invisible':[('condition_fields_type','!=','boolean')]}\">&amp;nbsp;=&amp;nbsp;</span>"
+msgstr ""
+
+#. module: fw_iot
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_kanban
 msgid ""
 "<span class=\"fa fa-circle text-danger\" role=\"img\" aria-label=\"Offline\" title=\"Offline\" name=\"status_offline\">\n"
@@ -364,6 +371,8 @@ msgstr "ยืนยัน"
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_setting_wizard__create_uid
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermometer__create_uid
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_type__create_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433__create_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433_setting_wizard__create_uid
 msgid "Created by"
 msgstr "สร้างโดย"
 
@@ -391,6 +400,8 @@ msgstr "สร้างโดย"
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_setting_wizard__create_date
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermometer__create_date
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_type__create_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433__create_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433_setting_wizard__create_date
 msgid "Created on"
 msgstr "สร้างเมื่อ"
 
@@ -398,6 +409,9 @@ msgstr "สร้างเมื่อ"
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_create_wizard_form
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_humidity_edit
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_humidity_tree
+#: model:ir.actions.act_window,name:fw_iot.fwiot_device_remote_433_action
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_remote_433_edit
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_remote_433_tree
 msgid "Data"
 msgstr "ข้อมูลของอุปกรณ์"
 
@@ -425,6 +439,9 @@ msgstr "ข้อมูลของอุปกรณ์"
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_status_filter
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_humidity_filter
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermometer_filter
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433__date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433__date_only
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_remote_433_filter
 msgid "Date"
 msgstr "วันที่"
 
@@ -489,6 +506,9 @@ msgstr "ถ่วงเวลา (วินาที)"
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_humidity_filter
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermometer_filter
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_tree
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433__device_id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433_setting_wizard__device_id
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_remote_433_filter
 #, python-format
 msgid "Device"
 msgstr "อุปกรณ์"
@@ -502,6 +522,7 @@ msgstr "อุปกรณ์"
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_sniffer_setting_wizard__device_locked
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_humidity_setting_wizard__device_locked
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_setting_wizard__device_locked
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433_setting_wizard__device_locked
 msgid "Device Locked"
 msgstr "อุปกรณ์ล็อค"
 
@@ -579,6 +600,8 @@ msgstr "งานอัตโนมัติของอุปกรณ์"
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermometer__display_name
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_type__display_name
 #: model:ir.model.fields,field_description:fw_iot.field_hr_employee__display_name
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433__display_name
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433_setting_wizard__display_name
 msgid "Display Name"
 msgstr "ชื่อ"
 
@@ -744,6 +767,11 @@ msgid "Frontware IOT device type"
 msgstr "ฟร้อนท์แวร์ไอโอที: ชนิดอุปกรณ์"
 
 #. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_remote_433
+msgid "Frontware IOT device: door open, button press"
+msgstr "ฟร้อนท์แวร์ไอโอที: อุปกรณ์ตรวจการเปิดประตู กดปุ่ม"
+
+#. module: fw_iot
 #: model:ir.model,name:fw_iot.model_fwiot_device_generic
 msgid "Frontware IOT device: generic"
 msgstr "ฟร้อนท์แวร์ไอโอที: อุปกรณ์พื้นฐาน"
@@ -762,6 +790,11 @@ msgstr "ฟร้อนท์แวร์ไอโอที: nfc_reader"
 #: model:ir.model,name:fw_iot.model_fwiot_device_scanner
 msgid "Frontware IOT device: scanner"
 msgstr "ฟร้อนท์แวร์ไอโอที: scanner"
+
+#. module: fw_iot
+#: model:ir.model,name:fw_iot.model_fwiot_device_remote_433_setting_wizard
+msgid "Frontware IOT device: show remote 433 setting"
+msgstr "ฟร้อนท์แวร์ไอโอที: ค่าติดตั้งของอุปกรณ์ remote 433"
 
 #. module: fw_iot
 #: model:ir.model,name:fw_iot.model_fwiot_device_smoke_detector_setting_wizard
@@ -846,6 +879,13 @@ msgid "Frontware IoT, fetch nfc reader data"
 msgstr "ฟร้อนท์แวร์ไอโอที: ดึงข้อมูลของอุปกรณ์ nfc reader"
 
 #. module: fw_iot
+#: model:ir.actions.server,name:fw_iot.ir_cron_remote_433_get_data_ir_actions_server
+#: model:ir.cron,cron_name:fw_iot.ir_cron_remote_433_get_data
+#: model:ir.cron,name:fw_iot.ir_cron_remote_433_get_data
+msgid "Frontware IoT, fetch remote 433 data"
+msgstr "ฟร้อนท์แวร์ไอโอที: ดึงข้อมูลของอุปกรณ์ remote 433"
+
+#. module: fw_iot
 #: model:ir.actions.server,name:fw_iot.ir_cron_scanner_get_data_ir_actions_server
 #: model:ir.cron,cron_name:fw_iot.ir_cron_scanner_get_data
 #: model:ir.cron,name:fw_iot.ir_cron_scanner_get_data
@@ -892,6 +932,7 @@ msgstr "ฟร้อนท์แวร์ไอโอที: ดึงข้อ�
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_status_filter
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_humidity_filter
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermometer_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_remote_433_filter
 msgid "Group By"
 msgstr "จัดกลุ่ม"
 
@@ -960,6 +1001,8 @@ msgstr "ความชื้น"
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermometer__id
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_type__id
 #: model:ir.model.fields,field_description:fw_iot.field_hr_employee__id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433__id
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433_setting_wizard__id
 msgid "ID"
 msgstr ""
 
@@ -1114,6 +1157,8 @@ msgstr "ภาษา"
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermometer____last_update
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_type____last_update
 #: model:ir.model.fields,field_description:fw_iot.field_hr_employee____last_update
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433____last_update
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433_setting_wizard____last_update
 msgid "Last Modified on"
 msgstr "แก้ไขล่าสุดเมื่อ"
 
@@ -1141,6 +1186,8 @@ msgstr "แก้ไขล่าสุดเมื่อ"
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_setting_wizard__write_uid
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermometer__write_uid
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_type__write_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433__write_uid
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433_setting_wizard__write_uid
 msgid "Last Updated by"
 msgstr "แก้ไขล่าสุดโดย"
 
@@ -1168,6 +1215,8 @@ msgstr "แก้ไขล่าสุดโดย"
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermo_setting_wizard__write_date
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_thermometer__write_date
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_type__write_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433__write_date
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433_setting_wizard__write_date
 msgid "Last Updated on"
 msgstr "แก้ไขล่าสุดเมื่อ"
 
@@ -1259,6 +1308,11 @@ msgid "Name"
 msgstr "ชื่อ"
 
 #. module: fw_iot
+#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_alert__condition_value_bool__false
+msgid "No"
+msgstr "ไม่"
+
+#. module: fw_iot
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_alert_edit
 msgid "No Telegram Bot Token define"
 msgstr "ไม่มีการกำหนด Telegram Bot Token"
@@ -1277,6 +1331,7 @@ msgstr "ไม่พบข้อมูลของอุปกรณ์นี้
 #: model_terms:ir.actions.act_window,help:fw_iot.fwiot_device_scanner_action
 #: model_terms:ir.actions.act_window,help:fw_iot.fwiot_device_sniffer_action
 #: model_terms:ir.actions.act_window,help:fw_iot.fwiot_device_thermo_humidity_action
+#: model_terms:ir.actions.act_window,help:fw_iot.fwiot_device_remote_433_action
 msgid "No data yet on this device"
 msgstr "ไม่พบข้อมูลของอุปกรณ์นี้"
 
@@ -1382,6 +1437,7 @@ msgstr ""
 
 #. module: fw_iot
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_nfc_reader_filter
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_nfc_reader__rfid
 msgid "RFID"
 msgstr ""
 
@@ -1445,6 +1501,7 @@ msgstr "งานอัตโนมัติและการเเจ้งเ
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_status_filter
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermo_humidity_filter
 #: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_thermometer_filter
+#: model_terms:ir.ui.view,arch_db:fw_iot.fwiot_device_remote_433_filter
 msgid "Search Data"
 msgstr "ค้นหาข้อมูล"
 
@@ -1658,6 +1715,11 @@ msgid "WiFi"
 msgstr ""
 
 #. module: fw_iot
+#: model:ir.model.fields.selection,name:fw_iot.selection__fwiot_device_alert__condition_value_bool__true
+msgid "Yes"
+msgstr "ใช่"
+
+#. module: fw_iot
 #: code:addons/fw_iot/models/device.py:0 code:addons/fw_iot/models/device.py:0
 #, python-format
 msgid "You must enter API Key"
@@ -1675,9 +1737,29 @@ msgid "allowed partner"
 msgstr "คู่ค้าที่อนุญาติ"
 
 #. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433__button_long_press
+msgid "button long press"
+msgstr "ปุ่มถูกกดนาน"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433__button_press
+msgid "button press"
+msgstr "ปุ่มถูกกด"
+
+#. module: fw_iot
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__condition_value
 msgid "compare value"
 msgstr "ค่าเปรียบเทียบ"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_remote_433__door_open
+msgid "door open"
+msgstr "ประตูเปิด"
+
+#. module: fw_iot
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__condition_fields_type
+msgid "field type"
+msgstr "ชนิด field"
 
 #. module: fw_iot
 #: model:ir.model.fields,help:fw_iot.field_fwiot_device_nfc_reader_setting_wizard__rfids
@@ -1782,6 +1864,8 @@ msgstr "จำนวนวินาทีระหว่างการสแก
 
 #. module: fw_iot
 #: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__condition_type
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__condition_type_bool
+#: model:ir.model.fields,field_description:fw_iot.field_fwiot_device_alert__condition_value_bool
 msgid "operator"
 msgstr "ตัวเปรียบเทียบ"
 
