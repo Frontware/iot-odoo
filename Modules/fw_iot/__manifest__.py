@@ -46,6 +46,7 @@
         "models/devices/thermo_humidity/setting_wizard.xml",
 
         "models/devices/remote_433/device.xml",
+        "models/devices/remote_433/setting_wizard.xml",
 
         "models/devices/nfc_reader/cron.xml",
         "models/devices/scanner/cron.xml",

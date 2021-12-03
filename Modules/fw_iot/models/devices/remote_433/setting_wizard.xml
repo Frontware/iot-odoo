@@ -9,6 +9,9 @@
                     <sheet>
                         <group>
                             <group>
+                                <field name="pin_4" attrs="{'readonly': [('device_locked','=',True)]}" />
+                                <field name="pin_5" attrs="{'readonly': [('device_locked','=',True)]}" />
+                                <field name="device_locked" invisible="1" />
                             </group>
                         </group>
                     </sheet>

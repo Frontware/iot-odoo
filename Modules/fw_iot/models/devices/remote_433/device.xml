@@ -16,7 +16,6 @@
                     <field name="date"/>
                     <field name="door_open"/>
                     <field name="button_press"/>
-                    <field name="button_long_press"/>
                 </tree>
             </field>
         </record>
@@ -31,7 +30,6 @@
                         <field name="date" readonly="1"/>
                         <field name="door_open" readonly="1"/>
                         <field name="button_press" readonly="1"/>
-                        <field name="button_long_press" readonly="1"/>
                     </group>
                 </sheet>
                 </form>

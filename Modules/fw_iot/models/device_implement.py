@@ -116,6 +116,9 @@ DEVICE_IMPLEMENT = [
             "action": "fw_iot.fwiot_device_remote_433_action",
             "schedule_id": "fw_iot.ir_cron_remote_433_get_data"
         },
-        "setting": {}
+        "setting": {
+            "action": "fw_iot.fwiot_device_remote_433_setting_wizard_action",
+            "model": "fwiot_device_remote_433_setting_wizard"
+        }
     }
 ]
