@@ -41,7 +41,7 @@ class FWIOT_device_remote_433(models.Model):
                "device_id": device.id,
                "date": d,
                "door_open": data.get('door_open', False),
-               "button_press": data.get('button_press', False),
+               "button_press": data.get('button_pressed', False),
                "button_long_press": data.get('long', False),
            }) 
 
@@ -50,7 +50,7 @@ class FWIOT_device_remote_433(models.Model):
         alert record
         """ 
         door_open = (data or {}).get('door_open', False)
-        button_press = (data or {}).get('button_press', False)
+        button_press = (data or {}).get('button_pressed', False)
 
         alerts = self.env['fwiot_device_alert'].search([('device_id','=', device.id),('active','=',True)])
         for each in alerts:
