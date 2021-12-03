@@ -141,7 +141,7 @@ class FWIOT_device_alert(models.Model):
         """
         msg_dev = '%s (%s)' % (self.device_id.name, self.device_id.token)
 
-        msg_con = self.condition_value
+        msg_con = self.condition_value or self.condition_value_bool
         if self.condition_fields == 'last_time':
             msg_con = '%s' % self.condition_last_min
 
@@ -226,10 +226,8 @@ class FWIOT_device_alert(models.Model):
                     tosend = True
 
             elif type(value) == bool:
-                v1 = self.condition_value.lower()
-                v1 = v1[0].upper() + v1[1:]
-                tosend = eval('%s %s %s' % (
-                    value, self.condition_type, v1))
+                tosend = eval('%s == %s' % (
+                    value, self.condition_value_bool))
 
             elif type(value) != str:
                 tosend = eval('%s %s %s' % (
